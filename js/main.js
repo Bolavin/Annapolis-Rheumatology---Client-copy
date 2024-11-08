@@ -16,3 +16,9 @@ function toggleDd() {
     ddIcon.classList.toggle("open")
 
 }
+
+function toggleNoti() {
+    const noti = document.querySelector(".noti")
+
+    noti.classList.toggle("close")
+}

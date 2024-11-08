@@ -49,7 +49,7 @@ h1 {
     color: var(--Off-Black, #282D30);
 
     /* Heading Styles/H1 */
-    font-size: 48px;
+    font-size: 4.8rem;
     font-style: normal;
     font-weight: 800;
     line-height: 114.286%;
@@ -62,13 +62,23 @@ h5,
 .btn {
     /* Heading Styles/H5 */
     font-family: Archivo;
-    font-size: 24px;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
     /* 116.667% */
     text-align: center;
     letter-spacing: -0.24px;
+}
+
+h6 {
+    /* Heading Styles/H6 */
+    font-family: Archivo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
 }
 
 
@@ -171,46 +181,8 @@ a {
     gap: 8px;
 }
 
-/* HERO */
+/*  */
 
-.hero {
-    position: relative;
-    display: flex;
-    height: 90vh;
-    /* padding: 80px; */
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    overflow: hidden;
-
-    background: linear-gradient(90deg, rgba(11, 109, 160, 0.25) 25%, rgba(231, 240, 245, 0.10) 75%), url(../images/physician-consulting-his-patient-clinic.jpg) center / cover no-repeat;
-
-}
-
-.hero__content {
-    display: flex;
-    width: fit-content;
-    padding: 40px 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-
-    border-radius: 24px;
-    background: rgba(231, 240, 245, 0.75);
-    backdrop-filter: blur(6px);
-}
-
-.hero__content h1 {
-    width: 600px;
-}
-
-.hero__content .body-r {
-    font-size: 2rem;
-    line-height: 1.5;
-    font-weight: 500;
-    width: 575px;
-    opacity: 0.7;
-}
 
 
 @media screen and (max-width: 900px) {
@@ -220,28 +192,13 @@ a {
         padding-inline: 32px;
     }
 
-    .hero {
-        padding-block: 40px;
-        height: 80vh;
-        overflow: hidden;
-
+    h6 {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
     }
 
-    .hero__content {
-        width: 60vw;
-        padding: 40px 24px;
-        gap: 20px;
-
-        border-radius: 16px;
-        background: rgba(231, 240, 245, 0.75);
-        backdrop-filter: blur(6px);
-    }
-
-    .hero__content h1 {
-        width: 100%;
-        font-size: 40px;
-        line-height: 44px;
-    }
 
     .hero__content .body-r {
         font-size: 14px;
@@ -263,6 +220,7 @@ a {
     }
 
 
+
 }
 
 @media screen and (max-width: 600px) {
@@ -273,31 +231,13 @@ a {
         overflow: hidden;
     }
 
-    .hero {
-        padding-block: 86px;
-        height: 90vh;
-        justify-content: flex-end;
-        align-items: flex-end;
-        overflow: hidden;
-
-
+    h6 {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
     }
 
-    .hero__content {
-        width: 100%;
-        padding: 32px 16px;
-        gap: 12px;
-
-        border-radius: 12px;
-        background: rgba(231, 240, 245, 0.75);
-        backdrop-filter: blur(6px);
-    }
-
-    .hero__content h1 {
-        width: 100%;
-        font-size: 32px;
-        line-height: 36x;
-    }
 
     .hero__content .body-r {
         font-size: 14px;
@@ -317,8 +257,6 @@ a {
         width: 16px;
         height: 16px;
     }
-
-
 
 
 

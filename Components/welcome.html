@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        :root {
+            --color-accent: #EF556A;
+            --color-off-white: #E7F0F5;
+            --color-off-black: #282D30;
+            --color-gold: #FF9D3B;
+            --color-blue: #498CBB;
+            --color-green: #7CBD40;
+            --color-white: #fff;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            color: var(--color-off-black);
+
+            background-color: var(--color-off-white);
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Archivo", sans-serif;
+            color: var(--color-off-black);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: var(--Off-Black, #282D30);
+
+            /* Heading Styles/H1 */
+            font-size: 4.8rem;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 114.286%;
+            letter-spacing: -1.12px;
+            text-transform: capitalize;
+        }
+
+
+        h5,
+        .btn {
+            /* Heading Styles/H5 */
+            font-family: Archivo;
+            font-size: 2.4rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            /* 116.667% */
+            text-align: center;
+            letter-spacing: -0.24px;
+        }
+
+        h6 {
+            /* Heading Styles/H6 */
+            font-family: Archivo;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-off-black);
+        }
+
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            height: fit-content;
+            max-width: 1440px;
+            margin-inline: auto;
+            padding-inline: 6vw;
+        }
+
+        .body-r {
+            color: var(--Off-Black, #282D30);
+
+            /* Body Styles/Body-regular */
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            /* 137.5% */
+            letter-spacing: -0.16px;
+
+
+
+        }
+
+        .btn {
+            display: flex;
+            width: 300px;
+            padding: 16px 24px;
+            justify-content: center-between;
+            align-items: center;
+            outline: 0;
+            border: 0;
+            white-space: nowrap;
+
+
+            border-radius: 12px;
+            transition: background 200ms ease-in;
+        }
+
+        .btn-icon::after {
+            content: '';
+            display: inline-block;
+            background: url('../images/arrow-right.svg') no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+
+
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+        }
+
+        .btn--primary {
+            color: var(--color-off-white);
+            background: var(--color-accent);
+
+        }
+
+        .btn--primary:hover {
+            color: var(--color-off-white);
+            background: #BD4B5C;
+        }
+
+        .btn--secondary {
+            color: var(--color-off-black);
+            border: 1.5px solid var(--color-accent, #EF556A);
+            background: rgba(239, 85, 106, 0.05);
+            transition: background 100ms ease;
+
+        }
+
+        .btn--secondary:hover {
+            background: rgba(239, 85, 106, 0.2);
+        }
+
+        .btn__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* WELCOME */
+
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .title {
+            width: 950px;
+
+            color: var(--Off-Black, #282D30);
+            text-align: center;
+
+            font-family: Archivo;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 28px;
+            /* 116.667% */
+            letter-spacing: -0.24px;
+        }
+
+        .welcome .btn {
+            width: auto;
+            padding: 16px 56px;
+            justify-content: center;
+
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: -0.16px;
+        }
+
+        .welcome .btn--secondary {
+            padding-inline: 40px;
+        }
+
+        .welcome .btn__container {
+            gap: 24px;
+        }
+
+
+
+        @media screen and (max-width: 900px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 32px;
+            }
+
+            h6 {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 240px;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+            .welcome {
+                gap: 16px;
+            }
+
+            .title {
+                width: 88%;
+
+                font-size: 15px;
+                line-height: 18px;
+                letter-spacing: -0.15px;
+            }
+
+            .welcome .btn {
+                padding: 12px 40px;
+
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            .welcome .btn--secondary {
+                padding-inline: 24px;
+            }
+
+            .welcome .btn__container {
+                gap: 16px;
+            }
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 16px;
+                overflow: hidden;
+            }
+
+            h6 {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+            .welcome {
+                gap: 12px;
+            }
+
+            .title {
+                width: 100%;
+
+                font-size: 11px;
+                line-height: 14px;
+                letter-spacing: -0.11px;
+            }
+
+            .welcome .btn {
+                width: 50%;
+                padding: 12px 24px;
+                text-align: center;
+
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            .welcome .btn--secondary {
+                padding-inline: 24px;
+            }
+
+            .welcome .btn__container {
+                width: 100%;
+                gap: 12px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome container">
+        <h2 class="title">
+            Here at Annapolis Rheumatology our Board Certified Rheumatologists strive to deliver evidence based,
+            compassionate care
+            to help you achieve your treatment goals. Along with our welcoming staff, our team is by your side with
+            every step.
+        </h2>
+
+        <div class="btn__container">
+            <a href="#" class="btn btn--primary">Contact Us</a>
+            <a href="#" class="btn btn--secondary">(714) 386 - 1092</a>
+        </div>
+    </div>
+</body>
+
+</html>

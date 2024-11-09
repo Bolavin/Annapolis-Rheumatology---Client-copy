@@ -128,6 +128,16 @@ a {
     letter-spacing: -0.16px;
 }
 
+.body-b {
+    /* Body Styles/Body-Bold */
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+}
+
 .button-r {
     /* Body Styles/Button-regular */
     font-size: 14px;
@@ -305,6 +315,34 @@ a {
     stroke: rgba(40, 45, 48, 0.25);
 }
 
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.title .text {
+    width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.title .btn {
+    padding: 20px;
+    width: 280px;
+}
+
+.title .btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+
+}
+
 /*  */
 
 
@@ -360,6 +398,35 @@ a {
     }
 
 
+    .title .text {
+        gap: 4px;
+        width: 350px;
+    }
+
+    .text h3 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .title .btn {
+        padding: 12px;
+        gap: 48px;
+        width: auto;
+    }
+
+    .title .btn h6 {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.16px;
+    }
+
+    .title .btn svg {
+        height: 16px;
+        width: 16px;
+    }
+
+
+
 
 
 
@@ -401,5 +468,23 @@ a {
     }
 
 
+    .title {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .title .text {
+        width: 88%;
+    }
+
+    .title .btn {
+        width: 100%;
+    }
+
+
 
 }
+
+@media screen and (max-width: 400px) {}

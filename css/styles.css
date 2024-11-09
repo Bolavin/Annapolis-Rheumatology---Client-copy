@@ -57,6 +57,14 @@ h1 {
     text-transform: capitalize;
 }
 
+h3 {
+    /* Heading Styles/H3 */
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+}
+
 
 h5,
 .btn {
@@ -170,6 +178,37 @@ a {
 
 }
 
+.btn--ghost {
+    padding: 16px;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+
+    border-radius: 8px;
+    border: 2px solid #282D30;
+    background: rgba(255, 255, 255, 0.50);
+
+    transition: all 100ms ease-in;
+}
+
+.btn--ghost.btn-icon::after {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+}
+
+.btn--ghost:hover {
+    color: var(--color-off-white);
+    background-color: var(--color-off-black);
+}
+
+.btn--ghost:hover.btn-icon::after {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+}
+
+
 .btn--primary {
     color: var(--color-off-white);
     background: var(--color-accent);
@@ -220,9 +259,22 @@ a {
     letter-spacing: -0.1px;
 }
 
+.x-div {
+    display: flex;
+    padding: 20px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.x-div svg {
+    width: 100%;
+
+    stroke-width: 1.5px;
+    stroke: rgba(40, 45, 48, 0.25);
+}
+
 /*  */
-
-
 
 
 
@@ -261,6 +313,9 @@ a {
     }
 
 
+
+
+
 }
 
 @media screen and (max-width: 600px) {
@@ -297,6 +352,9 @@ a {
         width: 16px;
         height: 16px;
     }
+
+
+
 
 
 }

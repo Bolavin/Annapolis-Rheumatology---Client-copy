@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        :root {
+            --color-accent: #EF556A;
+            --color-off-white: #E7F0F5;
+            --color-off-black: #282D30;
+            --color-gold: #FF9D3B;
+            --color-blue: #498CBB;
+            --color-green: #7CBD40;
+            --color-white: #fff;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            color: var(--color-off-black);
+
+            background-color: var(--color-off-white);
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Archivo", sans-serif;
+            color: var(--color-off-black);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: var(--Off-Black, #282D30);
+
+            /* Heading Styles/H1 */
+            font-size: 4.8rem;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 114.286%;
+            letter-spacing: -1.12px;
+            text-transform: capitalize;
+        }
+
+        h3 {
+            /* Heading Styles/H3 */
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px;
+        }
+
+
+        h5,
+        .btn {
+            /* Heading Styles/H5 */
+            font-family: Archivo;
+            font-size: 2.4rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            /* 116.667% */
+            text-align: center;
+            letter-spacing: -0.24px;
+        }
+
+        h6 {
+            /* Heading Styles/H6 */
+            font-family: Archivo;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-off-black);
+        }
+
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            height: fit-content;
+            max-width: 1440px;
+            margin-inline: auto;
+            padding-inline: 6vw;
+        }
+
+        .body-r {
+            color: var(--Off-Black, #282D30);
+
+            /* Body Styles/Body-regular */
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            /* 137.5% */
+            letter-spacing: -0.16px;
+        }
+
+        .button-r {
+            /* Body Styles/Button-regular */
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .text-caption {
+            /* Body Styles/Caption */
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: -0.12px;
+        }
+
+        .btn h6 {
+            color: var(--color-off-white);
+        }
+
+        .btn {
+            display: flex;
+            gap: 64px;
+            width: auto;
+            padding: 16px 24px;
+            justify-content: space-between;
+            align-items: center;
+            outline: 0;
+            border: 0;
+            white-space: nowrap;
+
+
+            border-radius: 12px;
+            transition: background 200ms ease-in;
+        }
+
+        .btn-icon::after {
+            content: '';
+            display: inline-block;
+            background: url('../images/arrow-right.svg') no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+
+
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+        }
+
+        .btn--ghost {
+            padding: 16px;
+
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 18px;
+
+            border-radius: 8px;
+            border: 2px solid #282D30;
+            background: rgba(255, 255, 255, 0.50);
+
+            transition: all 100ms ease-in;
+        }
+
+        .btn--ghost.btn-icon::after {
+            width: 12px;
+            height: 12px;
+            filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+        }
+
+        .btn--ghost:hover {
+            color: var(--color-off-white);
+            background-color: var(--color-off-black);
+        }
+
+        .btn--ghost:hover.btn-icon::after {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+        }
+
+
+        .btn--primary {
+            color: var(--color-off-white);
+            background: var(--color-accent);
+
+        }
+
+        .btn--primary:hover {
+            color: var(--color-off-white);
+            background: #BD4B5C;
+        }
+
+        .btn--secondary {
+            color: var(--color-off-black);
+            border: 1.5px solid var(--color-accent, #EF556A);
+            background: rgba(239, 85, 106, 0.05);
+            transition: background 100ms ease;
+
+        }
+
+        .btn--secondary:hover {
+            background: rgba(239, 85, 106, 0.2);
+        }
+
+        .btn__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chip {
+            display: inline-flex;
+            padding: 10px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            cursor: default;
+            border-radius: 40px;
+            border: 0.75px solid rgba(231, 240, 245, 0.75);
+            background: rgba(40, 45, 48, 0.15);
+
+            color: var(--Off-white, #E7F0F5);
+            text-align: center;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -0.1px;
+        }
+
+        .chip--brand {
+            display: flex;
+            padding: 10px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 10px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -0.1px;
+            text-transform: capitalize;
+
+            cursor: default;
+            border-radius: 40px;
+            border: 0.75px solid var(--Off-Black, #282D30);
+        }
+
+        .chip--brand::before {
+            content: '';
+            display: inline-block;
+            background: url('../images/brand-Icon.svg') no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+
+            filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+
+        }
+
+        .x-div {
+            display: flex;
+            padding: 20px 0px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .x-div svg {
+            width: 100%;
+
+            stroke-width: 1.5px;
+            stroke: rgba(40, 45, 48, 0.25);
+        }
+
+        /* LOCATION SECTION */
+        .location {
+            padding-block: 80px;
+        }
+
+        .location .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            align-self: stretch;
+        }
+
+        .location .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+        }
+
+        .title .text {
+            width: 500px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .title .btn {
+            padding: 20px;
+            width: 280px;
+        }
+
+        .title .btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+
+        }
+
+        .location__wrapper {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            gap: 40px;
+            align-self: stretch;
+            flex-wrap: wrap;
+        }
+
+        .location-card {
+            display: flex;
+            max-width: 31%;
+            flex-grow: 1;
+            padding: 12px;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            transition: all 200ms ease;
+        }
+
+        .location-card:hover {
+            box-shadow: 2px 4px 12px 1px rgba(40, 45, 48, 0.1);
+        }
+
+        .location-card .info {
+            display: flex;
+            padding-top: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            flex: 1 0 0;
+        }
+
+
+        .info .text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            align-self: stretch;
+        }
+
+        .text h6 {
+            color: var(--color-accent);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.18px;
+        }
+
+        .text .text-caption {
+            align-self: stretch;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .info .btn {
+            padding: 6px 12px;
+            align-self: stretch;
+            gap: 0;
+
+            border-radius: 4px;
+            border: 1px solid var(--color-off-black);
+            opacity: 0.8;
+            background: rgba(231, 240, 245, 0.25);
+        }
+
+        .info .btn:hover {
+            color: var(--color-off-white);
+            background-color: var(--color-off-black);
+        }
+
+        .info .btn:hover svg {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+        }
+
+        .info .btn span {
+            font-family: "Open Sans", sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: -0.12px;
+        }
+
+
+
+
+        .location-card .image {
+            position: relative;
+            width: 104px;
+            flex-shrink: 0;
+            align-self: stretch;
+
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            transition: all 500ms ease-in;
+        }
+
+        .location-card:hover img {
+            transform-origin: center;
+            transform: rotate(30deg) scale(2);
+
+        }
+
+        .location-card .image::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+
+            border-radius: 6px;
+            background: linear-gradient(180deg, rgba(40, 45, 48, 0.1) 0%, rgba(40, 45, 48, 0.3) 74.25%, rgba(40, 45, 48, 0.50) 100%);
+            background-blend-mode: multiply, normal;
+
+            /* transition: all 500ms ease-in; */
+        }
+
+        .location-card:hover .image::before {
+            background: linear-gradient(180deg, rgba(40, 45, 48, 0.01) 0%, rgba(40, 45, 48, 0.13) 74.25%, rgba(40, 45, 48, 0.50) 100%);
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width: 900px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 32px;
+            }
+
+            h6 {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 240px;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+            .chip--brand {
+                padding: 8px;
+                gap: 2px;
+
+                font-size: 8px;
+                line-height: 8px;
+                letter-spacing: -0.08px;
+
+            }
+
+            .chip--brand::before {
+                content: '';
+                width: 8px;
+                height: 8px;
+            }
+
+            .location {
+                padding-block: 48px;
+            }
+
+            .location .container {
+                gap: 24px;
+            }
+
+            .title .text {
+                gap: 4px;
+                width: 350px;
+            }
+
+            .text h3 {
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            .title .btn {
+                padding: 12px;
+                gap: 48px;
+                width: auto;
+            }
+
+            .title .btn h6 {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.16px;
+            }
+
+            .title .btn svg {
+                height: 16px;
+                width: 16px;
+            }
+
+            .location__wrapper {
+                gap: 24px;
+            }
+
+            .location-card {
+                max-width: 47%;
+            }
+
+            .text h6 {
+                font-size: 16px;
+            }
+
+            .text .text-caption {
+                width: 94%;
+                font-size: 12px;
+            }
+
+            .info .btn {
+                width: auto;
+            }
+
+            .info .btn svg {
+                height: 10px;
+                width: 10px;
+            }
+
+
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 16px;
+                overflow: hidden;
+            }
+
+            h6 {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+            .location {
+                padding-block: 32px;
+            }
+
+            .location .container {
+                gap: 16px;
+            }
+
+            .location .title {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .title .text {
+                width: 88%;
+            }
+
+            .title .btn {
+                width: 100%;
+            }
+
+            .location__wrapper {
+                gap: 8px;
+            }
+
+            .location-card {
+                max-width: 100%;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="location">
+        <div class="container">
+            <div class="title">
+                <div class="text">
+                    <span class="chip--brand">Our Locations</span>
+                    <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
+                </div>
+
+                <a href="#" class="btn btn--primary">
+                    <h6>(714) 386 - 1092</h6>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <g clip-path="url(#clip0_2038_6829)">
+                            <path
+                                d="M14.0196 19.1664C13.2571 19.1664 12.186 18.8906 10.5821 17.9945C8.63171 16.9008 7.12312 15.891 5.18327 13.9562C3.31296 12.0871 2.4028 10.8769 1.12898 8.55896C-0.310086 5.94178 -0.0647735 4.5699 0.209445 3.98357C0.536008 3.28279 1.01804 2.86365 1.64109 2.44764C1.99497 2.21577 2.36947 2.01702 2.75984 1.85389C2.7989 1.83709 2.83523 1.82107 2.86765 1.80662C3.06101 1.71951 3.35398 1.58787 3.72507 1.72849C3.97273 1.82146 4.19382 2.0117 4.53991 2.3535C5.24968 3.0535 6.2196 4.61248 6.57741 5.3781C6.81765 5.89412 6.97663 6.23475 6.97702 6.61678C6.97702 7.06404 6.75202 7.40896 6.47898 7.78123C6.4278 7.85115 6.37702 7.91795 6.3278 7.98279C6.03054 8.37342 5.9653 8.48631 6.00827 8.68787C6.09538 9.09295 6.74499 10.2988 7.81257 11.364C8.88015 12.4293 10.0512 13.0379 10.4579 13.1246C10.668 13.1695 10.7833 13.1015 11.1864 12.7937C11.2442 12.7496 11.3036 12.7039 11.3657 12.6582C11.7821 12.3484 12.111 12.1293 12.5477 12.1293H12.5501C12.9301 12.1293 13.2555 12.2941 13.7946 12.566C14.4977 12.9207 16.1036 13.8781 16.8079 14.5887C17.1505 14.934 17.3415 15.1543 17.4348 15.4015C17.5755 15.7738 17.443 16.0656 17.3567 16.2609C17.3423 16.2933 17.3262 16.3289 17.3094 16.3683C17.145 16.758 16.9451 17.1317 16.7122 17.4847C16.2969 18.1058 15.8762 18.5867 15.1739 18.9137C14.8133 19.0843 14.4185 19.1707 14.0196 19.1664Z"
+                                fill="#E7F0F5" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_2038_6829">
+                                <rect width="20" height="20" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="location__wrapper">
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="info">
+                        <div class="text">
+                            <h6>Annapolis Clinic</h6>
+                            <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                        </div>
+                        <a href="#" class="btn btn--ghost">
+                            <span>Get Directions</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                    fill="#282D30" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="image">
+                        <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

@@ -57,12 +57,31 @@ h1 {
     text-transform: capitalize;
 }
 
+h2 {
+    /* Heading Styles/H2 */
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -0.48px;
+    text-transform: capitalize;
+}
+
 h3 {
     /* Heading Styles/H3 */
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: 44px;
+}
+
+h4 {
+    /* Heading Styles/H4 */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.32px;
 }
 
 
@@ -343,7 +362,83 @@ a {
 
 }
 
-/*  */
+/* VALUE SECTION */
+.values {
+    display: flex;
+    padding-block: 96px;
+
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.values .container {
+    display: flex;
+    align-self: stretch;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.values .title {
+    display: flex;
+    width: 294px;
+    height: fit-content;
+
+    padding: 16px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.card__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+}
+
+.value-card {
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+
+    cursor: default;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 157, 59, 0.05);
+    background: rgba(40, 45, 48, 0.05);
+
+    transition: all 100ms ease-in;
+}
+
+.value-card img {
+    height: 250px;
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.value-card .text {
+    display: flex;
+    padding: 20px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.value-card .text p {
+    opacity: 0.65;
+}
+
+.value-card:hover {
+    border: 2px solid rgba(255, 157, 59, 0.1);
+    background: rgba(231, 240, 245, 0.5);
+    box-shadow: 0px 0px 40px 4px rgba(73, 140, 187, 0.10);
+}
 
 
 

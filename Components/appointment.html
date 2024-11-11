@@ -1,0 +1,777 @@
+<html lang="en">
+
+<head>
+    <style>
+        :root {
+            --color-accent: #EF556A;
+            --color-off-white: #E7F0F5;
+            --color-off-black: #282D30;
+            --color-gold: #FF9D3B;
+            --color-blue: #498CBB;
+            --color-green: #7CBD40;
+            --color-white: #fff;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            color: var(--color-off-black);
+
+            background-color: var(--color-off-white);
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Archivo", sans-serif;
+            color: var(--color-off-black);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: var(--Off-Black, #282D30);
+
+            /* Heading Styles/H1 */
+            font-size: 4.8rem;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 114.286%;
+            letter-spacing: -1.12px;
+            text-transform: capitalize;
+        }
+
+        h2 {
+            /* Heading Styles/H2 */
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 52px;
+            letter-spacing: -0.48px;
+            text-transform: capitalize;
+        }
+
+        h3 {
+            /* Heading Styles/H3 */
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px;
+        }
+
+        h4 {
+            /* Heading Styles/H4 */
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 36px;
+            letter-spacing: -0.32px;
+        }
+
+
+        h5,
+        .btn {
+            /* Heading Styles/H5 */
+            font-family: Archivo;
+            font-size: 2.4rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            /* 116.667% */
+            text-align: center;
+            letter-spacing: -0.24px;
+        }
+
+        h6 {
+            /* Heading Styles/H6 */
+            font-family: Archivo;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-off-black);
+        }
+
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            height: fit-content;
+            max-width: 1440px;
+            margin-inline: auto;
+            padding-inline: 6vw;
+        }
+
+        .body-r {
+            color: var(--Off-Black, #282D30);
+
+            /* Body Styles/Body-regular */
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            /* 137.5% */
+            letter-spacing: -0.16px;
+        }
+
+        .body-b {
+            /* Body Styles/Body-Bold */
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: -0.16px;
+        }
+
+        .button-r {
+            /* Body Styles/Button-regular */
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .text-caption {
+            /* Body Styles/Caption */
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: -0.12px;
+        }
+
+        .btn h6 {
+            color: var(--color-off-white);
+        }
+
+        .btn {
+            display: flex;
+            gap: 64px;
+            width: auto;
+            padding: 16px 24px;
+            justify-content: space-between;
+            align-items: center;
+            outline: 0;
+            border: 0;
+            white-space: nowrap;
+
+
+            border-radius: 12px;
+            transition: background 200ms ease-in;
+        }
+
+        .btn-icon::after {
+            content: '';
+            display: inline-block;
+            background: url('../images/arrow-right.svg') no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+
+
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+        }
+
+        .btn--ghost {
+            padding: 16px;
+
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 18px;
+
+            border-radius: 8px;
+            border: 2px solid #282D30;
+            background: rgba(255, 255, 255, 0.50);
+
+            transition: all 100ms ease-in;
+        }
+
+        .btn--ghost.btn-icon::after {
+            width: 12px;
+            height: 12px;
+            filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+        }
+
+        .btn--ghost:hover {
+            color: var(--color-off-white);
+            background-color: var(--color-off-black);
+        }
+
+        .btn--ghost:hover.btn-icon::after {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+        }
+
+
+        .btn--primary {
+            color: var(--color-off-white);
+            background: var(--color-accent);
+
+        }
+
+        .btn--primary:hover {
+            color: var(--color-off-white);
+            background: #BD4B5C;
+        }
+
+        .btn--secondary {
+            color: var(--color-off-black);
+            border: 1.5px solid var(--color-accent, #EF556A);
+            background: rgba(239, 85, 106, 0.05);
+            transition: background 100ms ease;
+
+        }
+
+        .btn--secondary:hover {
+            background: rgba(239, 85, 106, 0.2);
+        }
+
+        .btn__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chip {
+            display: inline-flex;
+            padding: 10px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            cursor: default;
+            border-radius: 40px;
+            border: 0.75px solid rgba(231, 240, 245, 0.75);
+            background: rgba(40, 45, 48, 0.15);
+
+            color: var(--Off-white, #E7F0F5);
+            text-align: center;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -0.1px;
+        }
+
+        .chip--brand {
+            display: flex;
+            padding: 10px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 10px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -0.1px;
+            text-transform: capitalize;
+
+            cursor: default;
+            border-radius: 40px;
+            border: 0.75px solid var(--Off-Black, #282D30);
+        }
+
+        .chip--brand::before {
+            content: '';
+            display: inline-block;
+            background: url('../images/brand-Icon.svg') no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+
+            filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+
+        }
+
+        .x-div {
+            display: flex;
+            padding: 20px 0px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .x-div svg {
+            width: 100%;
+
+            stroke-width: 1.5px;
+            stroke: rgba(40, 45, 48, 0.25);
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+        }
+
+        .title .text {
+            width: 700px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .title .btn {
+            padding: 20px;
+            width: 280px;
+        }
+
+        .title .btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+
+        }
+
+        /* APPOINTMETS SECTION */
+        .appointment {
+            padding-block: 80px;
+
+            background: rgba(40, 45, 48, 0.10);
+        }
+
+        .appointment .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+        }
+
+        .appointment .topper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+        }
+
+        .braging-cards__wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .braging-card {
+            display: flex;
+            height: auto;
+            padding: 12px 12px 32px 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.50);
+            box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.04);
+        }
+
+        .braging-card__image {
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 12px;
+        }
+
+        .texts__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            text-align: left;
+        }
+
+        .chip__wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+
+            opacity: 0.5;
+            flex-wrap: wrap;
+        }
+
+        .chip__wrapper .chip {
+            padding: 8px;
+            line-height: 1;
+
+            color: var(--color-off-black);
+            border: 0.5px solid var(--color-off-black);
+            background: none;
+
+            white-space: nowrap;
+        }
+
+        .texts__wrapper h5 {
+            text-align: left;
+        }
+
+        .braging-cards__wrapper .btn {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 900px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 32px;
+            }
+
+            h6 {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 240px;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+            .chip--brand {
+                padding: 8px;
+                gap: 2px;
+
+                font-size: 8px;
+                line-height: 8px;
+                letter-spacing: -0.08px;
+
+            }
+
+            .chip--brand::before {
+                content: '';
+                width: 8px;
+                height: 8px;
+            }
+
+
+            .title .text {
+                gap: 4px;
+                width: 350px;
+            }
+
+            .text h3 {
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            .title .btn {
+                padding: 12px;
+                gap: 48px;
+                width: auto;
+            }
+
+            .title .btn h6 {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.16px;
+            }
+
+            .title .btn svg {
+                height: 16px;
+                width: 16px;
+            }
+
+            .appointment {
+                padding-block: 32px;
+            }
+
+            .appointment .container {
+                gap: 20px;
+            }
+
+            .appointment .topper h3 {
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: -0.24px;
+
+            }
+
+            .appointment .topper .btn {
+                width: auto;
+                gap: 44px;
+                padding: 8px 12px;
+
+                font-size: 14px;
+            }
+
+            .braging-cards__wrapper {
+                gap: 16px;
+            }
+
+            .braging-card {
+                padding: 6px 6px 16px 6px;
+                gap: 16px;
+            }
+
+            .braging-card__image {
+                height: 175px;
+            }
+
+            .texts__wrapper h5 {
+                font-size: 19px;
+                line-height: 24px;
+                letter-spacing: -0.19px;
+            }
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                /* max-width: 800px; */
+                margin-inline: auto;
+                padding-inline: 16px;
+                overflow: hidden;
+            }
+
+            h6 {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px;
+            }
+
+
+            .hero__content .body-r {
+                font-size: 14px;
+                line-height: 18px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                white-space: nowrap;
+            }
+
+            .btn-icon::after {
+                width: 16px;
+                height: 16px;
+            }
+
+
+            .title {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .title .text {
+                width: 88%;
+            }
+
+            .title .btn {
+                width: 100%;
+            }
+
+            .appointment {
+                padding-block: 28px;
+            }
+
+            .appointment .container {
+                gap: 16px;
+            }
+
+            .appointment .topper h3 {
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: -0.24px;
+
+            }
+
+            .appointment .topper .btn {
+                display: none;
+            }
+
+            .braging-cards__wrapper {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, auto);
+                gap: 8px;
+
+
+            }
+
+            .braging-card {
+                padding: 4px;
+                border-radius: 6px;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                gap: 0;
+
+            }
+
+            .braging-card__image {
+                max-width: 33%;
+                height: 100%;
+
+                border-radius: 4px;
+            }
+
+            .texts__wrapper {
+                padding-inline: 8px;
+                gap: 8px;
+            }
+
+            .texts__wrapper h5 {
+                font-size: 16px;
+                line-height: 18px;
+                letter-spacing: -0.16px;
+            }
+
+            .braging-cards__wrapper .btn {
+                display: flex;
+                margin-top: 4px;
+                padding: 8px 12px;
+                border-radius: 4px;
+
+                /* max-width: 400px; */
+
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.12px;
+
+            }
+
+
+
+        }
+
+        @media screen and (max-width: 400px) {}
+    </style>
+</head>
+
+<body>
+    <section class="appointment">
+        <div class="container">
+            <div class="topper">
+                <h3>Get Outstanding Care!</h3>
+                <a href="#" class="btn btn-icon btn--primary">Book Apointment</a>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="1282" height="2" viewBox="0 0 1282 2" fill="none">
+                <path d="M1 1H1281" stroke="#282D30" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-dasharray="2 8" />
+            </svg>
+
+            <div class="braging-cards__wrapper">
+                <div class="braging-card">
+                    <img src="images/3-1024x574.png" alt="A picture of a nurse comforting a patient"
+                        class="braging-card__image">
+
+                    <div class="texts__wrapper">
+                        <div class="chip__wrapper">
+                            <span class="chip">Patient care</span>
+                            <span class="chip">compassion</span>
+                        </div>
+
+                        <h5>
+                            First in class when it comes to Patient — Physician Relationship
+                        </h5>
+                    </div>
+                </div>
+                <div class="braging-card">
+                    <img src="images/carpaltunnel4web-667x667.jpg"
+                        alt="A picture of a patient holding the hand that was just fixed" class="braging-card__image">
+
+                    <div class="texts__wrapper">
+                        <div class="chip__wrapper">
+                            <span class="chip">First-class Treatment</span>
+                            <span class="chip">Comfort Assured</span>
+                        </div>
+
+                        <h5>
+                            Your pursuit of Wholeness — Get your Mobility and Confidence Back!
+                        </h5>
+                    </div>
+                </div>
+                <div class="braging-card">
+                    <img src="images/doctor4web.jpg" alt="A picture of a group of doctors standing next to each other."
+                        class="braging-card__image">
+
+                    <div class="texts__wrapper">
+                        <div class="chip__wrapper">
+                            <span class="chip">Happiest Doctors</span>
+                            <span class="chip">Our Doctors</span>
+                        </div>
+
+                        <h5>
+                            Cutting Edge Expertise — Feel better about going to the doctor.
+                        </h5>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-icon btn--primary">Book Apointment</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

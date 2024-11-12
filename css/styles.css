@@ -157,6 +157,16 @@ a {
     letter-spacing: -0.16px;
 }
 
+.body-l {
+    /* Body Styles/Body-Light */
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: -0.16px;
+}
+
 .button-r {
     /* Body Styles/Button-regular */
     font-size: 14px;

@@ -1,0 +1,71 @@
+/* Basic Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Custom Select Wrapper */
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+/* Hide the default select element */
+.custom-select-wrapper select {
+    display: none;
+}
+
+/* Style the custom select box */
+.custom-select {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Add a down arrow to the custom select box */
+.custom-select::after {
+    content: '\25BC';
+    /* Unicode character for down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style the dropdown items */
+.custom-select-items {
+    position: absolute;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    display: none;
+    z-index: 99;
+}
+
+.custom-select-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-select-items div:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown items when the custom select box is clicked */
+.custom-select.active+.custom-select-items {
+    display: block;
+}
+
+.cards {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}

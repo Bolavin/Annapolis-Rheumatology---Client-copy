@@ -1,30 +1,3 @@
-function toggleMenu() {
-    const menu = document.querySelector(".nav__menu-wrapper")
-    const icon = document.querySelector(".mobile-icon")
-
-    menu.classList.toggle("open")
-    icon.classList.toggle("open")
-
-
-}
-
-function toggleDd() {
-    const dropDown = document.querySelector(".dd-menu")
-    const ddIcon = document.querySelector(".dd-icon")
-
-    dropDown.classList.toggle("open")
-    ddIcon.classList.toggle("open")
-
-}
-
-function toggleNoti() {
-    const noti = document.querySelector(".noti")
-
-    noti.classList.toggle("close")
-}
-
-
-// NOT MY CODE
  // Function to toggle the display of the custom select items
         function toggleSelect(selectElement) {
             const selectItems = selectElement.nextElementSibling;
@@ -87,32 +60,3 @@ function toggleNoti() {
                 }
             });
         }
-
-
-function moveElementsWithinCards() {
-    const cards = document.querySelectorAll('#all-doctors .card');
-    
-    cards.forEach(card => {
-        const movableElement = card.querySelector('.movable-element');
-        const oldContainer = card.querySelector('.content__wrapper');
-        const newContainer = card.querySelector('.callout');
-
-        if (movableElement) {
-            if (window.innerWidth < 601) {
-                if (!newContainer.contains(movableElement)) {
-                    newContainer.insertBefore(movableElement, newContainer.firstChild); // Append as the first child
-                }
-            } else {
-                if (!oldContainer.contains(movableElement)) {
-                    oldContainer.insertBefore(movableElement, oldContainer.firstChild); // Append as the first child
-                }
-            }
-        }
-    });
-}
-
-// Move the elements on initial load
-moveElementsWithinCards();
-
-// Move the elements on window resize
-window.addEventListener('resize', moveElementsWithinCards);

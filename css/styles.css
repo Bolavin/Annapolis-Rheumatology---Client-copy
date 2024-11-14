@@ -175,6 +175,16 @@ a {
     line-height: 18px;
 }
 
+.button-b {
+    /* Body Styles/Button-bold */
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 128.571% */
+}
+
 .text-caption {
     /* Body Styles/Caption */
     font-size: 12px;
@@ -375,6 +385,8 @@ a {
 /*  */
 
 
+
+
 @media screen and (max-width: 900px) {
     .container {
         /* max-width: 800px; */
@@ -387,6 +399,15 @@ a {
         font-style: normal;
         font-weight: 600;
         line-height: 18px;
+    }
+
+    .button-b {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
+        /* 133.333% */
+        letter-spacing: -0.12px;
     }
 
 
@@ -452,8 +473,6 @@ a {
         height: 16px;
         width: 16px;
     }
-
-
 
 
 

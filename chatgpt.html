@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 40px;
+        }
+
+        .field__wrapper {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-field {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field input {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .form-field datalist {
+            position: absolute;
+            top: calc(100% + 4px);
+            /* Adjusted for gap */
+            left: 0;
+            width: 100%;
+            background-color: lightgrey;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            padding: 12px 0;
+            display: none;
+            z-index: 1;
+        }
+
+        .form-field option {
+            padding: 4px;
+            margin-bottom: 1px;
+            cursor: pointer;
+        }
+
+        .form-field option:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="field__wrapper">
+        <div class="form-field data-list">
+            <label for="help-needed">I Need Help With</label>
+            <input type="text" id="help-needed" name="help-needed" placeholder="Please select or type"
+                autocomplete="off">
+            <datalist id="help-needed-datalist">
+                <option>Rheumatologist</option>
+                <option>Immunologist</option>
+                <option>Internist</option>
+            </datalist>
+        </div>
+
+        <div class="form-field data-list">
+            <label for="visited-us">Have you been treated by us before?</label>
+            <input type="text" id="visited-us" name="visited-us" placeholder="Please select" autocomplete="off">
+            <datalist id="visited-us-datalist">
+                <option>Yes</option>
+                <option>No</option>
+            </datalist>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to show/hide datalist and update input value
+        document.querySelectorAll('.form-field input').forEach(input => {
+            const datalist = input.nextElementSibling;
+
+            input.onfocus = function () {
+                datalist.style.display = 'block';
+            };
+
+            input.onblur = function () {
+                setTimeout(() => {
+                    datalist.style.display = 'none';
+                }, 200); // Slight delay to allow click events to register
+            };
+
+            datalist.querySelectorAll('option').forEach(option => {
+                option.onclick = function () {
+                    input.value = this.value;
+                    datalist.style.display = 'none';
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -116,3 +116,109 @@ moveElementsWithinCards();
 
 // Move the elements on window resize
 window.addEventListener('resize', moveElementsWithinCards);
+
+
+ // JavaScript to show/hide datalist and update input value
+        document.querySelectorAll('.form-field.data-list input').forEach(input => {
+            const datalist = input.nextElementSibling;
+
+            input.onfocus = function () {
+                datalist.style.display = 'block';
+            };
+
+            input.onblur = function () {
+                setTimeout(() => {
+                    datalist.style.display = 'none';
+                }, 200); // Slight delay to allow click events to register
+            };
+
+            datalist.querySelectorAll('option').forEach(option => {
+                option.onclick = function () {
+                    input.value = this.value;
+                    datalist.style.display = 'none';
+                };
+            });
+        });
+
+
+// JS SCRIPT FOR SUBMITTING THE FORM
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Initialize EmailJS with your Public Key
+//     emailjs.init("pIJk74ByKfq5jcaaa");
+
+//     document.getElementById('contactForm').addEventListener('submit', function(event) {
+//         event.preventDefault(); // Prevent the default form submission
+
+//         // Send form data using EmailJS
+//         emailjs.sendForm('service_vms3lbq', 'template_99dl5ka', this)
+//             .then(function(response) {
+//                 console.log('SUCCESS!', response.status, response.text);
+                
+//                 // Show success message
+//                 document.querySelector('.form__success').style.display = 'block';
+
+//                 // Hide success message after 5 seconds
+//                 setTimeout(function() {
+//                     document.querySelector('.form__success').style.display = 'none';
+//                 }, 5000);
+
+//                 // Clear the form
+//                 document.getElementById('contactForm').reset();
+//             }, function(error) {
+//                 console.error('FAILED...', error);
+//             });
+//     });
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your Public Key
+    emailjs.init("pIJk74ByKfq5jcaaa");
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+
+        // Change button text to "Sending..." with animation
+        submitButton.disabled = true;
+        let dotCount = 0;
+        const loadingInterval = setInterval(() => {
+            dotCount = (dotCount + 1) % 4;
+            submitButton.textContent = `Sending${'.'.repeat(dotCount)}`;
+        }, 500);
+
+        // Send form data using EmailJS
+        emailjs.sendForm('service_vms3lbq', 'template_99dl5ka', this)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+
+                clearInterval(loadingInterval);
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+
+                // Hide form and show success message
+                document.querySelector('.form__wrapper form').style.display = 'none';
+                document.querySelector('.form__success').style.display = 'flex';
+
+                // Hide success message after 10 seconds and reset form
+                setTimeout(function() {
+                    document.querySelector('.form__success').style.display = 'none';
+                    document.querySelector('.form__wrapper form').style.display = 'flex';
+                    document.getElementById('contactForm').reset();
+                }, 5000);
+            }, function(error) {
+                console.error('FAILED...', error);
+
+                clearInterval(loadingInterval);
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+
+                // Optionally, handle error case
+                alert('Form submission failed. Please try again.');
+            });
+    });
+});

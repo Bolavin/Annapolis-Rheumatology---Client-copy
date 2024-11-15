@@ -399,12 +399,13 @@
             gap: 12px;
         }
 
-        #btn--filter {
+        .btn--filter {
             position: relative;
 
             display: flex;
             width: 100%;
             padding: 20px 16px 20px 24px;
+            justify-content: flex-start;
             align-items: center;
             gap: 10px;
 
@@ -424,42 +425,42 @@
             letter-spacing: -0.16px;
         }
 
-        #btn--filter span {
+        .btn--filter span {
             height: 20px;
             width: 20px;
         }
 
 
-        #btn--filter #path1 {
+        .btn--filter #path1 {
             fill: #282D30;
         }
 
-        #btn--filter #path2 {
+        .btn--filter #path2 {
             filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(3266%) hue-rotate(171deg) brightness(97%) contrast(98%);
         }
 
-        #btn--filter:hover {
+        .btn--filter:hover {
             background: rgba(40, 45, 48, 0.20);
 
 
         }
 
-        #btn--filter.active {
+        .btn--filter.active {
             border: none;
             color: var(--color-off-white);
             background: var(--color-off-black);
         }
 
-        #btn--filter.active #path1 {
+        .btn--filter.active #path1 {
             fill: var(--color-off-white);
 
         }
 
-        #btn--filter.active #path2 {
+        .btn--filter.active #path2 {
             filter: brightness(0) saturate(100%) invert(15%) sepia(9%) saturate(592%) hue-rotate(158deg) brightness(95%) contrast(93%);
         }
 
-        #btn--filter.active::after {
+        .btn--filter.active::after {
             content: '';
             position: absolute;
             top: -2px;
@@ -473,6 +474,9 @@
             box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.25);
         }
 
+        .conditions__wrapper .condition-block.is-hidden {
+            display: none !important;
+        }
 
         .condition-block {
             display: flex;
@@ -486,6 +490,7 @@
         }
 
         .condition__image {
+            max-height: 444px;
             width: 333px;
             align-self: stretch;
             object-fit: cover;
@@ -651,14 +656,14 @@
                 flex-wrap: wrap;
             }
 
-            #btn--filter {
+            .btn--filter {
                 width: auto;
                 padding: 14px;
 
                 border-radius: 8px;
             }
 
-            #btn--filter span {
+            .btn--filter span {
                 display: none;
             }
 
@@ -777,7 +782,7 @@
                 justify-content: center;
             }
 
-            #btn--filter {
+            .btn--filter {
                 width: auto;
                 padding: 10px;
 
@@ -840,7 +845,33 @@
                 <p>Filter by Treatments:</p>
 
                 <div class="filter__btn-wrapper">
-                    <button id="btn--filter" class="btn active">
+                    <button id="inflammatory-arthritis" class="btn btn--filter active">
+                        <span>
+                            <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 20 20" fill="none">
+                                <path id="path1"
+                                    d="M1.13951 10.6079C0.83318 8.61109 0.675641 7.60835 1.06074 6.71896C1.44583 5.82958 2.27729 5.19305 3.96646 4.0072L5.20927 3.10038C7.32729 1.59191 8.37755 0.833313 9.58535 0.833313C10.7932 0.833313 11.8434 1.59191 13.9614 3.10038L15.2218 3.97233C16.8934 5.19305 17.7336 5.82958 18.11 6.71896C18.4863 7.60835 18.3375 8.61109 18.0312 10.6079L17.7686 12.3517C17.331 15.1943 17.1122 16.6156 16.0882 17.4614C15.0642 18.3072 13.5676 18.3333 10.5831 18.3333H8.5876C5.60311 18.3333 4.10649 18.3333 3.08249 17.4614C2.05848 16.5894 1.83968 15.1594 1.40207 12.3169L1.13951 10.6079Z"
+                                    fill="#E7F0F5" />
+                                <path id="path2" d="M10.0006 7.77777V12.2222M7.77783 9.99999H12.2234" stroke="#282D30"
+                                    stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        Inflammatory Arthritis
+                    </button>
+                    <button id="autoimmune-diseases" class="btn btn--filter">
+                        <span>
+                            <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 20 20" fill="none">
+                                <path id="path1"
+                                    d="M1.13951 10.6079C0.83318 8.61109 0.675641 7.60835 1.06074 6.71896C1.44583 5.82958 2.27729 5.19305 3.96646 4.0072L5.20927 3.10038C7.32729 1.59191 8.37755 0.833313 9.58535 0.833313C10.7932 0.833313 11.8434 1.59191 13.9614 3.10038L15.2218 3.97233C16.8934 5.19305 17.7336 5.82958 18.11 6.71896C18.4863 7.60835 18.3375 8.61109 18.0312 10.6079L17.7686 12.3517C17.331 15.1943 17.1122 16.6156 16.0882 17.4614C15.0642 18.3072 13.5676 18.3333 10.5831 18.3333H8.5876C5.60311 18.3333 4.10649 18.3333 3.08249 17.4614C2.05848 16.5894 1.83968 15.1594 1.40207 12.3169L1.13951 10.6079Z"
+                                    fill="#E7F0F5" />
+                                <path id="path2" d="M10.0006 7.77777V12.2222M7.77783 9.99999H12.2234" stroke="#282D30"
+                                    stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        Autoimmune Diseases
+                    </button>
+                    <button id="musculoskeletal-conditions" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -853,7 +884,7 @@
                         </span>
                         Musculoskeletal Conditions
                     </button>
-                    <button id="btn--filter" class="btn">
+                    <button id="joint-or-muscle-pain" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -864,9 +895,9 @@
                                     stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
-                        Musculoskeletal Conditions
+                        Joint or Muscle Pain
                     </button>
-                    <button id="btn--filter" class="btn">
+                    <button id="metabolic-bone-disease" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -877,72 +908,229 @@
                                     stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
-                        Musculoskeletal Conditions
-                    </button>
-                    <button id="btn--filter" class="btn">
-                        <span>
-                            <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 20 20" fill="none">
-                                <path id="path1"
-                                    d="M1.13951 10.6079C0.83318 8.61109 0.675641 7.60835 1.06074 6.71896C1.44583 5.82958 2.27729 5.19305 3.96646 4.0072L5.20927 3.10038C7.32729 1.59191 8.37755 0.833313 9.58535 0.833313C10.7932 0.833313 11.8434 1.59191 13.9614 3.10038L15.2218 3.97233C16.8934 5.19305 17.7336 5.82958 18.11 6.71896C18.4863 7.60835 18.3375 8.61109 18.0312 10.6079L17.7686 12.3517C17.331 15.1943 17.1122 16.6156 16.0882 17.4614C15.0642 18.3072 13.5676 18.3333 10.5831 18.3333H8.5876C5.60311 18.3333 4.10649 18.3333 3.08249 17.4614C2.05848 16.5894 1.83968 15.1594 1.40207 12.3169L1.13951 10.6079Z"
-                                    fill="#E7F0F5" />
-                                <path id="path2" d="M10.0006 7.77777V12.2222M7.77783 9.99999H12.2234" stroke="#282D30"
-                                    stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                        Musculoskeletal Conditions
-                    </button>
-                    <button id="btn--filter" class="btn">
-                        <span>
-                            <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 20 20" fill="none">
-                                <path id="path1"
-                                    d="M1.13951 10.6079C0.83318 8.61109 0.675641 7.60835 1.06074 6.71896C1.44583 5.82958 2.27729 5.19305 3.96646 4.0072L5.20927 3.10038C7.32729 1.59191 8.37755 0.833313 9.58535 0.833313C10.7932 0.833313 11.8434 1.59191 13.9614 3.10038L15.2218 3.97233C16.8934 5.19305 17.7336 5.82958 18.11 6.71896C18.4863 7.60835 18.3375 8.61109 18.0312 10.6079L17.7686 12.3517C17.331 15.1943 17.1122 16.6156 16.0882 17.4614C15.0642 18.3072 13.5676 18.3333 10.5831 18.3333H8.5876C5.60311 18.3333 4.10649 18.3333 3.08249 17.4614C2.05848 16.5894 1.83968 15.1594 1.40207 12.3169L1.13951 10.6079Z"
-                                    fill="#E7F0F5" />
-                                <path id="path2" d="M10.0006 7.77777V12.2222M7.77783 9.99999H12.2234" stroke="#282D30"
-                                    stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                        Musculoskeletal Conditions
+                        Metabolic bone disease
                     </button>
                 </div>
             </div>
-            <div class="condition-block">
-                <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
-                    class="condition__image">
 
-                <div class="condition__texts">
-                    <div class="condition__title">
-                        <h4>Musculoskeletal Conditions</h4>
-                    </div>
-
-                    <div class="condition__desc">
-                        <div class="desc-text">
-                            <p>
-                                Musculoskeletal conditions are conditions of the bones, muscles and connective tissues.
-                                Common musculoskeletal
-                                conditions include various forms of arthritis, back pain and gout.
-                            </p>
+            <div class="conditions__wrapper">
+                <div id="inflammatory-arthritis" class="condition-block">
+                    <img src="images/carpaltunnelweb.jpg" alt="A graphical image illustrating the current condition"
+                        class="condition__image">
+                    <div class="condition__texts">
+                        <div class="condition__title">
+                            <h4>Inflammatory Arthritis</h4>
                         </div>
-
-                        <div class="desc-list">
-                            <p class="body-b">
-                                Conditions we Treat
-                            </p>
-                            <ul>
-                                <li>Osteoarthritis</li>
-                                <li>Soft Tissue Rheumatism (Tenosynovitis,Tendonitis, Bursitis, Carpal Tunnel Syndrome)
-                                </li>
-                                <li>​Gout</li>
-                                <li>Fibromyalgia</li>
-                                <li>Unexplained Joint or Muscle Pain</li>
-                            </ul>
+                        <div class="condition__desc">
+                            <div class="desc-text">
+                                <p>
+                                    Inflammatory arthritis is the name used to describe a group of diseases caused by an
+                                    overactive immune system that
+                                    results in inflammation. Many forms of these diseases manifest mainly with
+                                    inflammation of the joints felt as joint pain
+                                    and stiffness, but inflammatory arthritis can also affect other connective tissues,
+                                    including the lungs, heart, eyes,
+                                    skin and other organs. Importantly, when inflammation affects any part of the body
+                                    it can result in damage which is
+                                    irreversible.
+                                </p>
+                            </div>
+                            <div class="desc-list">
+                                <p class="body-b">
+                                    Conditions we Treat
+                                </p>
+                                <ul>
+                                    <li>Rheumatoid Arthritis</li>
+                                    <li>Psoriatic Arthritis (Psoriasis with joint pain/swelling)
+                                    </li>
+                                    <li>Other Spondyloarthritis (Ankylosing Spondylitis, Reactive Arthritis, Arthritis
+                                        associated with Inflammatory bowel
+                                        disease)</li>
+                                    <li>Palindromic Rheumatism</li>
+                                    <li>Adult Onset Still's Disease</li>
+                                    <li>Viral arthritis</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div id="autoimmune-diseases" class="condition-block is-hidden">
+                    <img src="images/3d-render-medical-background-with-male-figure-lungs-covid-19-virus-cells.jpg"
+                        alt="A graphical image illustrating the current condition" class="condition__image">
+                    <div class="condition__texts">
+                        <div class="condition__title">
+                            <h4>Autoimmune Diseases</h4>
+                        </div>
+                        <div class="condition__desc">
+                            <div class="desc-text">
+                                <p>
+                                    Autoimmune Diseases is a condition in which your immune system mistakenly attacks
+                                    your body. Our bodies have an immune
+                                    system, which is a complex network of special cells and organs that defends the body
+                                    from germs and other foreign
+                                    invaders. At the core of the immune system is the ability to tell the difference
+                                    between self and nonself: what’s you
+                                    and what’s foreign. A flaw can make the body unable to tell the difference between
+                                    self and nonself. When this happens,
+                                    the body makes autoantibodies that attack normal cells by mistake
+                                </p>
+                            </div>
+                            <div class="desc-list">
+                                <p class="body-b">
+                                    Conditions we Treat
+                                </p>
+                                <ul>
+                                    <li>Systemic Lupus Erythematosus</li>
+                                    <li>Sjogren's Syndrome
+                                    </li>
+                                    <li>Mixed Connective Tissue Disease</li>
+                                    <li>Systemic Sclerosis/Scleroderma</li>
+                                    <li>Giant Cell Arteritis/Temporal Arteritis</li>
+                                    <li>Inflammatory Myositis/myopathy</li>
+                                    <li>ANCA-Associated Vasculitis (i.e Granulomatosis With Polyangiitis, Microscopic
+                                        Polyangiitis)</li>
+                                    <li>Polyarteritis Nodosa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="musculoskeletal-conditions" class="condition-block is-hidden">
+                    <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
+                        class="condition__image">
+                    <div class="condition__texts">
+                        <div class="condition__title">
+                            <h4>Musculoskeletal Conditions</h4>
+                        </div>
+                        <div class="condition__desc">
+                            <div class="desc-text">
+                                <p>
+                                    Musculoskeletal conditions are conditions of the bones, muscles and connective
+                                    tissues.
+                                    Common musculoskeletal
+                                    conditions include various forms of arthritis, back pain and gout.
+                                </p>
+                            </div>
+                            <div class="desc-list">
+                                <p class="body-b">
+                                    Conditions we Treat
+                                </p>
+                                <ul>
+                                    <li>Osteoarthritis</li>
+                                    <li>Soft Tissue Rheumatism (Tenosynovitis,Tendonitis, Bursitis, Carpal Tunnel
+                                        Syndrome)
+                                    </li>
+                                    <li>​Gout</li>
+                                    <li>Fibromyalgia</li>
+                                    <li>Unexplained Joint or Muscle Pain</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="joint-or-muscle-pain" class="condition-block is-hidden">
+                    <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
+                        class="condition__image">
+                    <div class="condition__texts">
+                        <div class="condition__title">
+                            <h4>Joint or Muscle Pain</h4>
+                        </div>
+                        <div class="condition__desc">
+                            <div class="desc-text">
+                                <p>
+                                    Joints form the connections between bones. They provide support and help you move.
+                                    Any damage to the joints from disease
+                                    or injury can interfere with your movement and cause a lot of pain. Many different
+                                    conditions can lead to painful
+                                    joints, including osteoarthritis, rheumatoid arthritis, bursitis, gout, strains,
+                                    sprains, and other injuries.
+                                </p>
+                            </div>
+                            <div class="desc-list">
+                                <p class="body-b">
+                                    Conditions we Treat
+                                </p>
+                                <ul>
+                                    <li>Behcet's disease</li>
+                                    <li>Periodic Fever Syndromes (e.g., Familial Mediterranean Fever)
+                                    </li>
+                                    <li>​IgG4 Related Diseases</li>
+                                    <li>Crystalline Arthritis</li>
+                                    <li>Gout</li>
+                                    <li>Pseudogout (chondrocalcinosis)</li>
+                                    <li>Basic calcium phosphate (BCP) crystal arthritis</li>
+                                    <li>Amyloidosis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="metabolic-bone-disease" class="condition-block is-hidden">
+                    <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
+                        class="condition__image">
+                    <div class="condition__texts">
+                        <div class="condition__title">
+                            <h4>Metabolic Bone Disease</h4>
+                        </div>
+                        <div class="condition__desc">
+                            <div class="desc-text">
+                                <p>
+                                    Metabolic bone disease is a weakening of the bones caused by abnormal levels of the
+                                    bone’s “building blocks,” such as
+                                    calcium, phosphorus or of vitamin D. Diseases or conditions that cause deficiencies
+                                    in any of these things can lead to
+                                    bone loss, fragile bones, fractures, bone deformities and serious disability.
+                                </p>
+                            </div>
+                            <div class="desc-list">
+                                <p class="body-b">
+                                    Conditions we Treat
+                                </p>
+                                <ul>
+                                    <li>Metabolic Bone Disease</li>
+                                    <li>Osteoporosis
+                                    </li>
+                                    <li>Osteomalacia</li>
+                                    <li>Paget's disease of bone</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn--filter');
+            const containerWrapper = document.querySelector('.conditions__wrapper');
+            const containers = containerWrapper.querySelectorAll('.condition-block');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove 'active' class from all buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add 'active' class to the clicked button
+                    button.classList.add('active');
+
+                    // Add 'is-hidden' class to all containers
+                    containers.forEach(container => container.classList.add('is-hidden'));
+
+                    // Remove 'is-hidden' class from the corresponding container
+                    const containerId = button.id;
+                    containerWrapper.querySelector(`#${containerId}`).classList.remove('is-hidden');
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

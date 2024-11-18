@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- Navication Bar -->
+    <!-- NavBar -->
     <html lang="en">
 
     <head>
@@ -101,8 +101,8 @@
             /* Nav Bar */
 
             #nav--desktop {
-                width: 100%;
                 z-index: 999;
+                width: 100%;
                 background: var(--color-off-white);
                 box-shadow: 0px 4px 12px 0px rgba(34, 34, 31, 0.10);
                 position: relative;
@@ -198,7 +198,8 @@
 
             .dd-menu {
                 display: none;
-                width: auto;
+                min-width: 160px;
+                max-width: auto;
                 height: 0;
                 padding: 12px 0px;
                 flex-direction: column;
@@ -206,11 +207,11 @@
                 align-items: center;
 
                 position: absolute;
-                left: -40px;
+                left: -50%;
                 top: 40px;
 
                 border-radius: 12px;
-                background: var(--color-white);
+                background: #F3F8FA;
                 box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.08);
 
             }
@@ -243,7 +244,7 @@
                 text-align: start;
                 padding: 0;
                 /* font-size: 1.4rem;
-    font-weight: 400; */
+        font-weight: 400; */
             }
 
             .nav__overlay,
@@ -281,6 +282,7 @@
             }
 
             .nav__btn.primary {
+                border: 1.5px solid var(--color-accent);
                 background: var(--color-accent, #EF556A);
                 color: var(--color-off-white);
                 transition: background 100ms ease;
@@ -297,9 +299,9 @@
             }
 
             .nav__btn.secondary {
-                height: 4rem;
+                min-height: 4rem;
                 color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
+                border: 1.5px solid var(--color-accent);
                 background: rgba(239, 85, 106, 0.05);
                 transition: background 100ms ease;
 
@@ -423,7 +425,7 @@
                 }
 
                 .nav__item {
-                    padding-block: 2rem;
+                    padding-block: 1rem;
                     width: 100%;
                 }
 
@@ -447,7 +449,7 @@
                     display: none;
                     position: static;
                     margin: 1rem 3rem;
-                    background: rgba(40, 45, 48, 0.1);
+                    background: rgba(40, 45, 48, 0.05);
                     box-shadow: revert;
                     width: auto;
                     height: 0;
@@ -472,6 +474,16 @@
                 .nav__btn.secondary .btn-icon {
                     display: unset;
                 }
+
+                .y-div {
+                    height: 5rem;
+                    width: .4rem;
+                }
+
+                .btn__container .nav__btn>:nth-child(3) {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         </style>
     </head>
@@ -482,7 +494,7 @@
             <nav class="container nav__desktop">
 
                 <a href="/">
-                    <img class="nav__brand" src="images/logo-block.svg" alt="Annapolis Rheumatology — Logo">
+                    <img class="nav__brand" src="/../images/logo-block.svg" alt="Annapolis Rheumatology — Logo">
                 </a>
 
                 <div class="nav__menu-wrapper">
@@ -494,34 +506,40 @@
                         <ul class="nav__list">
                             <li class="nav__item dd">
                                 <span>
-                                    <a href="#" onclick="toggleMenu()">Treatments</a>
+                                    <a href="/treatments.html" onclick="toggleMenu()">Treatments</a>
                                     <span class="dd-icon" onclick="toggleDd()">
-                                        <img src="images/arrow-down.svg" alt="">
+                                        <img src="/../images/arrow-down.svg" alt="">
                                     </span>
                                 </span>
                                 <ul class="dd-menu">
-                                    <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Inflammatory Arthritis
-                                        </a></li>
-                                    <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Autoimmune Diseases</a>
+                                    <li class="dd-menu__item"><a href="/treatments.html#inflammatory-arthritis"
+                                            onclick="toggleDd()">Inflammatory Arthritis</a>
                                     </li>
-                                    <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Musculoskeletal
+                                    <li class="dd-menu__item"><a href="/treatments.html#autoimmune-diseases"
+                                            onclick="toggleDd()">Autoimmune Diseases</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#musculoskeletal-conditions"
+                                            onclick="toggleDd()">Musculoskeletal
                                             Conditions</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#joint-or-muscle-pain"
+                                            onclick="toggleDd()">Joint or Muscle Pain</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#metabolic-bone-disease"
+                                            onclick="toggleDd()">Metabolic Bone Disease</a></li>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="#" onclick="toggleMenu()">Our Team</a></li>
-                            <li class="nav__item"><a href="#" onclick="toggleMenu()">Locations</a></li>
-                            <li class="nav__item"><a href="#" onclick="toggleMenu()">Contact Us</a></li>
+                            <li class="nav__item"><a href="/our-team.html" onclick="toggleMenu()">Our Team</a></li>
+                            <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
+                            <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
                         </ul>
                         <div class="btn__container">
-                            <a href="#" class="nav__btn secondary">
+                            <a href="/patients-center.html" class="nav__btn secondary">
                                 <span>Patient Center</span>
-                                <img src="images/y-div.svg" alt="Horizontal divider" class="y-div">
-                                <img src="images/patient_icon.svg" alt="phone icon" class="btn-icon">
+                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                             </a>
-                            <a href="#" class="nav__btn primary">
+                            <a href="tel:+17143861092" class="nav__btn primary">
                                 <span>(714) 386 - 1092</span>
-                                <img src="images/y-div.svg" alt="Horizontal divider" class="y-div">
-                                <img src="images/phone-icons.svg" alt="phone icon" class="btn-icon">
+                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
                             </a>
                         </div>
                     </div>
@@ -547,14 +565,38 @@
 
             }
 
-            function toggleDd() {
-                const dropDown = document.querySelector(".dd-menu")
-                const ddIcon = document.querySelector(".dd-icon")
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropDown = document.querySelector(".dd-menu");
+                const ddIcon = document.querySelector(".dd-icon");
 
-                dropDown.classList.toggle("open")
-                ddIcon.classList.toggle("open")
+                // Function to toggle dropdown
+                function toggleDd(event) {
+                    event.stopPropagation(); // Prevent click from propagating to document
+                    dropDown.classList.toggle("open");
+                    ddIcon.classList.toggle("open");
+                }
 
-            }
+                // Function to close dropdown
+                function closeDd() {
+                    dropDown.classList.remove("open");
+                    ddIcon.classList.remove("open");
+                }
+
+                // Add event listener to toggle dropdown on click
+                ddIcon.addEventListener('click', toggleDd);
+
+                // Add event listener to dropdown items to close dropdown on click
+                dropDown.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Prevent event from bubbling up to document
+                    closeDd();
+                });
+
+                // Add event listener to document to detect clicks outside dropdown
+                document.addEventListener('click', closeDd);
+            });
+
+
+
         </script>
     </body>
 
@@ -1703,7 +1745,7 @@
                 gap: 24px;
             }
 
-            .title {
+            .welcome .title {
                 width: 950px;
 
                 color: var(--Off-Black, #282D30);
@@ -3194,7 +3236,7 @@
 
     </html>
 
-    <!-- Locations -->
+    <!-- Location SECTION -->
     <html lang="en">
 
     <head>
@@ -3369,7 +3411,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url('images/arrow-right.svg') no-repeat;
+                background: url('../images/arrow-right.svg') no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -3482,7 +3524,7 @@
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url('images/brand-Icon.svg') no-repeat;
+                background: url('../images/brand-Icon.svg') no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
@@ -3885,6 +3927,23 @@
                         <span class="chip--brand">Our Locations</span>
                         <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
                     </div>
+
+                    <a href="#" class="btn btn--primary">
+                        <h6>(714) 386 - 1092</h6>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_2038_6829)">
+                                <path
+                                    d="M14.0196 19.1664C13.2571 19.1664 12.186 18.8906 10.5821 17.9945C8.63171 16.9008 7.12312 15.891 5.18327 13.9562C3.31296 12.0871 2.4028 10.8769 1.12898 8.55896C-0.310086 5.94178 -0.0647735 4.5699 0.209445 3.98357C0.536008 3.28279 1.01804 2.86365 1.64109 2.44764C1.99497 2.21577 2.36947 2.01702 2.75984 1.85389C2.7989 1.83709 2.83523 1.82107 2.86765 1.80662C3.06101 1.71951 3.35398 1.58787 3.72507 1.72849C3.97273 1.82146 4.19382 2.0117 4.53991 2.3535C5.24968 3.0535 6.2196 4.61248 6.57741 5.3781C6.81765 5.89412 6.97663 6.23475 6.97702 6.61678C6.97702 7.06404 6.75202 7.40896 6.47898 7.78123C6.4278 7.85115 6.37702 7.91795 6.3278 7.98279C6.03054 8.37342 5.9653 8.48631 6.00827 8.68787C6.09538 9.09295 6.74499 10.2988 7.81257 11.364C8.88015 12.4293 10.0512 13.0379 10.4579 13.1246C10.668 13.1695 10.7833 13.1015 11.1864 12.7937C11.2442 12.7496 11.3036 12.7039 11.3657 12.6582C11.7821 12.3484 12.111 12.1293 12.5477 12.1293H12.5501C12.9301 12.1293 13.2555 12.2941 13.7946 12.566C14.4977 12.9207 16.1036 13.8781 16.8079 14.5887C17.1505 14.934 17.3415 15.1543 17.4348 15.4015C17.5755 15.7738 17.443 16.0656 17.3567 16.2609C17.3423 16.2933 17.3262 16.3289 17.3094 16.3683C17.145 16.758 16.9451 17.1317 16.7122 17.4847C16.2969 18.1058 15.8762 18.5867 15.1739 18.9137C14.8133 19.0843 14.4185 19.1707 14.0196 19.1664Z"
+                                    fill="#E7F0F5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2038_6829">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="location__wrapper">
@@ -3908,7 +3967,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -3931,7 +3990,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -3954,7 +4013,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -3977,7 +4036,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -4000,7 +4059,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -4023,7 +4082,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -4046,7 +4105,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -5842,7 +5901,7 @@
 
     </html>
 
-    <!-- Footer -->
+    <!-- FOOTER SECTION -->
     <html lang="en">
 
     <head>
@@ -6046,7 +6105,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url('images/arrow-right.svg') no-repeat;
+                background: url('../images/arrow-right.svg') no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -6159,7 +6218,7 @@
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url('images/brand-Icon.svg') no-repeat;
+                background: url('../images/brand-Icon.svg') no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
@@ -6185,7 +6244,6 @@
 
             .title {
                 display: flex;
-                width: 100%;
                 justify-content: space-between;
                 align-items: center;
                 align-self: stretch;
@@ -6197,7 +6255,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                text-align: left;
                 gap: 16px;
             }
 
@@ -6353,7 +6410,6 @@
 
             .right .location {
                 display: flex;
-                padding: 0;
                 width: 341px;
                 flex-direction: column;
                 justify-content: center;
@@ -6361,19 +6417,19 @@
                 gap: 16px;
             }
 
-            .location h4 {
+            .right .location h4 {
                 color: var(--color-off-white);
 
             }
 
-            .location p {
+            .right .location p {
                 align-self: stretch;
                 line-height: 20px;
 
                 opacity: 0.9;
             }
 
-            .location a {
+            .right .location a {
                 padding: 12px 16px;
                 width: auto;
                 gap: 12px;
@@ -6382,7 +6438,7 @@
                 background: var(--color-off-white);
             }
 
-            .location a:hover {
+            .right .location a:hover {
                 background-color: rgba(231, 240, 245, 0.2);
             }
 
@@ -6488,7 +6544,7 @@
                 }
 
                 .footer {
-                    padding-block: 48px;
+                    padding-block: 32px;
                 }
 
                 .footer .container {
@@ -6644,8 +6700,8 @@
                     <div class="left">
                         <div class="brand">
                             <div class="logo">
-                                <img src="images/logo--block.svg" alt="A picture of the Logo icon">
-                                <img src="images/logo-text.svg"
+                                <img src="/images/logo--block.svg" alt="A picture of the Logo icon">
+                                <img src="/images/logo-text.svg"
                                     alt="A picture of the barnd name - Annapolis Rheumatology">
                             </div>
 
@@ -6688,11 +6744,11 @@
                         <div class="links__wrapper">
                             <h6>Pages</h6>
                             <ul class="links-group">
-                                <li><a href="#" class="button-r">Home</a></li>
-                                <li><a href="#" class="button-r">Specialties</a></li>
-                                <li><a href="#" class="button-r">Our Team</a></li>
-                                <li><a href="#" class="button-r">Contact Us</a></li>
-                                <li><a href="#" class="button-r">Patients Portal</a></li>
+                                <li><a href="/" class="button-r">Home</a></li>
+                                <li><a href="/treatments.html" class="button-r">Specialties</a></li>
+                                <li><a href="/our-team.html" class="button-r">Our Team</a></li>
+                                <li><a href="/contact-us.html" class="button-r">Contact Us</a></li>
+                                <li><a href="/patients-center.html" class="button-r">Patients Portal</a></li>
                             </ul>
                         </div>
                         <div class="links__wrapper">
@@ -6734,6 +6790,7 @@
     </body>
 
     </html>
+
 
 </body>
 

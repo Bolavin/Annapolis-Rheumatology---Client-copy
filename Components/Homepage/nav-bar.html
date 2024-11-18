@@ -83,6 +83,7 @@
         /* Nav Bar */
 
         #nav--desktop {
+            z-index: 999;
             width: 100%;
             background: var(--color-off-white);
             box-shadow: 0px 4px 12px 0px rgba(34, 34, 31, 0.10);
@@ -179,7 +180,8 @@
 
         .dd-menu {
             display: none;
-            width: 160px;
+            min-width: 160px;
+            max-width: auto;
             height: 0;
             padding: 12px 0px;
             flex-direction: column;
@@ -187,11 +189,11 @@
             align-items: center;
 
             position: absolute;
-            /* left: -12px; */
+            left: -50%;
             top: 40px;
 
             border-radius: 12px;
-            background: var(--color-off-white, #E7F0F5);
+            background: #F3F8FA;
             box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.08);
 
         }
@@ -262,6 +264,7 @@
         }
 
         .nav__btn.primary {
+            border: 1.5px solid var(--color-accent);
             background: var(--color-accent, #EF556A);
             color: var(--color-off-white);
             transition: background 100ms ease;
@@ -278,9 +281,9 @@
         }
 
         .nav__btn.secondary {
-            height: 4rem;
+            min-height: 4rem;
             color: var(--color-off-black);
-            border: 1.5px solid var(--color-accent, #EF556A);
+            border: 1.5px solid var(--color-accent);
             background: rgba(239, 85, 106, 0.05);
             transition: background 100ms ease;
 
@@ -404,7 +407,7 @@
             }
 
             .nav__item {
-                padding-block: 2rem;
+                padding-block: 1rem;
                 width: 100%;
             }
 
@@ -428,7 +431,7 @@
                 display: none;
                 position: static;
                 margin: 1rem 3rem;
-                background: rgba(40, 45, 48, 0.1);
+                background: rgba(40, 45, 48, 0.05);
                 box-shadow: revert;
                 width: auto;
                 height: 0;
@@ -453,6 +456,16 @@
             .nav__btn.secondary .btn-icon {
                 display: unset;
             }
+
+            .y-div {
+                height: 5rem;
+                width: .4rem;
+            }
+
+            .btn__container .nav__btn>:nth-child(3) {
+                width: 20px;
+                height: 20px;
+            }
         }
     </style>
 </head>
@@ -475,32 +488,40 @@
                     <ul class="nav__list">
                         <li class="nav__item dd">
                             <span>
-                                <a href="#" onclick="toggleMenu()">Treatments</a>
+                                <a href="/treatments.html" onclick="toggleMenu()">Treatments</a>
                                 <span class="dd-icon" onclick="toggleDd()">
                                     <img src="/../images/arrow-down.svg" alt="">
                                 </span>
                             </span>
                             <ul class="dd-menu">
-                                <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Link
-                                        1</a></li>
-                                <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Link 2</a></li>
-                                <li class="dd-menu__item"><a href="#" onclick="toggleDd()">Link 3</a></li>
+                                <li class="dd-menu__item"><a href="/treatments.html#inflammatory-arthritis"
+                                        onclick="toggleDd()">Inflammatory Arthritis</a>
+                                </li>
+                                <li class="dd-menu__item"><a href="/treatments.html#autoimmune-diseases"
+                                        onclick="toggleDd()">Autoimmune Diseases</a></li>
+                                <li class="dd-menu__item"><a href="/treatments.html#musculoskeletal-conditions"
+                                        onclick="toggleDd()">Musculoskeletal
+                                        Conditions</a></li>
+                                <li class="dd-menu__item"><a href="/treatments.html#joint-or-muscle-pain"
+                                        onclick="toggleDd()">Joint or Muscle Pain</a></li>
+                                <li class="dd-menu__item"><a href="/treatments.html#metabolic-bone-disease"
+                                        onclick="toggleDd()">Metabolic Bone Disease</a></li>
                             </ul>
                         </li>
-                        <li class="nav__item"><a href="#" onclick="toggleMenu()">Our Team</a></li>
-                        <li class="nav__item"><a href="#" onclick="toggleMenu()">Locations</a></li>
-                        <li class="nav__item"><a href="#" onclick="toggleMenu()">Contact Us</a></li>
+                        <li class="nav__item"><a href="/our-team.html" onclick="toggleMenu()">Our Team</a></li>
+                        <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
+                        <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
                     </ul>
                     <div class="btn__container">
-                        <a href="#" class="nav__btn secondary">
+                        <a href="/patients-center.html" class="nav__btn secondary">
                             <span>Patient Center</span>
-                            <img src="../images/y-div.svg" alt="Horizontal divider" class="y-div">
-                            <img src="../images/patient_icon.svg" alt="phone icon" class="btn-icon">
+                            <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                            <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                         </a>
-                        <a href="#" class="nav__btn primary">
+                        <a href="tel:+17143861092" class="nav__btn primary">
                             <span>(714) 386 - 1092</span>
-                            <img src="../images/y-div.svg" alt="Horizontal divider" class="y-div">
-                            <img src="../images/phone-icons.svg" alt="phone icon" class="btn-icon">
+                            <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                            <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
                         </a>
                     </div>
                 </div>
@@ -526,14 +547,38 @@
 
         }
 
-        function toggleDd() {
-            const dropDown = document.querySelector(".dd-menu")
-            const ddIcon = document.querySelector(".dd-icon")
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropDown = document.querySelector(".dd-menu");
+            const ddIcon = document.querySelector(".dd-icon");
 
-            dropDown.classList.toggle("open")
-            ddIcon.classList.toggle("open")
+            // Function to toggle dropdown
+            function toggleDd(event) {
+                event.stopPropagation(); // Prevent click from propagating to document
+                dropDown.classList.toggle("open");
+                ddIcon.classList.toggle("open");
+            }
 
-        }
+            // Function to close dropdown
+            function closeDd() {
+                dropDown.classList.remove("open");
+                ddIcon.classList.remove("open");
+            }
+
+            // Add event listener to toggle dropdown on click
+            ddIcon.addEventListener('click', toggleDd);
+
+            // Add event listener to dropdown items to close dropdown on click
+            dropDown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Prevent event from bubbling up to document
+                closeDd();
+            });
+
+            // Add event listener to document to detect clicks outside dropdown
+            document.addEventListener('click', closeDd);
+        });
+
+
+
     </script>
 </body>
 

@@ -845,7 +845,7 @@
                 <p>Filter by Treatments:</p>
 
                 <div class="filter__btn-wrapper">
-                    <button id="inflammatory-arthritis" class="btn btn--filter active">
+                    <a href="#inflammatory-arthritis" class="btn btn--filter active">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -857,8 +857,8 @@
                             </svg>
                         </span>
                         Inflammatory Arthritis
-                    </button>
-                    <button id="autoimmune-diseases" class="btn btn--filter">
+                    </a>
+                    <a href="#autoimmune-diseases" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -870,8 +870,8 @@
                             </svg>
                         </span>
                         Autoimmune Diseases
-                    </button>
-                    <button id="musculoskeletal-conditions" class="btn btn--filter">
+                    </a>
+                    <a href="#musculoskeletal-conditions" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -883,8 +883,8 @@
                             </svg>
                         </span>
                         Musculoskeletal Conditions
-                    </button>
-                    <button id="joint-or-muscle-pain" class="btn btn--filter">
+                    </a>
+                    <a href="#joint-or-muscle-pain" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -896,8 +896,8 @@
                             </svg>
                         </span>
                         Joint or Muscle Pain
-                    </button>
-                    <button id="metabolic-bone-disease" class="btn btn--filter">
+                    </a>
+                    <a href="#metabolic-bone-disease" class="btn btn--filter">
                         <span>
                             <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none">
@@ -908,8 +908,8 @@
                                     stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
-                        Metabolic bone disease
-                    </button>
+                        Metabolic Bone Disease
+                    </a>
                 </div>
             </div>
 
@@ -1112,21 +1112,51 @@
             const containerWrapper = document.querySelector('.conditions__wrapper');
             const containers = containerWrapper.querySelectorAll('.condition-block');
 
+            function updateActiveSection(hash) {
+                // Remove 'active' class from all buttons
+                buttons.forEach(button => button.classList.remove('active'));
+
+                // Add 'active' class to the corresponding button
+                const activeButton = document.querySelector(`.btn--filter[href="${hash}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+
+                // Add 'is-hidden' class to all containers
+                containers.forEach(container => container.classList.add('is-hidden'));
+
+                // Remove 'is-hidden' class from the corresponding container
+                const activeContainer = document.querySelector(hash);
+                if (activeContainer) {
+                    activeContainer.classList.remove('is-hidden');
+                }
+            }
+
+            // Handle initial load with hash
+            if (window.location.hash) {
+                updateActiveSection(window.location.hash);
+            }
+
+            // Handle click events on buttons
             buttons.forEach(button => {
-                button.addEventListener('click', function () {
-                    // Remove 'active' class from all buttons
-                    buttons.forEach(btn => btn.classList.remove('active'));
+                button.addEventListener('click', function (event) {
+                    // Prevent default anchor behavior
+                    event.preventDefault();
 
-                    // Add 'active' class to the clicked button
-                    button.classList.add('active');
+                    // Get the hash from the href attribute
+                    const hash = this.getAttribute('href');
 
-                    // Add 'is-hidden' class to all containers
-                    containers.forEach(container => container.classList.add('is-hidden'));
+                    // Update the active section
+                    updateActiveSection(hash);
 
-                    // Remove 'is-hidden' class from the corresponding container
-                    const containerId = button.id;
-                    containerWrapper.querySelector(`#${containerId}`).classList.remove('is-hidden');
+                    // Update the URL hash
+                    history.pushState(null, null, hash);
                 });
+            });
+
+            // Handle back/forward navigation
+            window.addEventListener('hashchange', function () {
+                updateActiveSection(window.location.hash);
             });
         });
 

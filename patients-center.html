@@ -1,0 +1,3453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient's Portal</title>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <html lang="en">
+
+    <head>
+        <style>
+            :root {
+                --color-accent: #EF556A;
+                --color-off-white: #E7F0F5;
+                --color-off-black: #282D30;
+                --color-gold: #FF9D3B;
+                --color-blue: #498CBB;
+                --color-green: #7CBD40;
+                --color-white: #fff;
+            }
+
+            *,
+            *::after,
+            *::before {
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.6rem;
+                line-height: 1.5;
+                color: var(--color-off-black);
+                background-color: var(--color-off-white);
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Archivo", sans-serif;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-off-black);
+            }
+
+
+            /* UTILITIES */
+            .container {
+                max-width: 1440px;
+                margin-inline: auto;
+                padding-inline: 6vw;
+            }
+
+            .btn {
+                outline: 0;
+                border: 0;
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 8px;
+            }
+
+
+
+
+            /* Nav Bar */
+
+            #nav--desktop {
+                z-index: 999;
+                width: 100%;
+                background: var(--color-off-white);
+                box-shadow: 0px 4px 12px 0px rgba(34, 34, 31, 0.10);
+                position: relative;
+            }
+
+            .nav__desktop {
+                display: flex;
+                padding-block: 20px;
+                justify-content: space-between;
+                align-items: center;
+                /* align-self: stretch; */
+            }
+
+            .nav__brand {
+                height: 4.2rem;
+                width: auto;
+                margin-right: 2rem;
+                margin-block: auto;
+                transform: translateY(6px);
+            }
+
+            .nav__menu {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .nav__list {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+            }
+
+            .nav__item a {
+
+                /* padding: 0; */
+
+                padding: 1rem 0.5rem;
+                font-size: 1.6rem;
+                text-transform: capitalize;
+                font-weight: 500;
+                line-height: 137.5%;
+                letter-spacing: -0.16px;
+                opacity: .75;
+                transform-origin: center;
+                white-space: nowrap;
+                transition: all 300ms ease-in-out;
+            }
+
+            .nav__item a:hover,
+            .nav__item a:focus {
+                opacity: .85;
+                font-weight: 600;
+            }
+
+            .nav__item a:active {
+                font-weight: 700;
+                opacity: 1;
+                color: var(--color-accent);
+            }
+
+            .nav__item .dd-icon {
+                /* padding: .5rem; */
+                display: inline-block;
+                width: 1.2rem;
+                /* height: fit-content; */
+                margin-left: -0.4rem;
+                margin-right: 1rem;
+                cursor: pointer;
+                transition: transform 100ms ease;
+                opacity: 0.7;
+                white-space: nowrap;
+
+            }
+
+            .nav__item .dd-icon.open {
+                transform: scaleY(-1);
+                padding-bottom: 4px;
+                transform-origin: center;
+                opacity: 0.85;
+
+            }
+
+
+
+            .nav__item.dd {
+                position: relative;
+                white-space: nowrap;
+            }
+
+            .dd-menu {
+                display: none;
+                min-width: 160px;
+                max-width: auto;
+                height: 0;
+                padding: 12px 0px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                position: absolute;
+                left: -50%;
+                top: 40px;
+
+                border-radius: 12px;
+                background: #F3F8FA;
+                box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.08);
+
+            }
+
+            .dd-menu.open {
+                display: flex;
+                height: fit-content;
+
+            }
+
+            .dd-menu__item {
+                padding: 12px 16px;
+                align-self: stretch;
+
+                opacity: 0.8;
+                background: rgba(40, 45, 48, 0.00);
+                transition: all 100ms ease;
+            }
+
+            .dd-menu__item:hover,
+            .dd-menu__item:focus {
+                opacity: 1;
+                background: rgba(40, 45, 48, 0.1);
+
+            }
+
+            .dd-menu__item a {
+                display: inline-block;
+                width: 100%;
+                text-align: start;
+                padding: 0;
+                /* font-size: 1.4rem;
+    font-weight: 400; */
+            }
+
+            .nav__overlay,
+            .mobile-icon {
+                display: none;
+            }
+
+            .nav__btn {
+                display: flex;
+                padding-inline: 2rem;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+
+                font-size: 1.6rem;
+                text-align: center;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+                letter-spacing: -0.2px;
+
+                border-radius: 8px;
+                white-space: nowrap;
+
+            }
+
+            .y-div {
+                height: 4rem;
+                width: .4rem;
+            }
+
+            .btn-icon {
+                width: 2rem;
+
+            }
+
+            .nav__btn.primary {
+                border: 1.5px solid var(--color-accent);
+                background: var(--color-accent, #EF556A);
+                color: var(--color-off-white);
+                transition: background 100ms ease;
+
+            }
+
+            .nav__btn.primary:hover {
+                background: #BD4B5C;
+            }
+
+            .nav__btn.primary .btn-icon,
+            .nav__btn.primary .y-div {
+                filter: brightness(0) saturate(100%) invert(95%) sepia(4%) saturate(325%) hue-rotate(155deg) brightness(96%) contrast(105%);
+            }
+
+            .nav__btn.secondary {
+                min-height: 4rem;
+                color: var(--color-off-black);
+                border: 1.5px solid var(--color-accent);
+                background: rgba(239, 85, 106, 0.05);
+                transition: background 100ms ease;
+
+            }
+
+            .nav__btn.secondary:hover {
+                background: rgba(239, 85, 106, 0.2);
+            }
+
+            .nav__btn.secondary .btn-icon,
+            .nav__btn.secondary .y-div {
+                filter: brightness(0) saturate(100%) invert(15%) sepia(2%) saturate(2890%) hue-rotate(171deg) brightness(95%) contrast(92%);
+            }
+
+            .nav__btn.secondary .y-div,
+            .nav__btn.secondary .btn-icon {
+                display: none;
+            }
+
+
+            @media screen and (max-width: 1024px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 32px;
+                }
+
+                .nav__desktop {
+                    display: flex;
+                    padding-block: 16px;
+                    justify-content: space-between;
+                    align-items: center;
+                    z-index: 99;
+                }
+
+                .nav__brand {
+                    height: 3.2rem;
+                }
+
+                .mobile-icon {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    height: 3.2rem;
+                    width: 4rem;
+                    cursor: pointer;
+                }
+
+                .mobile-icon span {
+                    width: 100%;
+                    border-radius: 1rem;
+                    height: 2px;
+                    background-color: var(--color-off-black);
+                    transition: all 300ms ease;
+                }
+
+                .mobile-icon.open span:first-child {
+                    transform: rotate(45deg) translate(10px, 5px);
+                }
+
+                .mobile-icon.open span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .mobile-icon.open span:last-child {
+                    transform: rotate(-45deg) translate(10px, -5px);
+                }
+
+                .nav__menu-wrapper {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row;
+                    top: 72px;
+                    right: 0;
+                    height: 0;
+                    width: 100vw;
+                    overflow: hidden;
+                    transition: all 100ms ease-in-out;
+
+                }
+
+                .nav__menu-wrapper.open {
+                    height: calc(100vh - 72px);
+                    /* overflow: hidden; */
+                }
+
+
+                .nav__overlay {
+                    display: unset;
+                    width: auto;
+                    flex-grow: 1;
+                    background: rgba(40, 45, 48, 0.2);
+                    justify-content: end;
+                    cursor: pointer;
+
+                }
+
+                .nav__menu {
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                    padding: 3rem 2rem;
+                    height: 100%;
+                    width: 340px;
+                    gap: 2rem;
+
+                    background-color: var(--color-off-white);
+                    backdrop-filter: blur(10px);
+                }
+
+                .nav__list,
+                .btn__container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 1rem;
+
+                }
+
+                .nav__item {
+                    padding-block: 1rem;
+                    width: 100%;
+                }
+
+                .nav__item a {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: start;
+                }
+
+                .nav__item .dd-icon {
+                    /* padding: .5rem; */
+                    display: inline-block;
+                    width: fit-content;
+                    /* height: fit-content; */
+                    transform-origin: center;
+                    margin-left: -4rem;
+
+                }
+
+                .dd-menu {
+                    display: none;
+                    position: static;
+                    margin: 1rem 3rem;
+                    background: rgba(40, 45, 48, 0.05);
+                    box-shadow: revert;
+                    width: auto;
+                    height: 0;
+                    overflow: hidden;
+                    transition: all 200ms ease-in-out;
+
+                }
+
+                .nav__btn {
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding-inline: 16px;
+                }
+
+                .nav__btn span {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: start;
+                }
+
+                .nav__btn.secondary .y-div,
+                .nav__btn.secondary .btn-icon {
+                    display: unset;
+                }
+
+                .y-div {
+                    height: 5rem;
+                    width: .4rem;
+                }
+
+                .btn__container .nav__btn>:nth-child(3) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Desktop Nav -->
+        <header id="nav--desktop">
+            <nav class="container nav__desktop">
+
+                <a href="/">
+                    <img class="nav__brand" src="/../images/logo-block.svg" alt="Annapolis Rheumatology — Logo">
+                </a>
+
+                <div class="nav__menu-wrapper">
+                    <div class="nav__overlay" onclick="toggleMenu()">
+
+                    </div>
+
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item dd">
+                                <span>
+                                    <a href="/treatments.html" onclick="toggleMenu()">Treatments</a>
+                                    <span class="dd-icon" onclick="toggleDd()">
+                                        <img src="/../images/arrow-down.svg" alt="">
+                                    </span>
+                                </span>
+                                <ul class="dd-menu">
+                                    <li class="dd-menu__item"><a href="/treatments.html#inflammatory-arthritis"
+                                            onclick="toggleDd()">Inflammatory Arthritis</a>
+                                    </li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#autoimmune-diseases"
+                                            onclick="toggleDd()">Autoimmune Diseases</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#musculoskeletal-conditions"
+                                            onclick="toggleDd()">Musculoskeletal
+                                            Conditions</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#joint-or-muscle-pain"
+                                            onclick="toggleDd()">Joint or Muscle Pain</a></li>
+                                    <li class="dd-menu__item"><a href="/treatments.html#metabolic-bone-disease"
+                                            onclick="toggleDd()">Metabolic Bone Disease</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__item"><a href="/our-team.html" onclick="toggleMenu()">Our Team</a></li>
+                            <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
+                            <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
+                        </ul>
+                        <div class="btn__container">
+                            <a href="/patients-center.html" class="nav__btn secondary">
+                                <span>Patient Center</span>
+                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
+                            </a>
+                            <a href="tel:+17143861092" class="nav__btn primary">
+                                <span>(714) 386 - 1092</span>
+                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+
+        <script>
+            function toggleMenu() {
+                const menu = document.querySelector(".nav__menu-wrapper")
+                const icon = document.querySelector(".mobile-icon")
+
+                menu.classList.toggle("open")
+                icon.classList.toggle("open")
+
+
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropDown = document.querySelector(".dd-menu");
+                const ddIcon = document.querySelector(".dd-icon");
+
+                // Function to toggle dropdown
+                function toggleDd(event) {
+                    event.stopPropagation(); // Prevent click from propagating to document
+                    dropDown.classList.toggle("open");
+                    ddIcon.classList.toggle("open");
+                }
+
+                // Function to close dropdown
+                function closeDd() {
+                    dropDown.classList.remove("open");
+                    ddIcon.classList.remove("open");
+                }
+
+                // Add event listener to toggle dropdown on click
+                ddIcon.addEventListener('click', toggleDd);
+
+                // Add event listener to dropdown items to close dropdown on click
+                dropDown.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Prevent event from bubbling up to document
+                    closeDd();
+                });
+
+                // Add event listener to document to detect clicks outside dropdown
+                document.addEventListener('click', closeDd);
+            });
+
+
+
+        </script>
+    </body>
+
+    </html>
+
+    <!-- PATIENT PORTAL -->
+    <html lang="en">
+
+    <head>
+        <style>
+            :root {
+                --color-accent: #EF556A;
+                --color-off-white: #E7F0F5;
+                --color-off-black: #282D30;
+                --color-gold: #FF9D3B;
+                --color-blue: #498CBB;
+                --color-green: #7CBD40;
+                --color-white: #fff;
+            }
+
+            *,
+            *::after,
+            *::before {
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.6rem;
+                color: var(--color-off-black);
+
+                background-color: var(--color-off-white);
+                margin: 0;
+                padding: 0;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Archivo", sans-serif;
+                color: var(--color-off-black);
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                color: var(--Off-Black, #282D30);
+
+                /* Heading Styles/H1 */
+                font-size: 4.8rem;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 114.286%;
+                letter-spacing: -1.12px;
+                text-transform: capitalize;
+            }
+
+            h2 {
+                /* Heading Styles/H2 */
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 52px;
+                letter-spacing: -0.48px;
+                text-transform: capitalize;
+            }
+
+            h3 {
+                /* Heading Styles/H3 */
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 44px;
+            }
+
+            h4 {
+                /* Heading Styles/H4 */
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 36px;
+                letter-spacing: -0.32px;
+            }
+
+
+            h5,
+            .btn {
+                /* Heading Styles/H5 */
+                font-family: Archivo;
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                /* 116.667% */
+                text-align: center;
+                letter-spacing: -0.24px;
+            }
+
+            h6 {
+                /* Heading Styles/H6 */
+                font-family: Archivo;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+            }
+
+
+            img {
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-off-black);
+            }
+
+
+            /* UTILITIES */
+            .container {
+                width: 100%;
+                height: fit-content;
+                max-width: 1440px;
+                margin-inline: auto;
+                padding-inline: 6vw;
+            }
+
+            .body-r {
+                color: var(--Off-Black, #282D30);
+
+                /* Body Styles/Body-regular */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                /* 137.5% */
+                letter-spacing: -0.16px;
+            }
+
+            .body-b {
+                /* Body Styles/Body-Bold */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 24px;
+                letter-spacing: -0.16px;
+            }
+
+            .body-l {
+                /* Body Styles/Body-Light */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 22px;
+                letter-spacing: -0.16px;
+            }
+
+            .button-r {
+                /* Body Styles/Button-regular */
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px;
+            }
+
+            .button-b {
+                /* Body Styles/Button-bold */
+                font-family: "Open Sans";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+                /* 128.571% */
+            }
+
+            .text-caption {
+                /* Body Styles/Caption */
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.12px;
+            }
+
+            .btn h6 {
+                color: var(--color-off-white);
+            }
+
+            .btn {
+                display: flex;
+                gap: 64px;
+                width: auto;
+                padding: 16px 24px;
+                justify-content: space-between;
+                align-items: center;
+                outline: 0;
+                border: 0;
+                white-space: nowrap;
+
+
+                border-radius: 12px;
+                transition: background 200ms ease-in;
+            }
+
+            .btn-icon::after {
+                content: '';
+                display: inline-block;
+                background: url('../images/arrow-right.svg') no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+
+
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+            }
+
+            .btn--ghost {
+                padding: 16px;
+
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+
+                border-radius: 8px;
+                border: 2px solid #282D30;
+                background: rgba(255, 255, 255, 0.50);
+
+                transition: all 100ms ease-in;
+            }
+
+            .btn--ghost.btn-icon::after {
+                width: 12px;
+                height: 12px;
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+            }
+
+            .btn--ghost:hover {
+                color: var(--color-off-white);
+                background-color: var(--color-off-black);
+            }
+
+            .btn--ghost:hover.btn-icon::after {
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+            }
+
+
+            .btn--primary {
+                color: var(--color-off-white);
+                background: var(--color-accent);
+
+            }
+
+            .btn--primary:hover {
+                color: var(--color-off-white);
+                background: #BD4B5C;
+            }
+
+            .btn--secondary {
+                color: var(--color-off-black);
+                border: 1.5px solid var(--color-accent, #EF556A);
+                background: rgba(239, 85, 106, 0.05);
+                transition: background 100ms ease;
+
+            }
+
+            .btn--secondary:hover {
+                background: rgba(239, 85, 106, 0.2);
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .chip {
+                display: inline-flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid rgba(231, 240, 245, 0.75);
+                background: rgba(40, 45, 48, 0.15);
+
+                color: var(--Off-white, #E7F0F5);
+                text-align: center;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+            }
+
+            .chip--brand {
+                display: flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                font-size: 10px;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+                text-transform: capitalize;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid var(--Off-Black, #282D30);
+            }
+
+            .chip--brand::before {
+                content: '';
+                display: inline-block;
+                background: url('../images/brand-Icon.svg') no-repeat;
+                background-size: contain;
+                width: 10px;
+                height: 10px;
+
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+
+            }
+
+            .x-div {
+                display: flex;
+                padding: 20px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .x-div svg {
+                width: 100%;
+
+                stroke-width: 1.5px;
+                stroke: rgba(40, 45, 48, 0.25);
+            }
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+
+            .title .text {
+                width: 700px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .title .btn {
+                padding: 20px;
+                width: 280px;
+            }
+
+            .title .btn svg {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+            }
+
+            /* PATIENTS CENTER */
+            .patient-center {
+                margin-top: 96px;
+            }
+
+            .patient-center .container {
+                display: flex;
+                max-width: 1080px;
+                width: 80%;
+
+                padding: 64px 40px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+
+                border-radius: 40px;
+                background: rgba(255, 255, 255, 0.80);
+                box-shadow: 0px 0px 24px 12px rgba(73, 140, 187, 0.10);
+            }
+
+            .patient-title {
+                width: 100%;
+                padding-bottom: 24px;
+
+                border-bottom: 2px dotted rgba(40, 45, 48, 0.15);
+            }
+
+            .new-zone {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                align-self: stretch;
+            }
+
+            .big-btn {
+                display: flex;
+                width: 323px;
+                padding: 12px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
+
+                border-radius: 12px;
+            }
+
+            .big-btn .text {
+                display: flex;
+                padding: 12px 4px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                align-self: stretch;
+            }
+
+            .big-btn .btn {
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .big-btn.main {
+                background: var(--color-accent);
+            }
+
+            .big-btn.main h4,
+            .big-btn.main p,
+            .big-btn.main span {
+                color: var(--color-off-white);
+
+            }
+
+            .big-btn.main p {
+                opacity: 0.8;
+            }
+
+            .big-btn.main .btn {
+                background: var(--color-off-black);
+                transition: background 100ms ease;
+            }
+
+            .big-btn.main .btn:hover {
+                background: #332828;
+            }
+
+            .big-btn.sub {
+                align-self: stretch;
+                justify-content: space-between;
+
+                background: rgba(73, 140, 187, 0.15);
+            }
+
+            .big-btn.sub .text {
+                padding: 40px 4px 0px;
+            }
+
+            .big-btn.sub h3,
+            .big-btn.sub p {
+                opacity: 0.8;
+                color: var(--color-off-black);
+            }
+
+            .big-btn.sub span {
+                color: var(--color-off-white);
+            }
+
+            .big-btn.sub .btn {
+                background: var(--color-blue);
+                transition: background 100ms ease;
+            }
+
+            .big-btn.sub .btn:hover {
+                background: #366189;
+            }
+
+            .patients-zone {
+                display: flex;
+                padding-top: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+                align-self: stretch;
+            }
+
+            .patients-zone .topper {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                align-self: stretch;
+            }
+
+            .patient-center .topper .body-l {
+                opacity: 0.8;
+            }
+
+            .patient-center .topper .line {
+                height: 2px;
+                flex: 1 0 0;
+
+                border-top: 2px solid rgba(40, 45, 48, 0.05);
+            }
+
+            .btns-group {
+                /* width: 100%; */
+                width: -webkit-fill-available;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 24px;
+            }
+
+            .btns-group .btn {
+                position: relative;
+                display: flex;
+
+                width: auto;
+                height: 72px;
+                padding: 20px;
+                align-items: flex-end;
+                gap: 8px;
+
+                color: var(--color-off-white);
+                border-radius: 8px;
+                background: linear-gradient(0deg, rgba(40, 45, 48, 0.25) 0%, rgba(40, 45, 48, 0.25) 100%), #498CBB;
+
+                transition: background 100ms ease;
+            }
+
+            .btns-group .btn svg {
+                position: absolute;
+                top: 12px;
+                right: 20px;
+            }
+
+            .btns-group .btn:hover {
+                background: linear-gradient(0deg, rgba(40, 45, 48, 0.5) 0%, rgba(40, 45, 48, 0.75) 100%), #498CBB;
+            }
+
+            .patients-zone .info-message {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                align-self: stretch;
+            }
+
+            .info-message .text-caption {
+                opacity: 0.7;
+            }
+
+
+            @media screen and (max-width: 900px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 32px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 18px;
+                }
+
+                .button-b {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px;
+                    /* 133.333% */
+                    letter-spacing: -0.12px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 240px;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .chip--brand {
+                    padding: 8px;
+                    gap: 2px;
+
+                    font-size: 8px;
+                    line-height: 8px;
+                    letter-spacing: -0.08px;
+
+                }
+
+                .chip--brand::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                }
+
+
+                .title .text {
+                    gap: 4px;
+                    width: 350px;
+                }
+
+                .text h3 {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                .title .btn {
+                    padding: 12px;
+                    gap: 48px;
+                    width: auto;
+                }
+
+                .title .btn h6 {
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: -0.16px;
+                }
+
+                .title .btn svg {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                .patient-center {
+                    margin-top: 40px;
+                }
+
+                .patient-center .container {
+                    max-width: 100%;
+                    min-width: calc(100% - 64px);
+
+                    padding: 32px 20px;
+                    gap: 32px;
+                    border-radius: 20px;
+                }
+
+                .patient-title {
+                    font-size: 32px;
+                    line-height: 36px;
+
+                    padding-bottom: 16px;
+                }
+
+                .new-zone {
+                    gap: 16px;
+                }
+
+                .big-btn {
+                    width: 40%;
+                    padding: 8px;
+
+                    gap: 24px;
+                }
+
+                .big-btn .text {
+                    gap: 12px;
+                    padding: 12px 4px;
+                }
+
+                .big-btn.main h4 {
+                    align-self: stretch;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+
+                /* .big-btn.sub {
+        width: fit-content;
+    } */
+
+                .big-btn.sub .text {
+                    padding: 28px 4px 8px;
+                    gap: 12px;
+                }
+
+                .big-btn.sub h3 {
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 36px;
+                    /* 112.5% */
+                    letter-spacing: -0.32px;
+                }
+
+                .patients-zone {
+                    gap: 24px;
+                }
+
+                .btns-group {
+                    gap: 16px;
+                }
+
+                .btns-group .btn {
+                    padding: 16px;
+                    height: 64px;
+
+                    border-radius: 6px;
+                }
+
+                .btns-group .btn svg {
+                    width: 12px;
+                    height: 16px;
+
+                    right: 12px;
+                    top: 12px;
+                }
+
+                .info-message .text-caption {
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px;
+                }
+
+
+
+            }
+
+            @media screen and (max-width: 600px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 16px;
+                    overflow: hidden;
+                }
+
+                h6 {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 100%;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+
+                .title {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .title .text {
+                    width: 88%;
+                }
+
+                .title .btn {
+                    width: 100%;
+                }
+
+                .patient-center {
+                    margin-top: 24px;
+                }
+
+                .patient-center .container {
+                    max-width: 100%;
+                    min-width: calc(100% - 32px);
+
+                    padding: 16px 8px;
+                    gap: 16px;
+                    border-radius: 8px;
+                }
+
+                .patient-title {
+                    font-size: 24px;
+                    line-height: 28px;
+
+                    padding-bottom: 12px;
+                }
+
+                .new-zone {
+                    gap: 12px;
+                }
+
+                .big-btn {
+                    width: 50%;
+                    padding: 4px;
+
+                    gap: 8px;
+                    border-radius: 4px;
+                    /* height: 100%; */
+                    align-self: stretch;
+                    justify-content: space-between;
+                }
+
+                .big-btn .text {
+                    gap: 12px;
+                    padding: 8px 4px;
+                }
+
+                .big-btn.main h4 {
+                    width: 80%;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+
+                /* .big-btn.sub {
+        width: fit-content;
+    } */
+
+                .big-btn.sub .text {
+                    margin-top: 20px;
+                    padding: 12px 4px;
+                    gap: 24px;
+                }
+
+                .big-btn.sub h3 {
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 24px;
+                    /* 112.5% */
+                    letter-spacing: -0.32px;
+                }
+
+                .big-btn .btn {
+                    padding: 10px;
+
+                    border-radius: 4px;
+                }
+
+                .big-btn .btn svg {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                .patients-zone {
+                    gap: 168pxpx;
+                }
+
+                .patient-center .topper .body-l {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px;
+                }
+
+                .btns-group {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, auto);
+                    gap: 16px;
+                }
+
+                .btns-group .btn {
+                    padding: 8px;
+                    height: 56px;
+
+                    border-radius: 6px;
+                }
+
+                .btns-group .btn svg {
+                    width: 12px;
+                    height: 16px;
+
+                    right: 12px;
+                    top: 12px;
+                }
+
+                .info-message .text-caption {
+                    font-size: 8px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 12px;
+                }
+
+
+
+            }
+
+            @media screen and (max-width: 400px) {}
+        </style>
+    </head>
+
+    <body>
+        <section class="patient-center">
+            <div class="container">
+                <h3 class="patient-title">Patients Center</h3>
+                <div class="new-zone">
+                    <div class="big-btn main">
+                        <div class="text">
+                            <p class="text-caption">Become a Patient!</p>
+                            <h4>Enjoy Personalized Care!</h4>
+                        </div>
+
+                        <a href="#" class="btn">
+                            <span class="button-b">New Patient Form</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M1.13999 10.6079C0.833669 8.61111 0.676129 7.60837 1.06123 6.71898C1.44632 5.82959 2.27778 5.19307 3.96695 4.00722L5.20975 3.10039C7.32778 1.59192 8.37804 0.833328 9.58584 0.833328C10.7936 0.833328 11.8439 1.59192 13.9619 3.10039L15.2222 3.97234C16.8939 5.19307 17.7341 5.82959 18.1105 6.71898C18.4868 7.60837 18.338 8.61111 18.0317 10.6079L17.7691 12.3518C17.3315 15.1943 17.1127 16.6156 16.0887 17.4614C15.0647 18.3072 13.5681 18.3333 10.5836 18.3333H8.58809C5.6036 18.3333 4.10698 18.3333 3.08298 17.4614C2.05897 16.5894 1.84017 15.1594 1.40256 12.3169L1.13999 10.6079Z"
+                                    fill="#E7F0F5" />
+                                <path d="M10.0001 7.77779V12.2222M7.77734 10H12.2229" stroke="#282D30"
+                                    stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="big-btn sub">
+                        <div class="text">
+                            <p class="text-caption">Need help urgently, Call Us On!</p>
+                            <h3>714 - 386 -1092</h3>
+                        </div>
+
+                        <a href="#" class="btn">
+                            <span class="button-b">Call us Now</span>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <g clip-path="url(#clip0_193_2474)">
+                                    <path
+                                        d="M14.0196 19.1663C13.2571 19.1663 12.186 18.8905 10.5821 17.9944C8.63171 16.9007 7.12312 15.8909 5.18327 13.9562C3.31296 12.087 2.4028 10.8769 1.12898 8.55889C-0.310086 5.9417 -0.0647735 4.56982 0.209445 3.9835C0.536008 3.28272 1.01804 2.86357 1.64109 2.44756C1.99497 2.2157 2.36947 2.01694 2.75984 1.85381C2.7989 1.83701 2.83523 1.821 2.86765 1.80654C3.06101 1.71943 3.35398 1.58779 3.72507 1.72842C3.97273 1.82139 4.19382 2.01162 4.53991 2.35342C5.24968 3.05342 6.2196 4.6124 6.57741 5.37803C6.81765 5.89404 6.97663 6.23467 6.97702 6.6167C6.97702 7.06397 6.75202 7.40889 6.47898 7.78115C6.4278 7.85107 6.37702 7.91787 6.3278 7.98272C6.03054 8.37334 5.9653 8.48623 6.00827 8.68779C6.09538 9.09287 6.74499 10.2987 7.81257 11.364C8.88015 12.4292 10.0512 13.0378 10.4579 13.1245C10.668 13.1694 10.7833 13.1015 11.1864 12.7937C11.2442 12.7495 11.3036 12.7038 11.3657 12.6581C11.7821 12.3483 12.111 12.1292 12.5477 12.1292H12.5501C12.9301 12.1292 13.2555 12.294 13.7946 12.5659C14.4977 12.9206 16.1036 13.878 16.8079 14.5886C17.1505 14.9339 17.3415 15.1542 17.4348 15.4015C17.5755 15.7737 17.443 16.0655 17.3567 16.2608C17.3423 16.2933 17.3262 16.3288 17.3094 16.3683C17.145 16.7579 16.9451 17.1316 16.7122 17.4847C16.2969 18.1058 15.8762 18.5866 15.1739 18.9136C14.8133 19.0842 14.4185 19.1706 14.0196 19.1663Z"
+                                        fill="#E7F0F5" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_193_2474">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="patients-zone">
+                    <div class="topper">
+                        <p class="body-l">For Existing Patients</p>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="btns-group">
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Patients Portal</span>
+                        </a>
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Pay a Bill</span>
+                        </a>
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Medical Record Release</span>
+                        </a>
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Informed Consent Form</span>
+                        </a>
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Privacy Policy Documents</span>
+                        </a>
+                        <a href="#" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                fill="none">
+                                <path
+                                    d="M16.78 0.160653C17.0293 -0.0269024 17.2949 -0.0502357 17.5767 0.0906531C17.858 0.231098 17.9987 0.45732 17.9987 0.76932V23.2313C17.9987 23.5433 17.858 23.7695 17.5767 23.91C17.2949 24.0504 17.0293 24.0271 16.78 23.84L14.9987 21.734L12.4673 23.84C12.3113 23.9333 12.1553 23.98 11.9993 23.98C11.8429 23.98 11.6864 23.9333 11.53 23.84L8.99933 21.734L6.468 23.84C6.32755 23.9287 6.16543 23.9771 5.99933 23.98C5.83324 23.9771 5.67111 23.9287 5.53067 23.84L3 21.734L1.218 23.84C0.968667 24.0267 0.703111 24.05 0.421333 23.91C0.140444 23.7695 0 23.5433 0 23.2313V0.76932C0 0.45732 0.140444 0.231098 0.421333 0.0906531C0.702667 -0.0497913 0.968222 -0.026458 1.218 0.160653L3 2.26665L5.53067 0.160653C5.68711 0.0668754 5.84333 0.0199865 5.99933 0.0199865C6.15533 0.0199865 6.31155 0.0668754 6.468 0.160653L8.99933 2.26665L11.53 0.160653C11.6864 0.0668754 11.8429 0.0199865 11.9993 0.0199865C12.1553 0.0199865 12.3113 0.0668754 12.4673 0.160653L14.9987 2.26665L16.78 0.160653ZM14.9987 7.88199V7.13332C14.9979 7.08466 14.9871 7.03668 14.9669 6.9924C14.9467 6.94812 14.9176 6.90849 14.8813 6.87599C14.8486 6.84007 14.8089 6.81116 14.7647 6.79099C14.7204 6.77083 14.6726 6.75983 14.624 6.75865H3.37467C3.32596 6.75974 3.27798 6.77069 3.23363 6.79086C3.18929 6.81103 3.14949 6.83999 3.11667 6.87599C3.08087 6.9088 3.05208 6.94851 3.03203 6.99273C3.01198 7.03695 3.00109 7.08478 3 7.13332V7.88199C3 7.97532 3.03889 8.0611 3.11667 8.13932C3.14955 8.1752 3.18937 8.20403 3.23371 8.22408C3.27806 8.24414 3.32601 8.25499 3.37467 8.25599H14.624C14.6725 8.2549 14.7204 8.244 14.7646 8.22395C14.8088 8.2039 14.8485 8.17512 14.8813 8.13932C14.9176 8.10682 14.9467 8.06719 14.9669 8.02291C14.9871 7.97862 14.9979 7.93065 14.9987 7.88199ZM14.9987 12.3747V11.626C14.9979 11.5773 14.9871 11.5294 14.9669 11.4851C14.9467 11.4408 14.9176 11.4012 14.8813 11.3687C14.8486 11.3327 14.8089 11.3038 14.7647 11.2837C14.7204 11.2635 14.6726 11.2525 14.624 11.2513H3.37467C3.32596 11.2524 3.27798 11.2634 3.23363 11.2835C3.18929 11.3037 3.14949 11.3327 3.11667 11.3687C3.08087 11.4015 3.05208 11.4412 3.03203 11.4854C3.01198 11.5296 3.00109 11.5774 3 11.626V12.3747C3 12.4684 3.03889 12.5542 3.11667 12.632C3.14955 12.6679 3.18937 12.6967 3.23371 12.7168C3.27806 12.7368 3.32601 12.7477 3.37467 12.7487H14.624C14.6725 12.7476 14.7204 12.7367 14.7646 12.7166C14.8088 12.6966 14.8485 12.6678 14.8813 12.632C14.9176 12.5995 14.9467 12.5599 14.9669 12.5156C14.9871 12.4713 14.9979 12.4233 14.9987 12.3747ZM14.9987 16.8667V16.118C14.9978 16.0694 14.9869 16.0216 14.9667 15.9774C14.9465 15.9333 14.9175 15.8937 14.8813 15.8613C14.8488 15.8251 14.8092 15.796 14.7649 15.7758C14.7206 15.7556 14.6727 15.7448 14.624 15.744H3.37467C3.32589 15.7447 3.27779 15.7555 3.23339 15.7757C3.18898 15.7958 3.14924 15.825 3.11667 15.8613C3.08064 15.8938 3.0517 15.9334 3.03162 15.9775C3.01155 16.0217 3.00079 16.0695 3 16.118V16.8667C3 16.9609 3.03889 17.0467 3.11667 17.124C3.14924 17.1603 3.18898 17.1895 3.23339 17.2097C3.27779 17.2299 3.32589 17.2406 3.37467 17.2413H14.624C14.6727 17.2405 14.7206 17.2297 14.7649 17.2095C14.8092 17.1893 14.8488 17.1602 14.8813 17.124C14.9176 17.0915 14.9467 17.0519 14.9669 17.0076C14.9871 16.9633 14.9979 16.9153 14.9987 16.8667Z"
+                                    fill="#E7F0F5" />
+                            </svg>
+
+                            <span class="button-b">Contact Us</span>
+                        </a>
+                    </div>
+
+                    <div class="info-message">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g opacity="0.8" clip-path="url(#clip0_193_2408)">
+                                <path
+                                    d="M0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8ZM8 1.5C6.27609 1.5 4.62279 2.18482 3.40381 3.40381C2.18482 4.62279 1.5 6.27609 1.5 8C1.5 9.72391 2.18482 11.3772 3.40381 12.5962C4.62279 13.8152 6.27609 14.5 8 14.5C9.72391 14.5 11.3772 13.8152 12.5962 12.5962C13.8152 11.3772 14.5 9.72391 14.5 8C14.5 6.27609 13.8152 4.62279 12.5962 3.40381C11.3772 2.18482 9.72391 1.5 8 1.5ZM6.5 7.75C6.5 7.55109 6.57902 7.36032 6.71967 7.21967C6.86032 7.07902 7.05109 7 7.25 7H8.25C8.44891 7 8.63968 7.07902 8.78033 7.21967C8.92098 7.36032 9 7.55109 9 7.75V10.5H9.25C9.44891 10.5 9.63968 10.579 9.78033 10.7197C9.92098 10.8603 10 11.0511 10 11.25C10 11.4489 9.92098 11.6397 9.78033 11.7803C9.63968 11.921 9.44891 12 9.25 12H7.25C7.05109 12 6.86032 11.921 6.71967 11.7803C6.57902 11.6397 6.5 11.4489 6.5 11.25C6.5 11.0511 6.57902 10.8603 6.71967 10.7197C6.86032 10.579 7.05109 10.5 7.25 10.5H7.5V8.5H7.25C7.05109 8.5 6.86032 8.42098 6.71967 8.28033C6.57902 8.13968 6.5 7.94891 6.5 7.75ZM8 6C7.73478 6 7.48043 5.89464 7.29289 5.70711C7.10536 5.51957 7 5.26522 7 5C7 4.73478 7.10536 4.48043 7.29289 4.29289C7.48043 4.10536 7.73478 4 8 4C8.26522 4 8.51957 4.10536 8.70711 4.29289C8.89464 4.48043 9 4.73478 9 5C9 5.26522 8.89464 5.51957 8.70711 5.70711C8.51957 5.89464 8.26522 6 8 6Z"
+                                    fill="#EF556A" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_193_2408">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        <p class="text-caption">
+                            Please when paying bills or requesting for records kindly, add the patient’s name in
+                            additional
+                            details box. Thank you!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    </html>
+
+
+    <!-- Location SECTION -->
+    <html lang="en">
+
+    <head>
+        <style>
+            :root {
+                --color-accent: #EF556A;
+                --color-off-white: #E7F0F5;
+                --color-off-black: #282D30;
+                --color-gold: #FF9D3B;
+                --color-blue: #498CBB;
+                --color-green: #7CBD40;
+                --color-white: #fff;
+            }
+
+            *,
+            *::after,
+            *::before {
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.6rem;
+                color: var(--color-off-black);
+
+                background-color: var(--color-off-white);
+                margin: 0;
+                padding: 0;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Archivo", sans-serif;
+                color: var(--color-off-black);
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                color: var(--Off-Black, #282D30);
+
+                /* Heading Styles/H1 */
+                font-size: 4.8rem;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 114.286%;
+                letter-spacing: -1.12px;
+                text-transform: capitalize;
+            }
+
+            h3 {
+                /* Heading Styles/H3 */
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 44px;
+            }
+
+
+            h5,
+            .btn {
+                /* Heading Styles/H5 */
+                font-family: Archivo;
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                /* 116.667% */
+                text-align: center;
+                letter-spacing: -0.24px;
+            }
+
+            h6 {
+                /* Heading Styles/H6 */
+                font-family: Archivo;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+            }
+
+
+            img {
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-off-black);
+            }
+
+
+            /* UTILITIES */
+            .container {
+                width: 100%;
+                height: fit-content;
+                max-width: 1440px;
+                margin-inline: auto;
+                padding-inline: 6vw;
+            }
+
+            .body-r {
+                color: var(--Off-Black, #282D30);
+
+                /* Body Styles/Body-regular */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                /* 137.5% */
+                letter-spacing: -0.16px;
+            }
+
+            .button-r {
+                /* Body Styles/Button-regular */
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px;
+            }
+
+            .text-caption {
+                /* Body Styles/Caption */
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.12px;
+            }
+
+            .btn h6 {
+                color: var(--color-off-white);
+            }
+
+            .btn {
+                display: flex;
+                gap: 64px;
+                width: auto;
+                padding: 16px 24px;
+                justify-content: space-between;
+                align-items: center;
+                outline: 0;
+                border: 0;
+                white-space: nowrap;
+
+
+                border-radius: 12px;
+                transition: background 200ms ease-in;
+            }
+
+            .btn-icon::after {
+                content: '';
+                display: inline-block;
+                background: url('../images/arrow-right.svg') no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+
+
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+            }
+
+            .btn--ghost {
+                padding: 16px;
+
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+
+                border-radius: 8px;
+                border: 2px solid #282D30;
+                background: rgba(255, 255, 255, 0.50);
+
+                transition: all 100ms ease-in;
+            }
+
+            .btn--ghost.btn-icon::after {
+                width: 12px;
+                height: 12px;
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+            }
+
+            .btn--ghost:hover {
+                color: var(--color-off-white);
+                background-color: var(--color-off-black);
+            }
+
+            .btn--ghost:hover.btn-icon::after {
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+            }
+
+
+            .btn--primary {
+                color: var(--color-off-white);
+                background: var(--color-accent);
+
+            }
+
+            .btn--primary:hover {
+                color: var(--color-off-white);
+                background: #BD4B5C;
+            }
+
+            .btn--secondary {
+                color: var(--color-off-black);
+                border: 1.5px solid var(--color-accent, #EF556A);
+                background: rgba(239, 85, 106, 0.05);
+                transition: background 100ms ease;
+
+            }
+
+            .btn--secondary:hover {
+                background: rgba(239, 85, 106, 0.2);
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .chip {
+                display: inline-flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid rgba(231, 240, 245, 0.75);
+                background: rgba(40, 45, 48, 0.15);
+
+                color: var(--Off-white, #E7F0F5);
+                text-align: center;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+            }
+
+            .chip--brand {
+                display: flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                font-size: 10px;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+                text-transform: capitalize;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid var(--Off-Black, #282D30);
+            }
+
+            .chip--brand::before {
+                content: '';
+                display: inline-block;
+                background: url('../images/brand-Icon.svg') no-repeat;
+                background-size: contain;
+                width: 10px;
+                height: 10px;
+
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+
+            }
+
+            .x-div {
+                display: flex;
+                padding: 20px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .x-div svg {
+                width: 100%;
+
+                stroke-width: 1.5px;
+                stroke: rgba(40, 45, 48, 0.25);
+            }
+
+            /* LOCATION SECTION */
+            .location {
+                padding-block: 80px;
+            }
+
+            .location .container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+                align-self: stretch;
+            }
+
+            .location .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+
+            .title .text {
+                width: 500px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .title .btn {
+                padding: 20px;
+                width: 280px;
+            }
+
+            .title .btn svg {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+            }
+
+            .location__wrapper {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                gap: 40px;
+                align-self: stretch;
+                flex-wrap: wrap;
+            }
+
+            .location-card {
+                display: flex;
+                max-width: 31%;
+                flex-grow: 1;
+                padding: 12px;
+                align-items: center;
+                gap: 12px;
+
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.72);
+                transition: all 200ms ease;
+            }
+
+            .location-card:hover {
+                box-shadow: 2px 4px 12px 1px rgba(40, 45, 48, 0.1);
+            }
+
+            .location-card .info {
+                display: flex;
+                padding-top: 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                flex: 1 0 0;
+            }
+
+
+            .info .text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                align-self: stretch;
+            }
+
+            .text h6 {
+                color: var(--color-accent);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -0.18px;
+            }
+
+            .text .text-caption {
+                align-self: stretch;
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+            .info .btn {
+                padding: 6px 12px;
+                align-self: stretch;
+                gap: 0;
+
+                border-radius: 4px;
+                border: 1px solid var(--color-off-black);
+                opacity: 0.8;
+                background: rgba(231, 240, 245, 0.25);
+            }
+
+            .info .btn:hover {
+                color: var(--color-off-white);
+                background-color: var(--color-off-black);
+            }
+
+            .info .btn:hover svg {
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+            }
+
+            .info .btn span {
+                font-family: "Open Sans", sans-serif;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px;
+                letter-spacing: -0.12px;
+            }
+
+
+
+
+            .location-card .image {
+                position: relative;
+                width: 104px;
+                flex-shrink: 0;
+                align-self: stretch;
+
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .image img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+                transition: all 500ms ease-in;
+            }
+
+            .location-card:hover img {
+                transform-origin: center;
+                transform: rotate(30deg) scale(2);
+
+            }
+
+            .location-card .image::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+
+                border-radius: 6px;
+                background: linear-gradient(180deg, rgba(40, 45, 48, 0.1) 0%, rgba(40, 45, 48, 0.3) 74.25%, rgba(40, 45, 48, 0.50) 100%);
+                background-blend-mode: multiply, normal;
+
+                /* transition: all 500ms ease-in; */
+            }
+
+            .location-card:hover .image::before {
+                background: linear-gradient(180deg, rgba(40, 45, 48, 0.01) 0%, rgba(40, 45, 48, 0.13) 74.25%, rgba(40, 45, 48, 0.50) 100%);
+            }
+
+
+
+
+
+
+
+            @media screen and (max-width: 900px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 32px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 18px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 240px;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .chip--brand {
+                    padding: 8px;
+                    gap: 2px;
+
+                    font-size: 8px;
+                    line-height: 8px;
+                    letter-spacing: -0.08px;
+
+                }
+
+                .chip--brand::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                }
+
+                .location {
+                    padding-block: 48px;
+                }
+
+                .location .container {
+                    gap: 24px;
+                }
+
+                .title .text {
+                    gap: 4px;
+                    width: 350px;
+                }
+
+                .text h3 {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                .title .btn {
+                    padding: 12px;
+                    gap: 48px;
+                    width: auto;
+                }
+
+                .title .btn h6 {
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: -0.16px;
+                }
+
+                .title .btn svg {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                .location__wrapper {
+                    gap: 24px;
+                }
+
+                .location-card {
+                    max-width: 47%;
+                }
+
+                .text h6 {
+                    font-size: 16px;
+                }
+
+                .text .text-caption {
+                    width: 94%;
+                    font-size: 12px;
+                }
+
+                .info .btn {
+                    width: auto;
+                }
+
+                .info .btn svg {
+                    height: 10px;
+                    width: 10px;
+                }
+
+
+
+
+            }
+
+            @media screen and (max-width: 600px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 16px;
+                    overflow: hidden;
+                }
+
+                h6 {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 100%;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .location {
+                    padding-block: 32px;
+                }
+
+                .location .container {
+                    gap: 16px;
+                }
+
+                .location .title {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .title .text {
+                    width: 88%;
+                }
+
+                .title .btn {
+                    width: 100%;
+                }
+
+                .location__wrapper {
+                    gap: 8px;
+                }
+
+                .location-card {
+                    max-width: 100%;
+                }
+
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="location">
+            <div class="container">
+                <div class="title">
+                    <div class="text">
+                        <span class="chip--brand">Our Locations</span>
+                        <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
+                    </div>
+
+                    <a href="#" class="btn btn--primary">
+                        <h6>(714) 386 - 1092</h6>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_2038_6829)">
+                                <path
+                                    d="M14.0196 19.1664C13.2571 19.1664 12.186 18.8906 10.5821 17.9945C8.63171 16.9008 7.12312 15.891 5.18327 13.9562C3.31296 12.0871 2.4028 10.8769 1.12898 8.55896C-0.310086 5.94178 -0.0647735 4.5699 0.209445 3.98357C0.536008 3.28279 1.01804 2.86365 1.64109 2.44764C1.99497 2.21577 2.36947 2.01702 2.75984 1.85389C2.7989 1.83709 2.83523 1.82107 2.86765 1.80662C3.06101 1.71951 3.35398 1.58787 3.72507 1.72849C3.97273 1.82146 4.19382 2.0117 4.53991 2.3535C5.24968 3.0535 6.2196 4.61248 6.57741 5.3781C6.81765 5.89412 6.97663 6.23475 6.97702 6.61678C6.97702 7.06404 6.75202 7.40896 6.47898 7.78123C6.4278 7.85115 6.37702 7.91795 6.3278 7.98279C6.03054 8.37342 5.9653 8.48631 6.00827 8.68787C6.09538 9.09295 6.74499 10.2988 7.81257 11.364C8.88015 12.4293 10.0512 13.0379 10.4579 13.1246C10.668 13.1695 10.7833 13.1015 11.1864 12.7937C11.2442 12.7496 11.3036 12.7039 11.3657 12.6582C11.7821 12.3484 12.111 12.1293 12.5477 12.1293H12.5501C12.9301 12.1293 13.2555 12.2941 13.7946 12.566C14.4977 12.9207 16.1036 13.8781 16.8079 14.5887C17.1505 14.934 17.3415 15.1543 17.4348 15.4015C17.5755 15.7738 17.443 16.0656 17.3567 16.2609C17.3423 16.2933 17.3262 16.3289 17.3094 16.3683C17.145 16.758 16.9451 17.1317 16.7122 17.4847C16.2969 18.1058 15.8762 18.5867 15.1739 18.9137C14.8133 19.0843 14.4185 19.1707 14.0196 19.1664Z"
+                                    fill="#E7F0F5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2038_6829">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="location__wrapper">
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="info">
+                            <div class="text">
+                                <h6>Annapolis Clinic</h6>
+                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                            </div>
+                            <a href="#" class="btn btn--ghost">
+                                <span>Get Directions</span>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                        fill="#282D30" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="image">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </body>
+
+    </html>
+
+    <!-- FOOTER SECTION -->
+    <html lang="en">
+
+    <head>
+        <style>
+            :root {
+                --color-accent: #EF556A;
+                --color-off-white: #E7F0F5;
+                --color-off-black: #282D30;
+                --color-gold: #FF9D3B;
+                --color-blue: #498CBB;
+                --color-green: #7CBD40;
+                --color-white: #fff;
+            }
+
+            *,
+            *::after,
+            *::before {
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.6rem;
+                color: var(--color-off-black);
+
+                background-color: var(--color-off-white);
+                margin: 0;
+                padding: 0;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Archivo", sans-serif;
+                color: var(--color-off-black);
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                color: var(--Off-Black, #282D30);
+
+                /* Heading Styles/H1 */
+                font-size: 4.8rem;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 114.286%;
+                letter-spacing: -1.12px;
+                text-transform: capitalize;
+            }
+
+            h2 {
+                /* Heading Styles/H2 */
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 52px;
+                letter-spacing: -0.48px;
+                text-transform: capitalize;
+            }
+
+            h3 {
+                /* Heading Styles/H3 */
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 44px;
+            }
+
+            h4 {
+                /* Heading Styles/H4 */
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 36px;
+                letter-spacing: -0.32px;
+            }
+
+
+            h5,
+            .btn {
+                /* Heading Styles/H5 */
+                font-family: Archivo;
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                /* 116.667% */
+                text-align: center;
+                letter-spacing: -0.24px;
+            }
+
+            h6 {
+                /* Heading Styles/H6 */
+                font-family: Archivo;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+            }
+
+
+            img {
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-off-black);
+            }
+
+
+            /* UTILITIES */
+            .container {
+                width: 100%;
+                height: fit-content;
+                max-width: 1440px;
+                margin-inline: auto;
+                padding-inline: 6vw;
+            }
+
+            .body-r {
+                color: var(--Off-Black, #282D30);
+
+                /* Body Styles/Body-regular */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                /* 137.5% */
+                letter-spacing: -0.16px;
+            }
+
+            .body-b {
+                /* Body Styles/Body-Bold */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 24px;
+                letter-spacing: -0.16px;
+            }
+
+            .button-r {
+                /* Body Styles/Button-regular */
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px;
+            }
+
+            .text-caption {
+                /* Body Styles/Caption */
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.12px;
+            }
+
+            .btn h6 {
+                color: var(--color-off-white);
+            }
+
+            .btn {
+                display: flex;
+                gap: 64px;
+                width: auto;
+                padding: 16px 24px;
+                justify-content: space-between;
+                align-items: center;
+                outline: 0;
+                border: 0;
+                white-space: nowrap;
+
+
+                border-radius: 12px;
+                transition: background 200ms ease-in;
+            }
+
+            .btn-icon::after {
+                content: '';
+                display: inline-block;
+                background: url('../images/arrow-right.svg') no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+
+
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+
+            }
+
+            .btn--ghost {
+                padding: 16px;
+
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+
+                border-radius: 8px;
+                border: 2px solid #282D30;
+                background: rgba(255, 255, 255, 0.50);
+
+                transition: all 100ms ease-in;
+            }
+
+            .btn--ghost.btn-icon::after {
+                width: 12px;
+                height: 12px;
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+            }
+
+            .btn--ghost:hover {
+                color: var(--color-off-white);
+                background-color: var(--color-off-black);
+            }
+
+            .btn--ghost:hover.btn-icon::after {
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+            }
+
+
+            .btn--primary {
+                color: var(--color-off-white);
+                background: var(--color-accent);
+
+            }
+
+            .btn--primary:hover {
+                color: var(--color-off-white);
+                background: #BD4B5C;
+            }
+
+            .btn--secondary {
+                color: var(--color-off-black);
+                border: 1.5px solid var(--color-accent, #EF556A);
+                background: rgba(239, 85, 106, 0.05);
+                transition: background 100ms ease;
+
+            }
+
+            .btn--secondary:hover {
+                background: rgba(239, 85, 106, 0.2);
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .chip {
+                display: inline-flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid rgba(231, 240, 245, 0.75);
+                background: rgba(40, 45, 48, 0.15);
+
+                color: var(--Off-white, #E7F0F5);
+                text-align: center;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+            }
+
+            .chip--brand {
+                display: flex;
+                padding: 10px 12px;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                font-size: 10px;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: -0.1px;
+                text-transform: capitalize;
+
+                cursor: default;
+                border-radius: 40px;
+                border: 0.75px solid var(--Off-Black, #282D30);
+            }
+
+            .chip--brand::before {
+                content: '';
+                display: inline-block;
+                background: url('../images/brand-Icon.svg') no-repeat;
+                background-size: contain;
+                width: 10px;
+                height: 10px;
+
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+
+            }
+
+            .x-div {
+                display: flex;
+                padding: 20px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .x-div svg {
+                width: 100%;
+
+                stroke-width: 1.5px;
+                stroke: rgba(40, 45, 48, 0.25);
+            }
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+
+            .title .text {
+                width: 700px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .title .btn {
+                padding: 20px;
+                width: 280px;
+            }
+
+            .title .btn svg {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+
+            }
+
+            /* FOOTER SECTION */
+            .footer {
+                display: flex;
+                padding-block: 80px;
+
+                background: var(--color-off-black);
+            }
+
+            .footer .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 64px;
+                align-self: stretch;
+            }
+
+            .footer .topper {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                align-self: stretch;
+
+                color: var(--color-off-white);
+            }
+
+            .topper .left {
+                display: flex;
+                flex-grow: 1;
+                min-width: 60%;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .left .brand {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .brand .logo {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+
+            }
+
+            .brand .logo>:first-child {
+                width: 56px;
+                height: 56px;
+            }
+
+            .brand .logo>:nth-child(2) {
+                width: 208px;
+                height: 52px;
+            }
+
+            .brand .social-icon {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .social-icon .socials {
+                display: flex;
+                padding: 4px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                border-radius: 20px;
+                background: rgba(231, 240, 245, 0.80);
+
+                transition: all 100ms ease;
+            }
+
+            .social-icon .socials svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .socials:hover {
+                cursor: pointer;
+                border-radius: 4px;
+
+                transform: scale(1.25);
+                background-color: var(--color-accent);
+            }
+
+            .socials:hover svg {
+                filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(933%) hue-rotate(160deg) brightness(100%) contrast(93%);
+            }
+
+            .links__wrapper h6,
+            .links__wrapper a {
+                color: var(--color-off-white);
+                opacity: 0.9;
+            }
+
+            .links__wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .links-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                align-self: stretch;
+                gap: 10px;
+            }
+
+            .links-group a {
+                opacity: 0.6;
+            }
+
+            .links-group a:hover {
+                opacity: 1;
+            }
+
+            .topper .right {
+                display: flex;
+                min-width: 50%;
+
+                align-self: stretch;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                flex: 1 0 0;
+
+            }
+
+            .right .location {
+                display: flex;
+                width: 341px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .location h4 {
+                color: var(--color-off-white);
+
+            }
+
+            .location p {
+                align-self: stretch;
+                line-height: 20px;
+
+                opacity: 0.9;
+            }
+
+            .location a {
+                padding: 12px 16px;
+                width: auto;
+                gap: 12px;
+
+                border-radius: 8px;
+                background: var(--color-off-white);
+            }
+
+            .location a:hover {
+                background-color: rgba(231, 240, 245, 0.2);
+            }
+
+            .footer .h-line {
+                width: 100vw;
+                height: 8px;
+                /* Adjust height to match the border width */
+                background-image: radial-gradient(circle, rgba(231, 240, 245, 0.25) 1.5px, transparent 2.5px);
+                background-size: 10px 10px;
+                /* Adjust the size of the dots and the gaps */
+            }
+
+            .footer .base {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+
+            .base .body-r {
+                color: var(--color-off-white);
+                opacity: 0.5;
+            }
+
+
+
+            @media screen and (max-width: 900px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 32px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 18px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 240px;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .chip--brand {
+                    padding: 8px;
+                    gap: 2px;
+
+                    font-size: 8px;
+                    line-height: 8px;
+                    letter-spacing: -0.08px;
+
+                }
+
+                .chip--brand::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                }
+
+
+                .title .text {
+                    gap: 4px;
+                    width: 350px;
+                }
+
+                .text h3 {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                .title .btn {
+                    padding: 12px;
+                    gap: 48px;
+                    width: auto;
+                }
+
+                .title .btn h6 {
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: -0.16px;
+                }
+
+                .title .btn svg {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                .footer {
+                    padding-block: 32px;
+                }
+
+                .footer .container {
+                    gap: 24px;
+                }
+
+                .left .brand {
+                    gap: 16px;
+                }
+
+                .brand .logo {
+                    gap: 12px;
+                }
+
+                .brand .logo>:first-child {
+                    width: 34px;
+                    height: 34px;
+                }
+
+                .brand .logo>:nth-child(2) {
+                    width: 128px;
+                    height: 32px;
+                }
+
+                .brand .social-icon {
+                    gap: 8px;
+                }
+
+                .social-icon .socials svg {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .topper .right {
+                    display: none;
+                }
+
+                .links__wrapper {
+                    gap: 12px;
+                }
+
+                .links__wrapper h6 {
+                    font-size: 16px;
+
+                }
+
+                .base .body-r {
+                    font-size: 12px;
+                }
+
+
+
+
+            }
+
+            @media screen and (max-width: 600px) {
+                .container {
+                    /* max-width: 800px; */
+                    margin-inline: auto;
+                    padding-inline: 16px;
+                    overflow: hidden;
+                }
+
+                h6 {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px;
+                }
+
+
+                .hero__content .body-r {
+                    font-size: 14px;
+                    line-height: 18px;
+                    width: 100%;
+                }
+
+                .btn {
+                    width: 100%;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px;
+                }
+
+
+                .title {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .title .text {
+                    width: 88%;
+                }
+
+                .title .btn {
+                    width: 100%;
+                }
+
+
+
+            }
+
+            @media screen and (max-width: 400px) {
+                .topper .left {
+                    gap: 16px;
+                    flex-wrap: wrap;
+                }
+
+                .left .brand {
+                    width: 100%;
+                }
+
+
+
+                .left .links__wrapper {
+                    /* justify-content: space-between; */
+                    gap: 12px;
+                }
+
+                .footer .base {
+                    gap: 16px;
+                    flex-wrap: wrap;
+                    /* text-align: center; */
+                }
+
+                .base .body-r:first-child {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .base .body-r:nth-child(2) {
+                    width: 100%;
+                    text-align: right;
+                }
+
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <footer class="footer">
+            <div class="container">
+                <div class="topper">
+                    <div class="left">
+                        <div class="brand">
+                            <div class="logo">
+                                <img src="/images/logo--block.svg" alt="A picture of the Logo icon">
+                                <img src="/images/logo-text.svg"
+                                    alt="A picture of the barnd name - Annapolis Rheumatology">
+                            </div>
+
+                            <div class="social-icon">
+                                <span class="socials">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                        fill="none">
+                                        <path
+                                            d="M7.047 15.75H10.047V10.0587H12.75L13.047 7.23079H10.047V5.80263C10.047 5.61419 10.126 5.43346 10.2667 5.30021C10.4073 5.16696 10.5981 5.09211 10.797 5.09211H13.047V2.25H10.797C9.80244 2.25 8.84861 2.62429 8.14535 3.29054C7.44209 3.95679 7.047 4.86041 7.047 5.80263V7.23079H5.547L5.25 10.0587H7.047V15.75Z"
+                                            fill="#EF556A" />
+                                    </svg>
+                                </span>
+                                <span class="socials">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                        fill="none">
+                                        <path
+                                            d="M9.6941 2.25C10.4535 2.25202 10.8389 2.25607 11.1716 2.26552L11.3026 2.27025C11.4538 2.27565 11.603 2.2824 11.7832 2.2905C12.5014 2.32425 12.9914 2.43765 13.4214 2.60437C13.8668 2.77581 14.2421 3.00801 14.6174 3.38262C14.9608 3.71993 15.2264 4.12812 15.3957 4.57869C15.5624 5.00866 15.6758 5.4987 15.7096 6.21755C15.7177 6.3971 15.7244 6.54627 15.7298 6.69814L15.7339 6.82909C15.744 7.16118 15.748 7.5466 15.7494 8.30595L15.7501 8.80949V9.69372C15.7517 10.1861 15.7465 10.6784 15.7345 11.1706L15.7305 11.3015C15.7251 11.4534 15.7183 11.6026 15.7102 11.7821C15.6765 12.501 15.5617 12.9903 15.3957 13.421C15.2264 13.8715 14.9608 14.2797 14.6174 14.6171C14.2801 14.9604 13.8719 15.226 13.4214 15.3953C12.9914 15.562 12.5014 15.6754 11.7832 15.7092L11.3026 15.7294L11.1716 15.7335C10.8389 15.7429 10.4535 15.7476 9.6941 15.749L9.19056 15.7497H8.30701C7.81445 15.7514 7.32189 15.7462 6.82947 15.7341L6.69853 15.7301C6.53829 15.724 6.37809 15.7171 6.21794 15.7092C5.49975 15.6754 5.00972 15.562 4.57908 15.3953C4.12875 15.2259 3.7208 14.9603 3.38368 14.6171C3.04008 14.2798 2.77424 13.8716 2.60475 13.421C2.43803 12.991 2.32463 12.501 2.29088 11.7821L2.27063 11.3015L2.26726 11.1706C2.25482 10.6784 2.24919 10.1861 2.25038 9.69372V8.30595C2.24852 7.81362 2.25347 7.32129 2.26523 6.82909L2.26996 6.69814C2.27536 6.54627 2.28211 6.3971 2.29021 6.21755C2.32396 5.4987 2.43735 5.00933 2.60408 4.57869C2.77396 4.12794 3.04027 3.71973 3.38436 3.38262C3.72128 3.03943 4.12899 2.77384 4.57908 2.60437C5.00972 2.43765 5.49908 2.32425 6.21794 2.2905C6.39748 2.2824 6.54733 2.27565 6.69853 2.27025L6.82947 2.2662C7.32167 2.25421 7.814 2.24903 8.30634 2.25067L9.6941 2.25ZM9.00022 5.62492C8.10514 5.62492 7.24671 5.98049 6.61379 6.61341C5.98087 7.24633 5.6253 8.10475 5.6253 8.99984C5.6253 9.89492 5.98087 10.7533 6.61379 11.3863C7.24671 12.0192 8.10514 12.3748 9.00022 12.3748C9.8953 12.3748 10.7537 12.0192 11.3866 11.3863C12.0196 10.7533 12.3751 9.89492 12.3751 8.99984C12.3751 8.10475 12.0196 7.24633 11.3866 6.61341C10.7537 5.98049 9.8953 5.62492 9.00022 5.62492ZM9.00022 6.97489C9.26614 6.97484 9.52946 7.02717 9.77516 7.1289C10.0209 7.23062 10.2441 7.37974 10.4322 7.56774C10.6202 7.75574 10.7694 7.97895 10.8712 8.22461C10.973 8.47027 11.0255 8.73358 11.0255 8.9995C11.0256 9.26542 10.9732 9.52874 10.8715 9.77444C10.7698 10.0201 10.6207 10.2434 10.4327 10.4315C10.2446 10.6195 10.0214 10.7687 9.77578 10.8705C9.53012 10.9723 9.26681 11.0247 9.00089 11.0248C8.46384 11.0248 7.94879 10.8114 7.56904 10.4317C7.18929 10.0519 6.97594 9.53689 6.97594 8.99984C6.97594 8.46279 7.18929 7.94773 7.56904 7.56798C7.94879 7.18823 8.46384 6.97489 9.00089 6.97489M12.5446 4.61244C12.3208 4.61244 12.1062 4.70134 11.948 4.85957C11.7897 5.0178 11.7008 5.2324 11.7008 5.45617C11.7008 5.67994 11.7897 5.89455 11.948 6.05278C12.1062 6.21101 12.3208 6.2999 12.5446 6.2999C12.7683 6.2999 12.9829 6.21101 13.1412 6.05278C13.2994 5.89455 13.3883 5.67994 13.3883 5.45617C13.3883 5.2324 13.2994 5.0178 13.1412 4.85957C12.9829 4.70134 12.7683 4.61244 12.5446 4.61244Z"
+                                            fill="#EF556A" />
+                                    </svg>
+                                </span>
+                                <span class="socials">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                        fill="none">
+                                        <path
+                                            d="M7.047 15.75H10.047V10.0587H12.75L13.047 7.23079H10.047V5.80263C10.047 5.61419 10.126 5.43346 10.2667 5.30021C10.4073 5.16696 10.5981 5.09211 10.797 5.09211H13.047V2.25H10.797C9.80244 2.25 8.84861 2.62429 8.14535 3.29054C7.44209 3.95679 7.047 4.86041 7.047 5.80263V7.23079H5.547L5.25 10.0587H7.047V15.75Z"
+                                            fill="#EF556A" />
+                                    </svg>
+                                </span>
+                                <span class="socials">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                        fill="none">
+                                        <path
+                                            d="M9.6941 2.25C10.4535 2.25202 10.8389 2.25607 11.1716 2.26552L11.3026 2.27025C11.4538 2.27565 11.603 2.2824 11.7832 2.2905C12.5014 2.32425 12.9914 2.43765 13.4214 2.60437C13.8668 2.77581 14.2421 3.00801 14.6174 3.38262C14.9608 3.71993 15.2264 4.12812 15.3957 4.57869C15.5624 5.00866 15.6758 5.4987 15.7096 6.21755C15.7177 6.3971 15.7244 6.54627 15.7298 6.69814L15.7339 6.82909C15.744 7.16118 15.748 7.5466 15.7494 8.30595L15.7501 8.80949V9.69372C15.7517 10.1861 15.7465 10.6784 15.7345 11.1706L15.7305 11.3015C15.7251 11.4534 15.7183 11.6026 15.7102 11.7821C15.6765 12.501 15.5617 12.9903 15.3957 13.421C15.2264 13.8715 14.9608 14.2797 14.6174 14.6171C14.2801 14.9604 13.8719 15.226 13.4214 15.3953C12.9914 15.562 12.5014 15.6754 11.7832 15.7092L11.3026 15.7294L11.1716 15.7335C10.8389 15.7429 10.4535 15.7476 9.6941 15.749L9.19056 15.7497H8.30701C7.81445 15.7514 7.32189 15.7462 6.82947 15.7341L6.69853 15.7301C6.53829 15.724 6.37809 15.7171 6.21794 15.7092C5.49975 15.6754 5.00972 15.562 4.57908 15.3953C4.12875 15.2259 3.7208 14.9603 3.38368 14.6171C3.04008 14.2798 2.77424 13.8716 2.60475 13.421C2.43803 12.991 2.32463 12.501 2.29088 11.7821L2.27063 11.3015L2.26726 11.1706C2.25482 10.6784 2.24919 10.1861 2.25038 9.69372V8.30595C2.24852 7.81362 2.25347 7.32129 2.26523 6.82909L2.26996 6.69814C2.27536 6.54627 2.28211 6.3971 2.29021 6.21755C2.32396 5.4987 2.43735 5.00933 2.60408 4.57869C2.77396 4.12794 3.04027 3.71973 3.38436 3.38262C3.72128 3.03943 4.12899 2.77384 4.57908 2.60437C5.00972 2.43765 5.49908 2.32425 6.21794 2.2905C6.39748 2.2824 6.54733 2.27565 6.69853 2.27025L6.82947 2.2662C7.32167 2.25421 7.814 2.24903 8.30634 2.25067L9.6941 2.25ZM9.00022 5.62492C8.10514 5.62492 7.24671 5.98049 6.61379 6.61341C5.98087 7.24633 5.6253 8.10475 5.6253 8.99984C5.6253 9.89492 5.98087 10.7533 6.61379 11.3863C7.24671 12.0192 8.10514 12.3748 9.00022 12.3748C9.8953 12.3748 10.7537 12.0192 11.3866 11.3863C12.0196 10.7533 12.3751 9.89492 12.3751 8.99984C12.3751 8.10475 12.0196 7.24633 11.3866 6.61341C10.7537 5.98049 9.8953 5.62492 9.00022 5.62492ZM9.00022 6.97489C9.26614 6.97484 9.52946 7.02717 9.77516 7.1289C10.0209 7.23062 10.2441 7.37974 10.4322 7.56774C10.6202 7.75574 10.7694 7.97895 10.8712 8.22461C10.973 8.47027 11.0255 8.73358 11.0255 8.9995C11.0256 9.26542 10.9732 9.52874 10.8715 9.77444C10.7698 10.0201 10.6207 10.2434 10.4327 10.4315C10.2446 10.6195 10.0214 10.7687 9.77578 10.8705C9.53012 10.9723 9.26681 11.0247 9.00089 11.0248C8.46384 11.0248 7.94879 10.8114 7.56904 10.4317C7.18929 10.0519 6.97594 9.53689 6.97594 8.99984C6.97594 8.46279 7.18929 7.94773 7.56904 7.56798C7.94879 7.18823 8.46384 6.97489 9.00089 6.97489M12.5446 4.61244C12.3208 4.61244 12.1062 4.70134 11.948 4.85957C11.7897 5.0178 11.7008 5.2324 11.7008 5.45617C11.7008 5.67994 11.7897 5.89455 11.948 6.05278C12.1062 6.21101 12.3208 6.2999 12.5446 6.2999C12.7683 6.2999 12.9829 6.21101 13.1412 6.05278C13.2994 5.89455 13.3883 5.67994 13.3883 5.45617C13.3883 5.2324 13.2994 5.0178 13.1412 4.85957C12.9829 4.70134 12.7683 4.61244 12.5446 4.61244Z"
+                                            fill="#EF556A" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="links__wrapper">
+                            <h6>Pages</h6>
+                            <ul class="links-group">
+                                <li><a href="/" class="button-r">Home</a></li>
+                                <li><a href="/treatments.html" class="button-r">Specialties</a></li>
+                                <li><a href="/our-team.html" class="button-r">Our Team</a></li>
+                                <li><a href="/contact-us.html" class="button-r">Contact Us</a></li>
+                                <li><a href="/patients-center.html" class="button-r">Patients Portal</a></li>
+                            </ul>
+                        </div>
+                        <div class="links__wrapper">
+                            <h6>Other Links</h6>
+                            <ul class="links-group">
+                                <li><a href="#" class="button-r">Become a member</a></li>
+                                <li><a href="#" class="button-r">Pay a Bill</a></li>
+                                <li><a href="#" class="button-r">Informed Consent Forms</a></li>
+                                <li><a href="#" class="button-r">Medical Record Release</a></li>
+                                <li><a href="#" class="button-r">Privacy & Policy Documents</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="right">
+                        <div class="location">
+                            <h4>Our Locations</h4>
+                            <p class="text-caption">
+                                Find your way to better care, We have offices in Annapolis, Bel Air, Clarksville, Owings
+                                Mills and Pasadena in MD and
+                                now Fairfax and Alexandria in VA .
+                            </p>
+                            <a href="#" class="btn btn-icon btn--ghost">Visit us Today!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-line"></div>
+
+                <div class="base">
+                    <p class="body-r">&copy; Annapolis Rheumatology LLC, 2024.</p>
+                    <p class="body-r">Made with Design by — CoryLukon</p>
+
+                </div>
+
+            </div>
+        </footer>
+    </body>
+
+    </html>
+
+</body>
+
+</html>

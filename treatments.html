@@ -606,32 +606,26 @@
                 --color-gold: #FF9D3B;
                 --color-blue: #498CBB;
                 --color-green: #7CBD40;
-                --color-white: #fff;
+                --color-white: #fff
             }
 
             *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
+            ::after,
+            ::before {
+                box-sizing: border-box
             }
 
             html {
-                font-size: 62.5%;
+                font-size: 62.5%
             }
 
             body {
                 font-family: "Open Sans", sans-serif;
                 font-size: 1.6rem;
                 color: var(--color-off-black);
-
                 background-color: var(--color-off-white);
                 margin: 0;
-                padding: 0;
-            }
-
-            p {
-                margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1,
@@ -640,233 +634,80 @@
             h4,
             h5,
             h6 {
-                font-family: "Archivo", sans-serif;
+                font-family: Archivo, sans-serif;
                 color: var(--color-off-black);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1 {
-                color: var(--Off-Black, #282D30);
-
-                /* Heading Styles/H1 */
+                color: var(--Off-Black, #282d30);
                 font-size: 4.8rem;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 114.286%;
                 letter-spacing: -1.12px;
-                text-transform: capitalize;
+                text-transform: capitalize
             }
 
             h2 {
-                /* Heading Styles/H2 */
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 52px;
-                letter-spacing: -0.48px;
-                text-transform: capitalize;
+                letter-spacing: -.48px;
+                text-transform: capitalize
             }
 
             h3 {
-                /* Heading Styles/H3 */
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 44px;
+                line-height: 44px
             }
 
             h4 {
-                /* Heading Styles/H4 */
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 36px;
-                letter-spacing: -0.32px;
+                letter-spacing: -.32px
             }
 
-
-            h5,
-            .btn {
-                /* Heading Styles/H5 */
+            h5 {
                 font-family: Archivo;
                 font-size: 2.4rem;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 28px;
-                /* 116.667% */
                 text-align: center;
-                letter-spacing: -0.24px;
+                letter-spacing: -.24px
             }
 
             h6 {
-                /* Heading Styles/H6 */
                 font-family: Archivo;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.2px;
+                letter-spacing: -.2px
             }
-
 
             img {
-                width: 100%;
-            }
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+                width: 100%
             }
 
             a {
                 text-decoration: none;
-                color: var(--color-off-black);
+                color: var(--color-off-black)
             }
 
-
-            /* UTILITIES */
             .container {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
                 margin-inline: auto;
-                padding-inline: 6vw;
-            }
-
-            .body-r {
-                color: var(--Off-Black, #282D30);
-
-                /* Body Styles/Body-regular */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                /* 137.5% */
-                letter-spacing: -0.16px;
-            }
-
-            .body-b {
-                /* Body Styles/Body-Bold */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 24px;
-                letter-spacing: -0.16px;
-            }
-
-            .button-r {
-                /* Body Styles/Button-regular */
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 18px;
-            }
-
-            .text-caption {
-                /* Body Styles/Caption */
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 16px;
-                letter-spacing: -0.12px;
-            }
-
-            .btn h6 {
-                color: var(--color-off-white);
-            }
-
-            .btn {
-                display: flex;
-                gap: 64px;
-                width: auto;
-                padding: 16px 24px;
-                justify-content: space-between;
-                align-items: center;
-                outline: 0;
-                border: 0;
-                white-space: nowrap;
-
-
-                border-radius: 12px;
-                transition: background 200ms ease-in;
-            }
-
-            .btn-icon::after {
-                content: '';
-                display: inline-block;
-                background: url('../images/arrow-right.svg') no-repeat;
-                background-size: contain;
-                width: 20px;
-                height: 20px;
-
-
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-
-            }
-
-            .btn--ghost {
-                padding: 16px;
-
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 18px;
-
-                border-radius: 8px;
-                border: 2px solid #282D30;
-                background: rgba(255, 255, 255, 0.50);
-
-                transition: all 100ms ease-in;
-            }
-
-            .btn--ghost.btn-icon::after {
-                width: 12px;
-                height: 12px;
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-            }
-
-            .btn--ghost:hover {
-                color: var(--color-off-white);
-                background-color: var(--color-off-black);
-            }
-
-            .btn--ghost:hover.btn-icon::after {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-            }
-
-
-            .btn--primary {
-                color: var(--color-off-white);
-                background: var(--color-accent);
-
-            }
-
-            .btn--primary:hover {
-                color: var(--color-off-white);
-                background: #BD4B5C;
-            }
-
-            .btn--secondary {
-                color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
-                background: rgba(239, 85, 106, 0.05);
-                transition: background 100ms ease;
-
-            }
-
-            .btn--secondary:hover {
-                background: rgba(239, 85, 106, 0.2);
-            }
-
-            .btn__container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 8px;
+                padding-inline: 6vw
             }
 
             .chip {
@@ -875,19 +716,17 @@
                 justify-content: center;
                 align-items: center;
                 gap: 4px;
-
                 cursor: default;
                 border-radius: 40px;
-                border: 0.75px solid rgba(231, 240, 245, 0.75);
-                background: rgba(40, 45, 48, 0.15);
-
-                color: var(--Off-white, #E7F0F5);
+                border: .75px solid rgba(231, 240, 245, .75);
+                background: rgba(40, 45, 48, .15);
+                color: var(--Off-white, #e7f0f5);
                 text-align: center;
                 font-size: 10px;
                 font-style: normal;
                 font-weight: 300;
                 line-height: 16px;
-                letter-spacing: -0.1px;
+                letter-spacing: -.1px
             }
 
             .chip--brand {
@@ -896,85 +735,36 @@
                 justify-content: center;
                 align-items: center;
                 gap: 4px;
-
                 font-size: 10px;
                 font-weight: 300;
                 line-height: 16px;
-                letter-spacing: -0.1px;
+                letter-spacing: -.1px;
                 text-transform: capitalize;
-
                 cursor: default;
                 border-radius: 40px;
-                border: 0.75px solid var(--Off-Black, #282D30);
+                border: .75px solid var(--Off-Black, #282d30)
             }
 
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url('../images/brand-Icon.svg') no-repeat;
+                background: url(../images/brand-Icon.svg) no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
-
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%)
             }
 
-            .x-div {
-                display: flex;
-                padding: 20px 0px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .x-div svg {
-                width: 100%;
-
-                stroke-width: 1.5px;
-                stroke: rgba(40, 45, 48, 0.25);
-            }
-
-            .title {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                align-self: stretch;
-            }
-
-            .title .text {
-                width: 700px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-
-            .title .btn {
-                padding: 20px;
-                width: 280px;
-            }
-
-            .title .btn svg {
-                width: 20px;
-                height: 20px;
-                flex-shrink: 0;
-
-            }
-
-            /* SUB HERO */
             .sub-hero {
                 display: flex;
-                padding-block: 48px 40px;
+                padding-block: 48px 40px
             }
 
             .sub-hero .container {
                 position: relative;
                 height: 375px;
-
                 border-radius: 24px;
-                overflow: hidden;
+                overflow: hidden
             }
 
             .sub-hero .sub__cont {
@@ -982,38 +772,32 @@
                 bottom: 0;
                 width: auto;
                 padding: 0 0 64px 64px;
-
-
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
-
-
-                z-index: 1;
+                z-index: 1
             }
 
             .sub-hero .chip--brand {
                 color: var(--color-off-white);
-                border-color: var(--color-off-white);
+                border-color: var(--color-off-white)
             }
 
             .sub-hero .chip--brand::before {
-                filter: brightness(0) saturate(100%) invert(86%) sepia(97%) saturate(3484%) hue-rotate(179deg) brightness(111%) contrast(92%);
+                filter: brightness(0) saturate(100%) invert(86%) sepia(97%) saturate(3484%) hue-rotate(179deg) brightness(111%) contrast(92%)
             }
 
             .sub__cont h3 {
                 width: 600px;
-                color: var(--color-off-white);
-
+                color: var(--color-off-white)
             }
 
             .sub__overlay {
                 width: 100%;
                 height: 100%;
-
                 border-radius: inherit;
-                background: linear-gradient(270deg, rgba(73, 140, 187, 0.00) 18.14%, #498CBB 33.99%, #282D30 82.69%);
+                background: linear-gradient(270deg, rgba(73, 140, 187, 0) 18.14%, #498cbb 33.99%, #282d30 82.69%)
             }
 
             .sub__image {
@@ -1021,209 +805,104 @@
                 right: 6vw;
                 bottom: 0;
                 z-index: -1;
-
                 width: 450px;
                 height: 100%;
                 object-position: center;
                 object-fit: cover;
-
                 border-top-right-radius: inherit;
-                border-bottom-right-radius: inherit;
-
+                border-bottom-right-radius: inherit
             }
 
-
-
-
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width:900px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
-                    padding-inline: 32px;
+                    padding-inline: 32px
                 }
 
                 h6 {
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 18px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
-                }
-
-                .btn {
-                    width: 240px;
-                    padding: 14px 16px;
-                    font-size: 16px;
-                    border-radius: 8px;
-                    white-space: nowrap;
-                }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
+                    line-height: 18px
                 }
 
                 .chip--brand {
                     padding: 8px;
                     gap: 2px;
-
                     font-size: 8px;
                     line-height: 8px;
-                    letter-spacing: -0.08px;
-
+                    letter-spacing: -.08px
                 }
 
                 .chip--brand::before {
                     content: '';
                     width: 8px;
-                    height: 8px;
-                }
-
-
-                .title .text {
-                    gap: 4px;
-                    width: 350px;
-                }
-
-                .text h3 {
-                    font-size: 24px;
-                    line-height: 28px;
-                }
-
-                .title .btn {
-                    padding: 12px;
-                    gap: 48px;
-                    width: auto;
-                }
-
-                .title .btn h6 {
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: -0.16px;
-                }
-
-                .title .btn svg {
-                    height: 16px;
-                    width: 16px;
+                    height: 8px
                 }
 
                 .sub-hero {
-                    padding-block: 32px 0;
+                    padding-block: 32px 0
                 }
 
                 .sub-hero .container {
                     height: 260px;
-
-                    border-radius: 20px;
+                    border-radius: 20px
                 }
 
                 .sub-hero .sub__cont {
                     gap: 12px;
-                    padding: 0 0 32px 32px;
+                    padding: 0 0 32px 32px
                 }
 
                 .sub__cont h3 {
                     width: 375px;
-
                     font-size: 24px;
-                    line-height: 28px;
+                    line-height: 28px
                 }
 
                 .sub__image {
-                    width: 250px;
+                    width: 250px
                 }
-
-
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width:600px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 16px;
-                    overflow: hidden;
+                    overflow: hidden
                 }
 
                 h6 {
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 16px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
-                }
-
-                .btn {
-                    width: 100%;
-                    padding: 14px 16px;
-                    font-size: 16px;
-                    border-radius: 8px;
-                    white-space: nowrap;
-                }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
-                }
-
-
-                .title {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 16px;
-                }
-
-                .title .text {
-                    width: 88%;
-                }
-
-                .title .btn {
-                    width: 100%;
+                    line-height: 16px
                 }
 
                 .sub-hero {
-                    padding-block: 16px 0;
+                    padding-block: 16px 0
                 }
 
                 .sub-hero .container {
                     height: 180px;
-
-                    border-radius: 12px;
+                    border-radius: 12px
                 }
 
                 .sub-hero .sub__cont {
                     gap: 8px;
-                    padding: 0 0 16px 16px;
+                    padding: 0 0 16px 16px
                 }
 
                 .sub__cont h3 {
                     width: 225px;
-
                     font-size: 16px;
-                    line-height: 18px;
+                    line-height: 18px
                 }
 
                 .sub__image {
-                    width: 145px;
+                    width: 145px
                 }
-
-
-
             }
-
-            @media screen and (max-width: 400px) {}
         </style>
     </head>
 
@@ -1237,7 +916,7 @@
 
                 <div class="sub__overlay"></div>
 
-                <img src="images/sub-hero-treatment-section.jpeg" alt="A picture of a doctor attending to a patient"
+                <img src="images/sub-hero-treatment-section.jpg" alt="A picture of a doctor attending to a patient"
                     class="sub__image">
             </div>
         </section>
@@ -1257,32 +936,31 @@
                 --color-gold: #FF9D3B;
                 --color-blue: #498CBB;
                 --color-green: #7CBD40;
-                --color-white: #fff;
+                --color-white: #fff
             }
 
             *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
+            ::after,
+            ::before {
+                box-sizing: border-box
             }
 
             html {
-                font-size: 62.5%;
+                font-size: 62.5%
             }
 
             body {
                 font-family: "Open Sans", sans-serif;
                 font-size: 1.6rem;
                 color: var(--color-off-black);
-
                 background-color: var(--color-off-white);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             p {
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1,
@@ -1291,143 +969,100 @@
             h4,
             h5,
             h6 {
-                font-family: "Archivo", sans-serif;
+                font-family: Archivo, sans-serif;
                 color: var(--color-off-black);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1 {
-                color: var(--Off-Black, #282D30);
-
-                /* Heading Styles/H1 */
+                color: var(--Off-Black, #282d30);
                 font-size: 4.8rem;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 114.286%;
                 letter-spacing: -1.12px;
-                text-transform: capitalize;
+                text-transform: capitalize
             }
 
             h2 {
-                /* Heading Styles/H2 */
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 52px;
-                letter-spacing: -0.48px;
-                text-transform: capitalize;
+                letter-spacing: -.48px;
+                text-transform: capitalize
             }
 
             h3 {
-                /* Heading Styles/H3 */
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 44px;
+                line-height: 44px
             }
 
             h4 {
-                /* Heading Styles/H4 */
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 36px;
-                letter-spacing: -0.32px;
+                letter-spacing: -.32px
             }
 
-
-            h5,
-            .btn {
-                /* Heading Styles/H5 */
+            .btn,
+            h5 {
                 font-family: Archivo;
                 font-size: 2.4rem;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 28px;
-                /* 116.667% */
                 text-align: center;
-                letter-spacing: -0.24px;
+                letter-spacing: -.24px
             }
 
             h6 {
-                /* Heading Styles/H6 */
                 font-family: Archivo;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.2px;
+                letter-spacing: -.2px
             }
 
-
             img {
-                width: 100%;
+                width: 100%
             }
 
             ul {
                 list-style: none;
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             a {
                 text-decoration: none;
-                color: var(--color-off-black);
+                color: var(--color-off-black)
             }
 
-
-            /* UTILITIES */
             .container {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
                 margin-inline: auto;
-                padding-inline: 6vw;
-            }
-
-            .body-r {
-                color: var(--Off-Black, #282D30);
-
-                /* Body Styles/Body-regular */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                /* 137.5% */
-                letter-spacing: -0.16px;
+                padding-inline: 6vw
             }
 
             .body-b {
-                /* Body Styles/Body-Bold */
                 font-family: "Open Sans";
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 24px;
-                letter-spacing: -0.16px;
-            }
-
-            .button-r {
-                /* Body Styles/Button-regular */
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 18px;
-            }
-
-            .text-caption {
-                /* Body Styles/Caption */
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 16px;
-                letter-spacing: -0.12px;
+                letter-spacing: -.16px
             }
 
             .btn h6 {
-                color: var(--color-off-white);
+                color: var(--color-off-white)
             }
 
             .btn {
@@ -1440,196 +1075,58 @@
                 outline: 0;
                 border: 0;
                 white-space: nowrap;
-
-
                 border-radius: 12px;
-                transition: background 200ms ease-in;
-            }
-
-            .btn-icon::after {
-                content: '';
-                display: inline-block;
-                background: url('../images/arrow-right.svg') no-repeat;
-                background-size: contain;
-                width: 20px;
-                height: 20px;
-
-
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-
-            }
-
-            .btn--ghost {
-                padding: 16px;
-
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 18px;
-
-                border-radius: 8px;
-                border: 2px solid #282D30;
-                background: rgba(255, 255, 255, 0.50);
-
-                transition: all 100ms ease-in;
-            }
-
-            .btn--ghost.btn-icon::after {
-                width: 12px;
-                height: 12px;
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-            }
-
-            .btn--ghost:hover {
-                color: var(--color-off-white);
-                background-color: var(--color-off-black);
-            }
-
-            .btn--ghost:hover.btn-icon::after {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-            }
-
-
-            .btn--primary {
-                color: var(--color-off-white);
-                background: var(--color-accent);
-
-            }
-
-            .btn--primary:hover {
-                color: var(--color-off-white);
-                background: #BD4B5C;
-            }
-
-            .btn--secondary {
-                color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
-                background: rgba(239, 85, 106, 0.05);
-                transition: background 100ms ease;
-
-            }
-
-            .btn--secondary:hover {
-                background: rgba(239, 85, 106, 0.2);
+                transition: background .2s ease-in
             }
 
             .btn__container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 8px;
-            }
-
-            .chip {
-                display: inline-flex;
-                padding: 10px 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 4px;
-
-                cursor: default;
-                border-radius: 40px;
-                border: 0.75px solid rgba(231, 240, 245, 0.75);
-                background: rgba(40, 45, 48, 0.15);
-
-                color: var(--Off-white, #E7F0F5);
-                text-align: center;
-                font-size: 10px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: -0.1px;
-            }
-
-            .chip--brand {
-                display: flex;
-                padding: 10px 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 4px;
-
-                font-size: 10px;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: -0.1px;
-                text-transform: capitalize;
-
-                cursor: default;
-                border-radius: 40px;
-                border: 0.75px solid var(--Off-Black, #282D30);
-            }
-
-            .chip--brand::before {
-                content: '';
-                display: inline-block;
-                background: url('../images/brand-Icon.svg') no-repeat;
-                background-size: contain;
-                width: 10px;
-                height: 10px;
-
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-
-            }
-
-            .x-div {
-                display: flex;
-                padding: 20px 0px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .x-div svg {
-                width: 100%;
-
-                stroke-width: 1.5px;
-                stroke: rgba(40, 45, 48, 0.25);
+                gap: 8px
             }
 
             .title {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .title .text {
                 width: 700px;
-
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 16px;
+                gap: 16px
             }
 
             .title .btn {
                 padding: 20px;
-                width: 280px;
+                width: 280px
             }
 
             .title .btn svg {
                 width: 20px;
                 height: 20px;
-                flex-shrink: 0;
-
+                flex-shrink: 0
             }
 
-            /* CONDITIONS SECTION */
             .conditions {
-                padding-block: 0 64px;
+                padding-block: 0 64px
             }
 
             .conditions .grid {
                 display: grid;
                 grid-template-columns: 300px auto;
-                gap: 40px;
+                gap: 40px
             }
 
             .condition-filter {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 20px;
+                gap: 20px
             }
 
             .condition-filter p {
@@ -1637,75 +1134,66 @@
                 font-style: italic;
                 font-weight: 400;
                 line-height: 22px;
-                letter-spacing: -0.16px;
+                letter-spacing: -.16px
             }
 
             .filter__btn-wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
+                gap: 12px
             }
 
             .btn.btn--filter {
                 position: relative;
-
                 display: flex;
                 width: 100%;
                 padding: 20px 16px 20px 24px;
                 justify-content: flex-start;
                 align-items: center;
                 gap: 10px;
-
-                border: 2px solid rgba(231, 240, 245, 0.2);
+                border: 2px solid rgba(231, 240, 245, .2);
                 border-radius: 12px;
-                background: rgba(40, 45, 48, 0.10);
-
+                background: rgba(40, 45, 48, .1);
                 cursor: pointer;
-                transition: all 100ms ease;
-
+                transition: all .1s ease;
                 font-family: Archivo;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                /* 150% */
-                letter-spacing: -0.16px;
+                letter-spacing: -.16px
             }
 
             .btn.btn--filter span {
                 height: 20px;
-                width: 20px;
+                width: 20px
             }
 
-
             .btn--filter #path1 {
-                fill: #282D30;
+                fill: #282d30
             }
 
             .btn--filter #path2 {
-                filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(3266%) hue-rotate(171deg) brightness(97%) contrast(98%);
+                filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(3266%) hue-rotate(171deg) brightness(97%) contrast(98%)
             }
 
             .btn--filter:hover {
-                background: rgba(40, 45, 48, 0.20);
-
-
+                background: rgba(40, 45, 48, .2)
             }
 
             .btn.btn--filter.active {
                 border: none;
                 color: var(--color-off-white);
-                background: var(--color-off-black);
+                background: var(--color-off-black)
             }
 
             .btn--filter.active #path1 {
-                fill: var(--color-off-white);
-
+                fill: var(--color-off-white)
             }
 
             .btn--filter.active #path2 {
-                filter: brightness(0) saturate(100%) invert(15%) sepia(9%) saturate(592%) hue-rotate(158deg) brightness(95%) contrast(93%);
+                filter: brightness(0) saturate(100%) invert(15%) sepia(9%) saturate(592%) hue-rotate(158deg) brightness(95%) contrast(93%)
             }
 
             .btn.btn--filter.active::after {
@@ -1716,14 +1204,13 @@
                 right: -2px;
                 bottom: -2px;
                 z-index: -3;
-
                 border-radius: inherit;
-                background: linear-gradient(180deg, #FF9D3B 0%, #EF556A 100%);
-                box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.25);
+                background: linear-gradient(180deg, #ff9d3b 0, #ef556a 100%);
+                box-shadow: 0 4px 20px 0 rgba(40, 45, 48, .25)
             }
 
             .conditions__wrapper .condition-block.is-hidden {
-                display: none !important;
+                display: none !important
             }
 
             .condition-block {
@@ -1732,9 +1219,8 @@
                 justify-content: center;
                 align-items: flex-start;
                 gap: 20px;
-
                 border-radius: 20px;
-                background: rgba(73, 140, 187, 0.25);
+                background: rgba(73, 140, 187, .25)
             }
 
             .condition__image {
@@ -1743,9 +1229,8 @@
                 align-self: stretch;
                 object-fit: cover;
                 object-position: center;
-
                 border-radius: 16px;
-                border: 2px solid rgba(231, 240, 245, 0.25);
+                border: 2px solid rgba(231, 240, 245, .25)
             }
 
             .condition__texts {
@@ -1753,7 +1238,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 20px;
-                flex: 1 0 0;
+                flex: 1 0 0
             }
 
             .condition__title {
@@ -1763,10 +1248,9 @@
                 align-items: center;
                 gap: 8px;
                 align-self: stretch;
-
                 border-radius: 16px;
-                background: rgba(231, 240, 245, 0.75);
-                box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.08);
+                background: rgba(231, 240, 245, .75);
+                box-shadow: 0 0 12px 4px rgba(0, 0, 0, .08)
             }
 
             .condition__desc {
@@ -1776,9 +1260,8 @@
                 align-items: flex-start;
                 gap: 40px;
                 align-self: stretch;
-
                 border-radius: 16px;
-                background: rgba(231, 240, 245, 0.66);
+                background: rgba(231, 240, 245, .66)
             }
 
             .desc-list {
@@ -1788,42 +1271,30 @@
                 align-items: flex-start;
                 gap: 12px;
                 align-self: stretch;
-
-                opacity: 0.9;
+                opacity: .9
             }
 
             .desc-list ul {
                 list-style: unset;
                 padding-left: 20px;
-
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 24px;
-                letter-spacing: -0.14px;
+                letter-spacing: -.14px
             }
 
-
-
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width:900px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
-                    padding-inline: 32px;
+                    padding-inline: 32px
                 }
 
                 h6 {
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 18px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 18px
                 }
 
                 .btn {
@@ -1831,153 +1302,115 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
-                }
-
-                .chip--brand {
-                    padding: 8px;
-                    gap: 2px;
-
-                    font-size: 8px;
-                    line-height: 8px;
-                    letter-spacing: -0.08px;
-
-                }
-
-                .chip--brand::before {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                }
-
 
                 .title .text {
                     gap: 4px;
-                    width: 350px;
+                    width: 350px
                 }
 
                 .text h3 {
                     font-size: 24px;
-                    line-height: 28px;
+                    line-height: 28px
                 }
 
                 .title .btn {
                     padding: 12px;
                     gap: 48px;
-                    width: auto;
+                    width: auto
                 }
 
                 .title .btn h6 {
                     font-size: 16px;
                     line-height: 24px;
-                    letter-spacing: -0.16px;
+                    letter-spacing: -.16px
                 }
 
                 .title .btn svg {
                     height: 16px;
-                    width: 16px;
+                    width: 16px
                 }
 
                 .conditions {
-                    padding-block: 40px;
+                    padding-block: 40px
                 }
 
                 .conditions .grid {
                     grid-template-columns: 1fr;
                     grid-template-rows: repeat(2, auto);
-                    gap: 24px;
+                    gap: 24px
                 }
 
                 .condition-filter {
-                    gap: 12px;
+                    gap: 12px
                 }
 
                 .filter__btn-wrapper {
                     flex-direction: row;
                     gap: 12px;
                     align-self: stretch;
-                    flex-wrap: wrap;
+                    flex-wrap: wrap
                 }
 
                 .btn.btn--filter {
                     width: auto;
                     padding: 14px;
-
-                    border-radius: 8px;
+                    border-radius: 8px
                 }
 
                 .btn.btn--filter span {
-                    display: none;
+                    display: none
                 }
 
                 .condition-block {
                     padding: 12px;
                     gap: 12px;
-
-                    border-radius: 12px;
+                    border-radius: 12px
                 }
 
                 .condition__image {
-                    width: 300px;
-
-                    /* border-radius: 12px; */
+                    width: 300px
                 }
 
                 .condition__texts {
-                    gap: 12px;
+                    gap: 12px
                 }
 
                 .condition__title {
                     padding: 32px 20px;
-
-                    border-radius: 12px;
+                    border-radius: 12px
                 }
 
                 .condition__title h4 {
                     font-size: 24px;
                     line-height: 28px;
-                    letter-spacing: -0.24px;
+                    letter-spacing: -.24px
                 }
 
                 .condition__desc {
                     padding: 20px 12px 24px 12px;
                     gap: 24px;
-
-                    border-radius: 12px;
+                    border-radius: 12px
                 }
 
                 .desc-list {
-                    gap: 12px;
+                    gap: 12px
                 }
-
-
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width:600px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 16px;
-                    overflow: hidden;
+                    overflow: hidden
                 }
 
                 h6 {
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 16px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 16px
                 }
 
                 .btn {
@@ -1985,104 +1418,87 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
-                }
-
 
                 .title {
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: flex-start;
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .title .text {
-                    width: 88%;
+                    width: 88%
                 }
 
                 .title .btn {
-                    width: 100%;
+                    width: 100%
                 }
 
                 .conditions {
-                    padding-block: 28px;
+                    padding-block: 28px
                 }
 
                 .conditions .grid {
                     grid-template-columns: 1fr;
                     grid-template-rows: repeat(2, auto);
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .condition-filter p {
-                    display: none;
-                    /* gap: 12px; */
+                    display: none
                 }
 
                 .filter__btn-wrapper {
                     gap: 12px;
-
-                    justify-content: center;
+                    justify-content: center
                 }
 
                 .btn.btn--filter {
                     width: auto;
                     padding: 10px;
-
-                    border-radius: 6px;
+                    border-radius: 6px
                 }
 
                 .condition-block {
                     flex-direction: column;
                     padding: 8px;
                     gap: 8px;
-
-                    border-radius: 8px;
+                    border-radius: 8px
                 }
 
                 .condition__image {
                     width: 100%;
                     height: 200px;
-
-                    border-radius: 12px;
+                    border-radius: 12px
                 }
 
                 .condition__texts {
-                    gap: 8px;
+                    gap: 8px
                 }
 
                 .condition__title {
                     padding: 24px 12px;
-
-                    border-radius: 8px;
+                    border-radius: 8px
                 }
 
                 .condition__title h4 {
                     font-size: 20px;
                     line-height: 24px;
-                    letter-spacing: -0.2px;
+                    letter-spacing: -.2px
                 }
 
                 .condition__desc {
                     padding: 16px 12px 24px 12px;
                     gap: 24px;
-
-                    border-radius: 8px;
+                    border-radius: 8px
                 }
 
                 .desc-list {
-                    gap: 12px;
+                    gap: 12px
                 }
-
-
             }
-
-            @media screen and (max-width: 400px) {}
         </style>
 
         <script>
@@ -2364,8 +1780,8 @@
                     </div>
 
                     <div id="joint-or-muscle-pain" class="condition-block is-hidden">
-                        <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
-                            class="condition__image">
+                        <img src="images/x-ray-with-neon-colors.jpg"
+                            alt="A graphical image illustrating the current condition" class="condition__image">
                         <div class="condition__texts">
                             <div class="condition__title">
                                 <h4>Joint or Muscle Pain</h4>
@@ -2404,8 +1820,8 @@
                     </div>
 
                     <div id="metabolic-bone-disease" class="condition-block is-hidden">
-                        <img src="images/arthritisweb.jpg" alt="A graphical image illustrating the current condition"
-                            class="condition__image">
+                        <img src="images/images-that-simulate-x-rays-with-neon-colors.jpg"
+                            alt="A graphical image illustrating the current condition" class="condition__image">
 
                         <div class="condition__texts">
                             <div class="condition__title">
@@ -2459,32 +1875,26 @@
                 --color-gold: #FF9D3B;
                 --color-blue: #498CBB;
                 --color-green: #7CBD40;
-                --color-white: #fff;
+                --color-white: #fff
             }
 
             *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
+            ::after,
+            ::before {
+                box-sizing: border-box
             }
 
             html {
-                font-size: 62.5%;
+                font-size: 62.5%
             }
 
             body {
                 font-family: "Open Sans", sans-serif;
                 font-size: 1.6rem;
                 color: var(--color-off-black);
-
                 background-color: var(--color-off-white);
                 margin: 0;
-                padding: 0;
-            }
-
-            p {
-                margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1,
@@ -2493,143 +1903,85 @@
             h4,
             h5,
             h6 {
-                font-family: "Archivo", sans-serif;
+                font-family: Archivo, sans-serif;
                 color: var(--color-off-black);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1 {
-                color: var(--Off-Black, #282D30);
-
-                /* Heading Styles/H1 */
+                color: var(--Off-Black, #282d30);
                 font-size: 4.8rem;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 114.286%;
                 letter-spacing: -1.12px;
-                text-transform: capitalize;
+                text-transform: capitalize
             }
 
             h2 {
-                /* Heading Styles/H2 */
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 52px;
-                letter-spacing: -0.48px;
-                text-transform: capitalize;
+                letter-spacing: -.48px;
+                text-transform: capitalize
             }
 
             h3 {
-                /* Heading Styles/H3 */
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 44px;
+                line-height: 44px
             }
 
             h4 {
-                /* Heading Styles/H4 */
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 36px;
-                letter-spacing: -0.32px;
+                letter-spacing: -.32px
             }
 
-
-            h5,
-            .btn {
-                /* Heading Styles/H5 */
+            .btn,
+            h5 {
                 font-family: Archivo;
                 font-size: 2.4rem;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 28px;
-                /* 116.667% */
                 text-align: center;
-                letter-spacing: -0.24px;
+                letter-spacing: -.24px
             }
 
             h6 {
-                /* Heading Styles/H6 */
                 font-family: Archivo;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.2px;
+                letter-spacing: -.2px
             }
-
 
             img {
-                width: 100%;
-            }
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+                width: 100%
             }
 
             a {
                 text-decoration: none;
-                color: var(--color-off-black);
+                color: var(--color-off-black)
             }
 
-
-            /* UTILITIES */
             .container {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
                 margin-inline: auto;
-                padding-inline: 6vw;
-            }
-
-            .body-r {
-                color: var(--Off-Black, #282D30);
-
-                /* Body Styles/Body-regular */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                /* 137.5% */
-                letter-spacing: -0.16px;
-            }
-
-            .body-b {
-                /* Body Styles/Body-Bold */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 24px;
-                letter-spacing: -0.16px;
-            }
-
-            .button-r {
-                /* Body Styles/Button-regular */
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 18px;
-            }
-
-            .text-caption {
-                /* Body Styles/Caption */
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 16px;
-                letter-spacing: -0.12px;
+                padding-inline: 6vw
             }
 
             .btn h6 {
-                color: var(--color-off-white);
+                color: var(--color-off-white)
             }
 
             .btn {
@@ -2642,84 +1994,35 @@
                 outline: 0;
                 border: 0;
                 white-space: nowrap;
-
-
                 border-radius: 12px;
-                transition: background 200ms ease-in;
+                transition: background .2s ease-in
             }
 
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url('../images/arrow-right.svg') no-repeat;
+                background: url(../images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
-
-
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
-
-            .btn--ghost {
-                padding: 16px;
-
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 18px;
-
-                border-radius: 8px;
-                border: 2px solid #282D30;
-                background: rgba(255, 255, 255, 0.50);
-
-                transition: all 100ms ease-in;
-            }
-
-            .btn--ghost.btn-icon::after {
-                width: 12px;
-                height: 12px;
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-            }
-
-            .btn--ghost:hover {
-                color: var(--color-off-white);
-                background-color: var(--color-off-black);
-            }
-
-            .btn--ghost:hover.btn-icon::after {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-            }
-
 
             .btn--primary {
                 color: var(--color-off-white);
-                background: var(--color-accent);
-
+                background: var(--color-accent)
             }
 
             .btn--primary:hover {
                 color: var(--color-off-white);
-                background: #BD4B5C;
-            }
-
-            .btn--secondary {
-                color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
-                background: rgba(239, 85, 106, 0.05);
-                transition: background 100ms ease;
-
-            }
-
-            .btn--secondary:hover {
-                background: rgba(239, 85, 106, 0.2);
+                background: #bd4b5c
             }
 
             .btn__container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 8px;
+                gap: 8px
             }
 
             .chip {
@@ -2728,99 +2031,36 @@
                 justify-content: center;
                 align-items: center;
                 gap: 4px;
-
                 cursor: default;
                 border-radius: 40px;
-                border: 0.75px solid rgba(231, 240, 245, 0.75);
-                background: rgba(40, 45, 48, 0.15);
-
-                color: var(--Off-white, #E7F0F5);
+                border: .75px solid rgba(231, 240, 245, .75);
+                background: rgba(40, 45, 48, .15);
+                color: var(--Off-white, #e7f0f5);
                 text-align: center;
                 font-size: 10px;
                 font-style: normal;
                 font-weight: 300;
                 line-height: 16px;
-                letter-spacing: -0.1px;
-            }
-
-            .chip--brand {
-                display: flex;
-                padding: 10px 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 4px;
-
-                font-size: 10px;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: -0.1px;
-                text-transform: capitalize;
-
-                cursor: default;
-                border-radius: 40px;
-                border: 0.75px solid var(--Off-Black, #282D30);
-            }
-
-            .chip--brand::before {
-                content: '';
-                display: inline-block;
-                background: url('../images/brand-Icon.svg') no-repeat;
-                background-size: contain;
-                width: 10px;
-                height: 10px;
-
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-
+                letter-spacing: -.1px
             }
 
             .x-div {
                 display: flex;
-                padding: 20px 0px;
+                padding: 20px 0;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 8px
             }
 
             .x-div svg {
                 width: 100%;
-
                 stroke-width: 1.5px;
-                stroke: rgba(40, 45, 48, 0.25);
+                stroke: rgba(40, 45, 48, .25)
             }
 
-            .title {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                align-self: stretch;
-            }
-
-            .title .text {
-                width: 700px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-
-            .title .btn {
-                padding: 20px;
-                width: 280px;
-            }
-
-            .title .btn svg {
-                width: 20px;
-                height: 20px;
-                flex-shrink: 0;
-
-            }
-
-            /* APPOINTMETS SECTION */
             .appointment {
                 padding-block: 80px;
-
-                background: rgba(40, 45, 48, 0.10);
+                background: rgba(40, 45, 48, .1)
             }
 
             .appointment .container {
@@ -2828,20 +2068,20 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .appointment .topper {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .braging-cards__wrapper {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 16px;
+                gap: 16px
             }
 
             .braging-card {
@@ -2851,19 +2091,17 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
-
                 border-radius: 20px;
-                border: 2px solid rgba(255, 255, 255, 0.5);
-                background: rgba(255, 255, 255, 0.50);
-                box-shadow: 0px 4px 20px 0px rgba(40, 45, 48, 0.04);
+                border: 2px solid rgba(255, 255, 255, .5);
+                background: rgba(255, 255, 255, .5);
+                box-shadow: 0 4px 20px 0 rgba(40, 45, 48, .04)
             }
 
             .braging-card__image {
                 height: 300px;
                 object-fit: cover;
                 object-position: center;
-
-                border-radius: 12px;
+                border-radius: 12px
             }
 
             .texts__wrapper {
@@ -2871,58 +2109,45 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 16px;
-
-                text-align: left;
+                text-align: left
             }
 
             .chip__wrapper {
                 display: flex;
                 align-items: flex-start;
                 gap: 8px;
-
-                opacity: 0.5;
-                flex-wrap: wrap;
+                opacity: .5;
+                flex-wrap: wrap
             }
 
             .chip__wrapper .chip {
                 padding: 8px;
                 line-height: 1;
-
                 color: var(--color-off-black);
-                border: 0.5px solid var(--color-off-black);
-                background: none;
-
-                white-space: nowrap;
+                border: .5px solid var(--color-off-black);
+                background: 0 0;
+                white-space: nowrap
             }
 
             .texts__wrapper h5 {
-                text-align: left;
+                text-align: left
             }
 
             .braging-cards__wrapper .btn {
-                display: none;
+                display: none
             }
 
-
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width:900px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
-                    padding-inline: 32px;
+                    padding-inline: 32px
                 }
 
                 h6 {
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 18px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 18px
                 }
 
                 .btn {
@@ -2930,123 +2155,67 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
 
                 .btn-icon::after {
                     width: 16px;
-                    height: 16px;
-                }
-
-                .chip--brand {
-                    padding: 8px;
-                    gap: 2px;
-
-                    font-size: 8px;
-                    line-height: 8px;
-                    letter-spacing: -0.08px;
-
-                }
-
-                .chip--brand::before {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                }
-
-
-                .title .text {
-                    gap: 4px;
-                    width: 350px;
-                }
-
-                .text h3 {
-                    font-size: 24px;
-                    line-height: 28px;
-                }
-
-                .title .btn {
-                    padding: 12px;
-                    gap: 48px;
-                    width: auto;
-                }
-
-                .title .btn h6 {
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: -0.16px;
-                }
-
-                .title .btn svg {
-                    height: 16px;
-                    width: 16px;
+                    height: 16px
                 }
 
                 .appointment {
-                    padding-block: 32px;
+                    padding-block: 32px
                 }
 
                 .appointment .container {
-                    gap: 20px;
+                    gap: 20px
                 }
 
                 .appointment .topper h3 {
                     font-size: 24px;
                     line-height: 28px;
-                    letter-spacing: -0.24px;
-
+                    letter-spacing: -.24px
                 }
 
                 .appointment .topper .btn {
                     width: auto;
                     gap: 44px;
                     padding: 8px 12px;
-
-                    font-size: 14px;
+                    font-size: 14px
                 }
 
                 .braging-cards__wrapper {
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .braging-card {
                     padding: 6px 6px 16px 6px;
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .braging-card__image {
-                    height: 175px;
+                    height: 175px
                 }
 
                 .texts__wrapper h5 {
                     font-size: 19px;
                     line-height: 24px;
-                    letter-spacing: -0.19px;
+                    letter-spacing: -.19px
                 }
-
-
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width:600px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 16px;
-                    overflow: hidden;
+                    overflow: hidden
                 }
 
                 h6 {
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 16px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 16px
                 }
 
                 .btn {
@@ -3054,55 +2223,36 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
 
                 .btn-icon::after {
                     width: 16px;
-                    height: 16px;
-                }
-
-
-                .title {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 16px;
-                }
-
-                .title .text {
-                    width: 88%;
-                }
-
-                .title .btn {
-                    width: 100%;
+                    height: 16px
                 }
 
                 .appointment {
-                    padding-block: 28px;
+                    padding-block: 28px
                 }
 
                 .appointment .container {
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .appointment .topper h3 {
                     font-size: 20px;
                     line-height: 24px;
-                    letter-spacing: -0.24px;
-
+                    letter-spacing: -.24px
                 }
 
                 .appointment .topper .btn {
-                    display: none;
+                    display: none
                 }
 
                 .braging-cards__wrapper {
                     grid-template-columns: 1fr;
                     grid-template-rows: repeat(4, auto);
-                    gap: 8px;
-
-
+                    gap: 8px
                 }
 
                 .braging-card {
@@ -3111,26 +2261,24 @@
                     flex-direction: row;
                     align-items: center;
                     width: 100%;
-                    gap: 0;
-
+                    gap: 0
                 }
 
                 .braging-card__image {
                     max-width: 33%;
                     height: 100%;
-
-                    border-radius: 4px;
+                    border-radius: 4px
                 }
 
                 .texts__wrapper {
                     padding-inline: 8px;
-                    gap: 8px;
+                    gap: 8px
                 }
 
                 .texts__wrapper h5 {
                     font-size: 16px;
                     line-height: 18px;
-                    letter-spacing: -0.16px;
+                    letter-spacing: -.16px
                 }
 
                 .braging-cards__wrapper .btn {
@@ -3138,22 +2286,13 @@
                     margin-top: 4px;
                     padding: 8px 12px;
                     border-radius: 4px;
-
-                    /* max-width: 400px; */
-
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 16px;
-                    letter-spacing: -0.12px;
-
+                    letter-spacing: -.12px
                 }
-
-
-
             }
-
-            @media screen and (max-width: 400px) {}
         </style>
     </head>
 
@@ -3162,7 +2301,7 @@
             <div class="container">
                 <div class="topper">
                     <h3>Get Outstanding Care!</h3>
-                    <a href="#" class="btn btn-icon btn--primary">Book Apointment</a>
+                    <a href="/contact-us.html#bookAppointment" class="btn btn-icon btn--primary">Book Appointment</a>
                 </div>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="1282" height="2" viewBox="0 0 1282 2" fill="none">
@@ -3228,7 +2367,7 @@
 
     </html>
 
-    <!-- Location Section -->
+    <!-- Location SECTION -->
     <html lang="en">
 
     <head>
@@ -3240,32 +2379,31 @@
                 --color-gold: #FF9D3B;
                 --color-blue: #498CBB;
                 --color-green: #7CBD40;
-                --color-white: #fff;
+                --color-white: #fff
             }
 
             *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
+            ::after,
+            ::before {
+                box-sizing: border-box
             }
 
             html {
-                font-size: 62.5%;
+                font-size: 62.5%
             }
 
             body {
                 font-family: "Open Sans", sans-serif;
                 font-size: 1.6rem;
                 color: var(--color-off-black);
-
                 background-color: var(--color-off-white);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             p {
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1,
@@ -3274,114 +2412,76 @@
             h4,
             h5,
             h6 {
-                font-family: "Archivo", sans-serif;
+                font-family: Archivo, sans-serif;
                 color: var(--color-off-black);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1 {
-                color: var(--Off-Black, #282D30);
-
-                /* Heading Styles/H1 */
+                color: var(--Off-Black, #282d30);
                 font-size: 4.8rem;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 114.286%;
                 letter-spacing: -1.12px;
-                text-transform: capitalize;
+                text-transform: capitalize
             }
 
             h3 {
-                /* Heading Styles/H3 */
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 44px;
+                line-height: 44px
             }
 
-
-            h5,
-            .btn {
-                /* Heading Styles/H5 */
+            .btn,
+            h5 {
                 font-family: Archivo;
                 font-size: 2.4rem;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 28px;
-                /* 116.667% */
                 text-align: center;
-                letter-spacing: -0.24px;
+                letter-spacing: -.24px
             }
 
             h6 {
-                /* Heading Styles/H6 */
                 font-family: Archivo;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.2px;
+                letter-spacing: -.2px
             }
-
 
             img {
-                width: 100%;
-            }
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+                width: 100%
             }
 
             a {
                 text-decoration: none;
-                color: var(--color-off-black);
+                color: var(--color-off-black)
             }
 
-
-            /* UTILITIES */
             .container {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
                 margin-inline: auto;
-                padding-inline: 6vw;
-            }
-
-            .body-r {
-                color: var(--Off-Black, #282D30);
-
-                /* Body Styles/Body-regular */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 22px;
-                /* 137.5% */
-                letter-spacing: -0.16px;
-            }
-
-            .button-r {
-                /* Body Styles/Button-regular */
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 18px;
+                padding-inline: 6vw
             }
 
             .text-caption {
-                /* Body Styles/Caption */
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 16px;
-                letter-spacing: -0.12px;
+                letter-spacing: -.12px
             }
 
             .btn h6 {
-                color: var(--color-off-white);
+                color: var(--color-off-white)
             }
 
             .btn {
@@ -3394,84 +2494,46 @@
                 outline: 0;
                 border: 0;
                 white-space: nowrap;
-
-
                 border-radius: 12px;
-                transition: background 200ms ease-in;
-            }
-
-            .btn-icon::after {
-                content: '';
-                display: inline-block;
-                background: url('../images/arrow-right.svg') no-repeat;
-                background-size: contain;
-                width: 20px;
-                height: 20px;
-
-
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-
+                transition: background .2s ease-in
             }
 
             .btn--ghost {
                 padding: 16px;
-
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 18px;
-
                 border-radius: 8px;
-                border: 2px solid #282D30;
-                background: rgba(255, 255, 255, 0.50);
-
-                transition: all 100ms ease-in;
-            }
-
-            .btn--ghost.btn-icon::after {
-                width: 12px;
-                height: 12px;
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+                border: 2px solid #282d30;
+                background: rgba(255, 255, 255, .5);
+                transition: all .1s ease-in
             }
 
             .btn--ghost:hover {
                 color: var(--color-off-white);
-                background-color: var(--color-off-black);
+                background-color: var(--color-off-black)
             }
 
             .btn--ghost:hover.btn-icon::after {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
-
 
             .btn--primary {
                 color: var(--color-off-white);
-                background: var(--color-accent);
-
+                background: var(--color-accent)
             }
 
             .btn--primary:hover {
                 color: var(--color-off-white);
-                background: #BD4B5C;
-            }
-
-            .btn--secondary {
-                color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
-                background: rgba(239, 85, 106, 0.05);
-                transition: background 100ms ease;
-
-            }
-
-            .btn--secondary:hover {
-                background: rgba(239, 85, 106, 0.2);
+                background: #bd4b5c
             }
 
             .btn__container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 8px;
+                gap: 8px
             }
 
             .chip {
@@ -3480,19 +2542,17 @@
                 justify-content: center;
                 align-items: center;
                 gap: 4px;
-
                 cursor: default;
                 border-radius: 40px;
-                border: 0.75px solid rgba(231, 240, 245, 0.75);
-                background: rgba(40, 45, 48, 0.15);
-
-                color: var(--Off-white, #E7F0F5);
+                border: .75px solid rgba(231, 240, 245, .75);
+                background: rgba(40, 45, 48, .15);
+                color: var(--Off-white, #e7f0f5);
                 text-align: center;
                 font-size: 10px;
                 font-style: normal;
                 font-weight: 300;
                 line-height: 16px;
-                letter-spacing: -0.1px;
+                letter-spacing: -.1px
             }
 
             .chip--brand {
@@ -3501,84 +2561,62 @@
                 justify-content: center;
                 align-items: center;
                 gap: 4px;
-
                 font-size: 10px;
                 font-weight: 300;
                 line-height: 16px;
-                letter-spacing: -0.1px;
+                letter-spacing: -.1px;
                 text-transform: capitalize;
-
                 cursor: default;
                 border-radius: 40px;
-                border: 0.75px solid var(--Off-Black, #282D30);
+                border: .75px solid var(--Off-Black, #282d30)
             }
 
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url('../images/brand-Icon.svg') no-repeat;
+                background: url(../images/brand-Icon.svg) no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
-
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%)
             }
 
-            .x-div {
-                display: flex;
-                padding: 20px 0px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
+            .locations {
+                padding-block: 80px
             }
 
-            .x-div svg {
-                width: 100%;
-
-                stroke-width: 1.5px;
-                stroke: rgba(40, 45, 48, 0.25);
-            }
-
-            /* LOCATION SECTION */
-            .location {
-                padding-block: 80px;
-            }
-
-            .location .container {
+            .locations .container {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 40px;
-                align-self: stretch;
+                align-self: stretch
             }
 
-            .location .title {
+            .locations .title {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .title .text {
                 width: 500px;
-
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 16px;
+                gap: 16px
             }
 
             .title .btn {
                 padding: 20px;
-                width: 280px;
+                width: 280px
             }
 
             .title .btn svg {
                 width: 20px;
                 height: 20px;
-                flex-shrink: 0;
-
+                flex-shrink: 0
             }
 
             .location__wrapper {
@@ -3587,7 +2625,7 @@
                 align-content: center;
                 gap: 40px;
                 align-self: stretch;
-                flex-wrap: wrap;
+                flex-wrap: wrap
             }
 
             .location-card {
@@ -3597,18 +2635,16 @@
                 padding: 12px;
                 align-items: center;
                 gap: 12px;
-
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 600;
-
                 border-radius: 8px;
-                background: rgba(255, 255, 255, 0.72);
-                transition: all 200ms ease;
+                background: rgba(255, 255, 255, .72);
+                transition: all .2s ease
             }
 
             .location-card:hover {
-                box-shadow: 2px 4px 12px 1px rgba(40, 45, 48, 0.1);
+                box-shadow: 2px 4px 12px 1px rgba(40, 45, 48, .1)
             }
 
             .location-card .info {
@@ -3617,16 +2653,15 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
-                flex: 1 0 0;
+                flex: 1 0 0
             }
-
 
             .info .text {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 6px;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .text h6 {
@@ -3635,33 +2670,32 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.18px;
+                letter-spacing: -.18px
             }
 
             .text .text-caption {
                 align-self: stretch;
                 font-size: 14px;
-                opacity: 0.7;
+                opacity: .7
             }
 
             .info .btn {
                 padding: 6px 12px;
                 align-self: stretch;
                 gap: 0;
-
                 border-radius: 4px;
                 border: 1px solid var(--color-off-black);
-                opacity: 0.8;
-                background: rgba(231, 240, 245, 0.25);
+                opacity: .8;
+                background: rgba(231, 240, 245, .25)
             }
 
             .info .btn:hover {
                 color: var(--color-off-white);
-                background-color: var(--color-off-black);
+                background-color: var(--color-off-black)
             }
 
             .info .btn:hover svg {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
 
             .info .btn span {
@@ -3670,34 +2704,28 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: 16px;
-                letter-spacing: -0.12px;
+                letter-spacing: -.12px
             }
-
-
-
 
             .location-card .image {
                 position: relative;
                 width: 104px;
                 flex-shrink: 0;
                 align-self: stretch;
-
                 border-radius: 6px;
-                overflow: hidden;
+                overflow: hidden
             }
 
             .image img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
-
-                transition: all 500ms ease-in;
+                transition: all .5s ease-in
             }
 
             .location-card:hover img {
                 transform-origin: center;
-                transform: rotate(30deg) scale(2);
-
+                transform: rotate(30deg) scale(2)
             }
 
             .location-card .image::before {
@@ -3706,43 +2734,26 @@
                 height: 100%;
                 width: 100%;
                 z-index: 1;
-
                 border-radius: 6px;
-                background: linear-gradient(180deg, rgba(40, 45, 48, 0.1) 0%, rgba(40, 45, 48, 0.3) 74.25%, rgba(40, 45, 48, 0.50) 100%);
-                background-blend-mode: multiply, normal;
-
-                /* transition: all 500ms ease-in; */
+                background: linear-gradient(180deg, rgba(40, 45, 48, .1) 0, rgba(40, 45, 48, .3) 74.25%, rgba(40, 45, 48, .5) 100%);
+                background-blend-mode: multiply, normal
             }
 
             .location-card:hover .image::before {
-                background: linear-gradient(180deg, rgba(40, 45, 48, 0.01) 0%, rgba(40, 45, 48, 0.13) 74.25%, rgba(40, 45, 48, 0.50) 100%);
+                background: linear-gradient(180deg, rgba(40, 45, 48, .01) 0, rgba(40, 45, 48, .13) 74.25%, rgba(40, 45, 48, .5) 100%)
             }
 
-
-
-
-
-
-
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width:900px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
-                    padding-inline: 32px;
+                    padding-inline: 32px
                 }
 
                 h6 {
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 18px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 18px
                 }
 
                 .btn {
@@ -3750,116 +2761,97 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
-                }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
+                    white-space: nowrap
                 }
 
                 .chip--brand {
                     padding: 8px;
                     gap: 2px;
-
                     font-size: 8px;
                     line-height: 8px;
-                    letter-spacing: -0.08px;
-
+                    letter-spacing: -.08px
                 }
 
                 .chip--brand::before {
                     content: '';
                     width: 8px;
-                    height: 8px;
+                    height: 8px
                 }
 
                 .location {
-                    padding-block: 48px;
+                    padding-block: 48px
                 }
 
                 .location .container {
-                    gap: 24px;
+                    gap: 24px
                 }
 
                 .title .text {
                     gap: 4px;
-                    width: 350px;
+                    width: 350px
                 }
 
                 .text h3 {
                     font-size: 24px;
-                    line-height: 28px;
+                    line-height: 28px
                 }
 
                 .title .btn {
                     padding: 12px;
                     gap: 48px;
-                    width: auto;
+                    width: auto
                 }
 
                 .title .btn h6 {
                     font-size: 16px;
                     line-height: 24px;
-                    letter-spacing: -0.16px;
+                    letter-spacing: -.16px
                 }
 
                 .title .btn svg {
                     height: 16px;
-                    width: 16px;
+                    width: 16px
                 }
 
                 .location__wrapper {
-                    gap: 24px;
+                    gap: 24px
                 }
 
                 .location-card {
-                    max-width: 47%;
+                    max-width: 47%
                 }
 
                 .text h6 {
-                    font-size: 16px;
+                    font-size: 16px
                 }
 
                 .text .text-caption {
                     width: 94%;
-                    font-size: 12px;
+                    font-size: 12px
                 }
 
                 .info .btn {
-                    width: auto;
+                    width: auto
                 }
 
                 .info .btn svg {
                     height: 10px;
-                    width: 10px;
+                    width: 10px
                 }
-
-
-
-
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width:600px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 16px;
-                    overflow: hidden;
+                    overflow: hidden
                 }
 
                 h6 {
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 16px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 16px
                 }
 
                 .btn {
@@ -3867,52 +2859,45 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
-                }
-
-                .btn-icon::after {
-                    width: 16px;
-                    height: 16px;
+                    white-space: nowrap
                 }
 
                 .location {
-                    padding-block: 32px;
+                    padding-block: 32px
                 }
 
                 .location .container {
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .location .title {
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: flex-start;
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .title .text {
-                    width: 88%;
+                    width: 88%
                 }
 
                 .title .btn {
-                    width: 100%;
+                    width: 100%
                 }
 
                 .location__wrapper {
-                    gap: 8px;
+                    gap: 8px
                 }
 
                 .location-card {
-                    max-width: 100%;
+                    max-width: 100%
                 }
-
-
             }
         </style>
     </head>
 
     <body>
-        <section class="location">
+        <section class="locations">
             <div class="container">
                 <div class="title">
                     <div class="text">
@@ -3920,7 +2905,7 @@
                         <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
                     </div>
 
-                    <a href="#" class="btn btn--primary">
+                    <a href="tel:+17143861092" class="btn btn--primary">
                         <h6>(714) 386 - 1092</h6>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -3946,7 +2931,8 @@
                                 <h6>Annapolis Clinic</h6>
                                 <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=166+DEFENSE+HIGHWAY,+Annapolis,+MD&hl=en"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -3959,17 +2945,18 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>Bel Air Location</h6>
+                                <p class="text-caption">510 Upper Chesapeake Drive, # 413, BEL AIR, MD 21014</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=510+Upper+chesapeake+drive,+Bel+Air,+MD&hl=en"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -3982,17 +2969,19 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>Clarksville Location</h6>
+                                <p class="text-caption">5005 Signal Bell Lane, Ste 204 ( RIVER HILL STATION Building)
+                                    Clarksville, 21029</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=5005+Signal+Bell+Ln,+Clarksville,+MD+21029"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -4005,17 +2994,18 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>Owings Mills Location</h6>
+                                <p class="text-caption">21 Crossroads Drive, Owings Mills MD 21117</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=21+Crossroads+Drive,+Owings+Mills,+MD+21117"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -4028,17 +3018,18 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>Pasadena Location</h6>
+                                <p class="text-caption">18 Magothy Beach Rd, Ste B, Pasadena MD 21122</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=18+Magothy+Beach+Rd,+Pasadena,+MD+21122&hl=en"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -4051,17 +3042,18 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>Alexandria Location</h6>
+                                <p class="text-caption">1600 N Beauregard St, ste 105 Alexandria VA, 22311</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=1600+N+Beauregard+St,+Alexandria,+VA+22311"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -4074,17 +3066,20 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                <h6>FairFax Location</h6>
+                                <p class="text-caption">3620 Joseph Siewick Drive, Ste 306,
+                                    Inova Fair Oaks Medical Campus
+                                    Fairfax VA 22033</p>
                             </div>
-                            <a href="#" class="btn btn--ghost">
+                            <a href="https://www.google.com/maps?saddr&daddr=Inova+Fair+Oaks+Hospital,+Joseph+Siewick+Drive,+Fairfax,+MD&hl=en"
+                                class="btn btn--ghost get-directions-btn">
                                 <span>Get Directions</span>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -4097,7 +3092,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="/images/noti-picture.jpg" alt="A picture of the mad point to our addresss">
+                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 
@@ -4105,11 +3100,56 @@
 
             </div>
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                function requestLocationAndSetDirections(btn) {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                            const latitude = position.coords.latitude;
+                            const longitude = position.coords.longitude;
+                            const origin = `${latitude},${longitude}`;
+
+                            const originalHref = btn.getAttribute('href');
+                            const url = new URL(originalHref);
+                            url.searchParams.set('saddr', origin);
+
+                            btn.setAttribute('href', url.toString());
+                            btn.setAttribute('target', '_blank');
+
+                            // Open the updated link
+                            window.open(btn.getAttribute('href'), '_blank');
+                        }, function (error) {
+                            console.error('Error obtaining location:', error);
+                            alert('Unable to retrieve your location. The link will use the default directions without the starting point.');
+                            window.open(btn.getAttribute('href'), '_blank');
+                        });
+                    } else {
+                        alert('Geolocation is not supported by this browser.');
+                        window.open(btn.getAttribute('href'), '_blank');
+                    }
+                }
+
+                function updateLinks() {
+                    const getDirectionsBtns = document.querySelectorAll('.get-directions-btn');
+                    getDirectionsBtns.forEach(btn => {
+                        btn.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            requestLocationAndSetDirections(btn);
+                        });
+                    });
+                }
+
+                // Initially run the function to set up the links
+                updateLinks();
+            });
+
+        </script>
     </body>
 
     </html>
 
-    <!-- Footer Section -->
+    <!-- FOOTER SECTION -->
     <html lang="en">
 
     <head>
@@ -4121,32 +3161,31 @@
                 --color-gold: #FF9D3B;
                 --color-blue: #498CBB;
                 --color-green: #7CBD40;
-                --color-white: #fff;
+                --color-white: #fff
             }
 
             *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
+            ::after,
+            ::before {
+                box-sizing: border-box
             }
 
             html {
-                font-size: 62.5%;
+                font-size: 62.5%
             }
 
             body {
                 font-family: "Open Sans", sans-serif;
                 font-size: 1.6rem;
                 color: var(--color-off-black);
-
                 background-color: var(--color-off-white);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             p {
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1,
@@ -4155,143 +3194,116 @@
             h4,
             h5,
             h6 {
-                font-family: "Archivo", sans-serif;
+                font-family: Archivo, sans-serif;
                 color: var(--color-off-black);
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             h1 {
-                color: var(--Off-Black, #282D30);
-
-                /* Heading Styles/H1 */
+                color: var(--Off-Black, #282d30);
                 font-size: 4.8rem;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 114.286%;
                 letter-spacing: -1.12px;
-                text-transform: capitalize;
+                text-transform: capitalize
             }
 
             h2 {
-                /* Heading Styles/H2 */
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 52px;
-                letter-spacing: -0.48px;
-                text-transform: capitalize;
+                letter-spacing: -.48px;
+                text-transform: capitalize
             }
 
             h3 {
-                /* Heading Styles/H3 */
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 44px;
+                line-height: 44px
             }
 
             h4 {
-                /* Heading Styles/H4 */
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 36px;
-                letter-spacing: -0.32px;
+                letter-spacing: -.32px
             }
 
-
-            h5,
-            .btn {
-                /* Heading Styles/H5 */
+            .btn,
+            h5 {
                 font-family: Archivo;
                 font-size: 2.4rem;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 28px;
-                /* 116.667% */
                 text-align: center;
-                letter-spacing: -0.24px;
+                letter-spacing: -.24px
             }
 
             h6 {
-                /* Heading Styles/H6 */
                 font-family: Archivo;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
-                letter-spacing: -0.2px;
+                letter-spacing: -.2px
             }
 
-
             img {
-                width: 100%;
+                width: 100%
             }
 
             ul {
                 list-style: none;
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
 
             a {
                 text-decoration: none;
-                color: var(--color-off-black);
+                color: var(--color-off-black)
             }
 
-
-            /* UTILITIES */
             .container {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
                 margin-inline: auto;
-                padding-inline: 6vw;
+                padding-inline: 6vw
             }
 
             .body-r {
-                color: var(--Off-Black, #282D30);
-
-                /* Body Styles/Body-regular */
+                color: var(--Off-Black, #282d30);
                 font-family: "Open Sans";
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 22px;
-                /* 137.5% */
-                letter-spacing: -0.16px;
-            }
-
-            .body-b {
-                /* Body Styles/Body-Bold */
-                font-family: "Open Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 24px;
-                letter-spacing: -0.16px;
+                letter-spacing: -.16px
             }
 
             .button-r {
-                /* Body Styles/Button-regular */
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 18px;
+                line-height: 18px
             }
 
             .text-caption {
-                /* Body Styles/Caption */
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 16px;
-                letter-spacing: -0.12px;
+                letter-spacing: -.12px
             }
 
             .btn h6 {
-                color: var(--color-off-white);
+                color: var(--color-off-white)
             }
 
             .btn {
@@ -4304,186 +3316,58 @@
                 outline: 0;
                 border: 0;
                 white-space: nowrap;
-
-
                 border-radius: 12px;
-                transition: background 200ms ease-in;
+                transition: background .2s ease-in
             }
 
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url('../images/arrow-right.svg') no-repeat;
+                background: url(../images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
-
-
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
 
             .btn--ghost {
                 padding: 16px;
-
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 18px;
-
                 border-radius: 8px;
-                border: 2px solid #282D30;
-                background: rgba(255, 255, 255, 0.50);
-
-                transition: all 100ms ease-in;
+                border: 2px solid #282d30;
+                background: rgba(255, 255, 255, .5);
+                transition: all .1s ease-in
             }
 
             .btn--ghost.btn-icon::after {
                 width: 12px;
                 height: 12px;
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
+                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%)
             }
 
             .btn--ghost:hover {
                 color: var(--color-off-white);
-                background-color: var(--color-off-black);
+                background-color: var(--color-off-black)
             }
 
             .btn--ghost:hover.btn-icon::after {
-                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%);
-            }
-
-
-            .btn--primary {
-                color: var(--color-off-white);
-                background: var(--color-accent);
-
-            }
-
-            .btn--primary:hover {
-                color: var(--color-off-white);
-                background: #BD4B5C;
-            }
-
-            .btn--secondary {
-                color: var(--color-off-black);
-                border: 1.5px solid var(--color-accent, #EF556A);
-                background: rgba(239, 85, 106, 0.05);
-                transition: background 100ms ease;
-
-            }
-
-            .btn--secondary:hover {
-                background: rgba(239, 85, 106, 0.2);
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
 
             .btn__container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 8px;
+                gap: 8px
             }
 
-            .chip {
-                display: inline-flex;
-                padding: 10px 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 4px;
-
-                cursor: default;
-                border-radius: 40px;
-                border: 0.75px solid rgba(231, 240, 245, 0.75);
-                background: rgba(40, 45, 48, 0.15);
-
-                color: var(--Off-white, #E7F0F5);
-                text-align: center;
-                font-size: 10px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: -0.1px;
-            }
-
-            .chip--brand {
-                display: flex;
-                padding: 10px 12px;
-                justify-content: center;
-                align-items: center;
-                gap: 4px;
-
-                font-size: 10px;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: -0.1px;
-                text-transform: capitalize;
-
-                cursor: default;
-                border-radius: 40px;
-                border: 0.75px solid var(--Off-Black, #282D30);
-            }
-
-            .chip--brand::before {
-                content: '';
-                display: inline-block;
-                background: url('../images/brand-Icon.svg') no-repeat;
-                background-size: contain;
-                width: 10px;
-                height: 10px;
-
-                filter: brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(1066%) hue-rotate(159deg) brightness(102%) contrast(91%);
-
-            }
-
-            .x-div {
-                display: flex;
-                padding: 20px 0px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .x-div svg {
-                width: 100%;
-
-                stroke-width: 1.5px;
-                stroke: rgba(40, 45, 48, 0.25);
-            }
-
-            .title {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                align-self: stretch;
-            }
-
-            .title .text {
-                width: 700px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-
-            .title .btn {
-                padding: 20px;
-                width: 280px;
-            }
-
-            .title .btn svg {
-                width: 20px;
-                height: 20px;
-                flex-shrink: 0;
-
-            }
-
-            /* FOOTER SECTION */
             .footer {
                 display: flex;
                 padding-block: 80px;
-
-                background: var(--color-off-black);
+                background: var(--color-off-black)
             }
 
             .footer .container {
@@ -4491,7 +3375,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 64px;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .footer .topper {
@@ -4499,8 +3383,7 @@
                 justify-content: space-between;
                 align-items: flex-start;
                 align-self: stretch;
-
-                color: var(--color-off-white);
+                color: var(--color-off-white)
             }
 
             .topper .left {
@@ -4508,38 +3391,37 @@
                 flex-grow: 1;
                 min-width: 60%;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: flex-start
             }
 
             .left .brand {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 24px;
+                gap: 24px
             }
 
             .brand .logo {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 20px;
-
+                gap: 20px
             }
 
             .brand .logo>:first-child {
                 width: 56px;
-                height: 56px;
+                height: 56px
             }
 
             .brand .logo>:nth-child(2) {
                 width: 208px;
-                height: 52px;
+                height: 52px
             }
 
             .brand .social-icon {
                 display: flex;
                 align-items: center;
-                gap: 12px;
+                gap: 12px
             }
 
             .social-icon .socials {
@@ -4548,34 +3430,31 @@
                 justify-content: center;
                 align-items: center;
                 gap: 8px;
-
                 border-radius: 20px;
-                background: rgba(231, 240, 245, 0.80);
-
-                transition: all 100ms ease;
+                background: rgba(231, 240, 245, .8);
+                transition: all .1s ease
             }
 
             .social-icon .socials svg {
                 width: 28px;
-                height: 28px;
+                height: 28px
             }
 
             .socials:hover {
                 cursor: pointer;
                 border-radius: 4px;
-
                 transform: scale(1.25);
-                background-color: var(--color-accent);
+                background-color: var(--color-accent)
             }
 
             .socials:hover svg {
-                filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(933%) hue-rotate(160deg) brightness(100%) contrast(93%);
+                filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(933%) hue-rotate(160deg) brightness(100%) contrast(93%)
             }
 
-            .links__wrapper h6,
-            .links__wrapper a {
+            .links__wrapper a,
+            .links__wrapper h6 {
                 color: var(--color-off-white);
-                opacity: 0.9;
+                opacity: .9
             }
 
             .links__wrapper {
@@ -4583,7 +3462,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                gap: 20px;
+                gap: 20px
             }
 
             .links-group {
@@ -4592,28 +3471,26 @@
                 justify-content: center;
                 align-items: flex-start;
                 align-self: stretch;
-                gap: 10px;
+                gap: 10px
             }
 
             .links-group a {
-                opacity: 0.6;
+                opacity: .6
             }
 
             .links-group a:hover {
-                opacity: 1;
+                opacity: 1
             }
 
             .topper .right {
                 display: flex;
                 min-width: 50%;
-
                 align-self: stretch;
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
                 gap: 8px;
-                flex: 1 0 0;
-
+                flex: 1 0 0
             }
 
             .right .location {
@@ -4622,76 +3499,61 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                gap: 16px;
+                gap: 16px
             }
 
-            .location h4 {
-                color: var(--color-off-white);
-
+            .right .location h4 {
+                color: var(--color-off-white)
             }
 
-            .location p {
+            .right .location p {
                 align-self: stretch;
                 line-height: 20px;
-
-                opacity: 0.9;
+                opacity: .9
             }
 
-            .location a {
+            .right .location a {
                 padding: 12px 16px;
                 width: auto;
                 gap: 12px;
-
                 border-radius: 8px;
-                background: var(--color-off-white);
+                background: var(--color-off-white)
             }
 
-            .location a:hover {
-                background-color: rgba(231, 240, 245, 0.2);
+            .right .location a:hover {
+                background-color: rgba(231, 240, 245, .2)
             }
 
             .footer .h-line {
                 width: 100vw;
                 height: 8px;
-                /* Adjust height to match the border width */
-                background-image: radial-gradient(circle, rgba(231, 240, 245, 0.25) 1.5px, transparent 2.5px);
-                background-size: 10px 10px;
-                /* Adjust the size of the dots and the gaps */
+                background-image: radial-gradient(circle, rgba(231, 240, 245, .25) 1.5px, transparent 2.5px);
+                background-size: 10px 10px
             }
 
             .footer .base {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                align-self: stretch;
+                align-self: stretch
             }
 
             .base .body-r {
                 color: var(--color-off-white);
-                opacity: 0.5;
+                opacity: .5
             }
 
-
-
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width:900px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
-                    padding-inline: 32px;
+                    padding-inline: 32px
                 }
 
                 h6 {
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 18px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 18px
                 }
 
                 .btn {
@@ -4699,135 +3561,83 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
 
                 .btn-icon::after {
                     width: 16px;
-                    height: 16px;
-                }
-
-                .chip--brand {
-                    padding: 8px;
-                    gap: 2px;
-
-                    font-size: 8px;
-                    line-height: 8px;
-                    letter-spacing: -0.08px;
-
-                }
-
-                .chip--brand::before {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                }
-
-
-                .title .text {
-                    gap: 4px;
-                    width: 350px;
+                    height: 16px
                 }
 
                 .text h3 {
                     font-size: 24px;
-                    line-height: 28px;
-                }
-
-                .title .btn {
-                    padding: 12px;
-                    gap: 48px;
-                    width: auto;
-                }
-
-                .title .btn h6 {
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: -0.16px;
-                }
-
-                .title .btn svg {
-                    height: 16px;
-                    width: 16px;
+                    line-height: 28px
                 }
 
                 .footer {
-                    padding-block: 32px;
+                    padding-block: 32px
                 }
 
                 .footer .container {
-                    gap: 24px;
+                    gap: 24px
                 }
 
                 .left .brand {
-                    gap: 16px;
+                    gap: 16px
                 }
 
                 .brand .logo {
-                    gap: 12px;
+                    gap: 12px
                 }
 
                 .brand .logo>:first-child {
                     width: 34px;
-                    height: 34px;
+                    height: 34px
                 }
 
                 .brand .logo>:nth-child(2) {
                     width: 128px;
-                    height: 32px;
+                    height: 32px
                 }
 
                 .brand .social-icon {
-                    gap: 8px;
+                    gap: 8px
                 }
 
                 .social-icon .socials svg {
                     width: 16px;
-                    height: 16px;
+                    height: 16px
                 }
 
                 .topper .right {
-                    display: none;
+                    display: none
                 }
 
                 .links__wrapper {
-                    gap: 12px;
+                    gap: 12px
                 }
 
                 .links__wrapper h6 {
-                    font-size: 16px;
-
+                    font-size: 16px
                 }
 
                 .base .body-r {
-                    font-size: 12px;
+                    font-size: 12px
                 }
-
-
-
-
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width:600px) {
                 .container {
-                    /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 16px;
-                    overflow: hidden;
+                    overflow: hidden
                 }
 
                 h6 {
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 16px;
-                }
-
-
-                .hero__content .body-r {
-                    font-size: 14px;
-                    line-height: 18px;
-                    width: 100%;
+                    line-height: 16px
                 }
 
                 .btn {
@@ -4835,68 +3645,43 @@
                     padding: 14px 16px;
                     font-size: 16px;
                     border-radius: 8px;
-                    white-space: nowrap;
+                    white-space: nowrap
                 }
 
                 .btn-icon::after {
                     width: 16px;
-                    height: 16px;
+                    height: 16px
                 }
-
-
-                .title {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 16px;
-                }
-
-                .title .text {
-                    width: 88%;
-                }
-
-                .title .btn {
-                    width: 100%;
-                }
-
-
-
             }
 
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width:400px) {
                 .topper .left {
                     gap: 16px;
-                    flex-wrap: wrap;
+                    flex-wrap: wrap
                 }
 
                 .left .brand {
-                    width: 100%;
+                    width: 100%
                 }
 
-
-
                 .left .links__wrapper {
-                    /* justify-content: space-between; */
-                    gap: 12px;
+                    gap: 12px
                 }
 
                 .footer .base {
                     gap: 16px;
-                    flex-wrap: wrap;
-                    /* text-align: center; */
+                    flex-wrap: wrap
                 }
 
                 .base .body-r:first-child {
                     width: 100%;
-                    text-align: left;
+                    text-align: left
                 }
 
                 .base .body-r:nth-child(2) {
                     width: 100%;
-                    text-align: right;
+                    text-align: right
                 }
-
-
             }
         </style>
     </head>
@@ -4980,7 +3765,7 @@
                                 Mills and Pasadena in MD and
                                 now Fairfax and Alexandria in VA .
                             </p>
-                            <a href="#" class="btn btn-icon btn--ghost">Visit us Today!</a>
+                            <a href="/locations.html" class="btn btn-icon btn--ghost">Visit us Today!</a>
                         </div>
                     </div>
                 </div>
@@ -4989,7 +3774,11 @@
 
                 <div class="base">
                     <p class="body-r">&copy; Annapolis Rheumatology LLC, 2024.</p>
-                    <p class="body-r">Made with Design by — CoryLukon</p>
+                    <a class="body-r" target="_blank"
+                        href="https://www.upwork.com/freelancers/~01784d35dfefa0fc70?companyReference=1659448736704086017&mp_source=share">
+                        Made with Design by — CoryLukon
+                    </a>
+
 
                 </div>
 

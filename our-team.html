@@ -245,7 +245,7 @@
                 text-align: start;
                 padding: 0;
                 /* font-size: 1.4rem;
-        font-weight: 400; */
+            font-weight: 400; */
             }
 
             .nav__overlay,
@@ -507,23 +507,23 @@
                         <ul class="nav__list">
                             <li class="nav__item dd">
                                 <span>
-                                    <a href="/treatments.html" onclick="toggleMenu()">Treatments</a>
+                                    <a href="/diseases.html" onclick="toggleMenu()">Diseases</a>
                                     <span class="dd-icon" onclick="toggleDd()">
                                         <img src="/../images/arrow-down.svg" alt="">
                                     </span>
                                 </span>
                                 <ul class="dd-menu">
-                                    <li class="dd-menu__item"><a href="/treatments.html#inflammatory-arthritis"
+                                    <li class="dd-menu__item"><a href="/diseases.html#inflammatory-arthritis"
                                             onclick="toggleDd()">Inflammatory Arthritis</a>
                                     </li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#autoimmune-diseases"
+                                    <li class="dd-menu__item"><a href="/diseases.html#autoimmune-diseases"
                                             onclick="toggleDd()">Autoimmune Diseases</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#musculoskeletal-conditions"
+                                    <li class="dd-menu__item"><a href="/diseases.html#musculoskeletal-conditions"
                                             onclick="toggleDd()">Musculoskeletal
                                             Conditions</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#joint-or-muscle-pain"
+                                    <li class="dd-menu__item"><a href="/diseases.html#joint-or-muscle-pain"
                                             onclick="toggleDd()">Joint or Muscle Pain</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#metabolic-bone-disease"
+                                    <li class="dd-menu__item"><a href="/diseases.html#metabolic-bone-disease"
                                             onclick="toggleDd()">Metabolic Bone Disease</a></li>
                                 </ul>
                             </li>
@@ -537,8 +537,8 @@
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                             </a>
-                            <a href="tel:+17143861092" class="nav__btn primary">
-                                <span>(714) 386 - 1092</span>
+                            <a href="tel:+14108971941" class="nav__btn primary">
+                                <span>(410) 897 - 1941</span>
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
                             </a>
@@ -1383,6 +1383,7 @@
 
                 .card__base .card__image {
                     min-height: 150px;
+                    max-height: 100%;
                     border-radius: 8px
                 }
 
@@ -1401,6 +1402,10 @@
                 .specialty .title svg {
                     width: 16px;
                     height: 16px
+                }
+
+                .callout .location {
+                    margin: 0;
                 }
             }
 
@@ -1492,6 +1497,7 @@
 
                 .card__base .card__image {
                     min-height: 150px;
+                    max-height: 300px;
                     min-width: 50%;
                     border-radius: 8px
                 }
@@ -2716,7 +2722,9 @@
             }
 
             .locations {
-                padding-block: 80px
+                margin-top: 80px;
+                padding-block: 80px;
+                background: rgba(40, 45, 48, 0.05);
             }
 
             .locations .container {
@@ -2913,6 +2921,7 @@
                 }
 
                 .location {
+                    margin-top: 48px;
                     padding-block: 48px
                 }
 
@@ -2997,6 +3006,7 @@
                 }
 
                 .location {
+                    margin-top: 32px;
                     padding-block: 32px
                 }
 
@@ -3039,8 +3049,8 @@
                         <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
                     </div>
 
-                    <a href="tel:+17143861092" class="btn btn--primary">
-                        <h6>(714) 386 - 1092</h6>
+                    <a href="tel:+14108971941" class="btn btn--primary">
+                        <h6>(410) 897 - 1941</h6>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <g clip-path="url(#clip0_2038_6829)">
@@ -3062,7 +3072,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
+                                <h6>Annapolis</h6>
                                 <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=166+DEFENSE+HIGHWAY,+Annapolis,+MD&hl=en"
@@ -3086,7 +3096,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Bel Air Location</h6>
+                                <h6>Bel Air</h6>
                                 <p class="text-caption">510 Upper Chesapeake Drive, # 413, BEL AIR, MD 21014</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=510+Upper+chesapeake+drive,+Bel+Air,+MD&hl=en"
@@ -3110,7 +3120,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Clarksville Location</h6>
+                                <h6>Clarksville</h6>
                                 <p class="text-caption">5005 Signal Bell Lane, Ste 204 ( RIVER HILL STATION Building)
                                     Clarksville, 21029</p>
                             </div>
@@ -3135,7 +3145,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Owings Mills Location</h6>
+                                <h6>Owings Mills</h6>
                                 <p class="text-caption">21 Crossroads Drive, Owings Mills MD 21117</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=21+Crossroads+Drive,+Owings+Mills,+MD+21117"
@@ -3159,7 +3169,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Pasadena Location</h6>
+                                <h6>Pasadena</h6>
                                 <p class="text-caption">18 Magothy Beach Rd, Ste B, Pasadena MD 21122</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=18+Magothy+Beach+Rd,+Pasadena,+MD+21122&hl=en"
@@ -3183,7 +3193,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Alexandria Location</h6>
+                                <h6>Alexandria</h6>
                                 <p class="text-caption">1600 N Beauregard St, ste 105 Alexandria VA, 22311</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=1600+N+Beauregard+St,+Alexandria,+VA+22311"
@@ -3207,7 +3217,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>FairFax Location</h6>
+                                <h6>FairFax</h6>
                                 <p class="text-caption">3620 Joseph Siewick Drive, Ste 306,
                                     Inova Fair Oaks Medical Campus
                                     Fairfax VA 22033</p>

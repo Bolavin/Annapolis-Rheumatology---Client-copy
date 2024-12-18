@@ -244,7 +244,7 @@
                 text-align: start;
                 padding: 0;
                 /* font-size: 1.4rem;
-    font-weight: 400; */
+        font-weight: 400; */
             }
 
             .nav__overlay,
@@ -506,23 +506,23 @@
                         <ul class="nav__list">
                             <li class="nav__item dd">
                                 <span>
-                                    <a href="/treatments.html" onclick="toggleMenu()">Treatments</a>
+                                    <a href="/diseases.html" onclick="toggleMenu()">Diseases</a>
                                     <span class="dd-icon" onclick="toggleDd()">
                                         <img src="/../images/arrow-down.svg" alt="">
                                     </span>
                                 </span>
                                 <ul class="dd-menu">
-                                    <li class="dd-menu__item"><a href="/treatments.html#inflammatory-arthritis"
+                                    <li class="dd-menu__item"><a href="/diseases.html#inflammatory-arthritis"
                                             onclick="toggleDd()">Inflammatory Arthritis</a>
                                     </li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#autoimmune-diseases"
+                                    <li class="dd-menu__item"><a href="/diseases.html#autoimmune-diseases"
                                             onclick="toggleDd()">Autoimmune Diseases</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#musculoskeletal-conditions"
+                                    <li class="dd-menu__item"><a href="/diseases.html#musculoskeletal-conditions"
                                             onclick="toggleDd()">Musculoskeletal
                                             Conditions</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#joint-or-muscle-pain"
+                                    <li class="dd-menu__item"><a href="/diseases.html#joint-or-muscle-pain"
                                             onclick="toggleDd()">Joint or Muscle Pain</a></li>
-                                    <li class="dd-menu__item"><a href="/treatments.html#metabolic-bone-disease"
+                                    <li class="dd-menu__item"><a href="/diseases.html#metabolic-bone-disease"
                                             onclick="toggleDd()">Metabolic Bone Disease</a></li>
                                 </ul>
                             </li>
@@ -536,8 +536,8 @@
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                             </a>
-                            <a href="tel:+17143861092" class="nav__btn primary">
-                                <span>(714) 386 - 1092</span>
+                            <a href="tel:+14108971941" class="nav__btn primary">
+                                <span>(410) 897 - 1941</span>
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
                             </a>
@@ -1865,8 +1865,367 @@
 
                 </div>
             </div>
+
         </section>
 
+    </body>
+
+    </html>
+
+    <!-- Dont treat sub-section! -->
+    <html lang="en">
+
+    <head>
+        <style>
+            :root {
+                --color-accent: #EF556A;
+                --color-off-white: #E7F0F5;
+                --color-off-black: #282D30;
+                --color-gold: #FF9D3B;
+                --color-blue: #498CBB;
+                --color-green: #7CBD40;
+                --color-white: #fff
+            }
+
+            *,
+            ::after,
+            ::before {
+                box-sizing: border-box
+            }
+
+            html {
+                font-size: 62.5%
+            }
+
+            body {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.6rem;
+                color: var(--color-off-black);
+                background-color: var(--color-off-white);
+                margin: 0;
+                padding: 0
+            }
+
+            p {
+                margin: 0;
+                padding: 0
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: Archivo, sans-serif;
+                color: var(--color-off-black);
+                margin: 0;
+                padding: 0
+            }
+
+            h1 {
+                color: var(--Off-Black, #282d30);
+                font-size: 4.8rem;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 114.286%;
+                letter-spacing: -1.12px;
+                text-transform: capitalize
+            }
+
+            .btn,
+            h5 {
+                font-family: Archivo;
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                text-align: center;
+                letter-spacing: -.24px
+            }
+
+            h6 {
+                font-family: Archivo;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -.2px
+            }
+
+            img {
+                width: 100%
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-off-black)
+            }
+
+            section.container {
+                margin-bottom: 64px;
+            }
+
+            .container {
+                width: 100%;
+                height: fit-content;
+                max-width: 1440px;
+                margin-inline: auto;
+                padding-inline: 6vw
+            }
+
+            .body-r {
+                color: var(--Off-Black, #282d30);
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                letter-spacing: -.16px
+            }
+
+            .button-r {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px
+            }
+
+            .btn h6 {
+                color: var(--color-off-white)
+            }
+
+            .btn {
+                display: flex;
+                gap: 64px;
+                width: auto;
+                padding: 16px 24px;
+                justify-content: space-between;
+                align-items: center;
+                outline: 0;
+                border: 0;
+                white-space: nowrap;
+                border-radius: 12px;
+                transition: background .2s ease-in
+            }
+
+            .btn-icon::after {
+                content: '';
+                display: inline-block;
+                background: url(images/arrow-right.svg) no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
+            }
+
+            .btn--primary {
+                color: var(--color-off-white);
+                background: var(--color-accent)
+            }
+
+            .btn--primary:hover {
+                color: var(--color-off-white);
+                background: #bd4b5c
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px
+            }
+
+            .dont-treat {
+                display: flex;
+                align-items: center;
+                gap: 80px;
+                align-self: stretch;
+                overflow: hidden
+            }
+
+            .dont-treat .text {
+                display: flex;
+                padding-block: 40px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+                width: 60%;
+                flex: 2 0 0
+            }
+
+            .text h3 {
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 36px;
+                letter-spacing: -.32px;
+                text-transform: capitalize
+            }
+
+            .text p {
+                width: 96%;
+                opacity: .6
+            }
+
+            .text a {
+                padding: 16px;
+                border-radius: 12px;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -.2px;
+                text-transform: capitalize
+            }
+
+            .dont-treat img {
+                width: 20%;
+                align-self: stretch;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 24px;
+                flex: 1 0 0
+            }
+
+            @media screen and (max-width:900px) {
+                .container {
+                    margin-inline: auto;
+                    padding-inline: 32px
+                }
+
+                h6 {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 18px
+                }
+
+                .btn {
+                    width: 240px;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px
+                }
+
+                section.container {
+                    margin-bottom: 32px;
+                }
+
+                .dont-treat {
+                    gap: 24px
+                }
+
+                .dont-treat .text {
+                    padding-block: 20px;
+                    gap: 16px
+                }
+
+                .text a {
+                    width: auto
+                }
+            }
+
+            @media screen and (max-width:600px) {
+                .container {
+                    margin-inline: auto;
+                    padding-inline: 16px;
+                    overflow: hidden
+                }
+
+                h6 {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px
+                }
+
+                .btn {
+                    width: 100%;
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    white-space: nowrap
+                }
+
+                .btn-icon::after {
+                    width: 16px;
+                    height: 16px
+                }
+
+                section.container {
+                    margin-bottom: 16px;
+                }
+
+                .dont-treat {
+                    flex-direction: column-reverse;
+                    gap: 24px;
+                    align-items: flex-start;
+                    align-self: stretch
+                }
+
+                .dont-treat img {
+                    width: 100%;
+                    height: 200px;
+                    border-radius: 12px
+                }
+
+                .dont-treat .text {
+                    width: 100%;
+                    padding: 0;
+                    gap: 12px
+                }
+
+                .text h3 {
+                    font-size: 20px
+                }
+
+                .text p {
+                    width: 100%;
+                    font-size: 12px;
+                    line-height: 1.5
+                }
+
+                .text a {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 12px;
+                    border-radius: 6px
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="container">
+            <div class="dont-treat">
+                <div class="text">
+                    <h3>What We don’t Treat</h3>
+                    <p class="body-r">Rheumatologists do not typically manage chronic pain, chronic Lyme, long
+                        Covid,
+                        Ehlers-Danlos
+                        syndrome, hypermobility
+                        syndromes, chronic fatigue syndrome (myalgic encephalomyelitis), or non-inflammatory spine
+                        problems (degenerative
+                        arthritis of the spine, spinal stenosis, degenerative disc disease). We are able to help
+                        establish the diagnosis of
+                        fibromyalgia, but do not manage it long term, so we can guide you to others who can best
+                        provide
+                        ongoing care. Click the
+                        button below to view all conditions we specialize in.</p>
+                    <!-- <a href="/treatments.html" class="btn btn-icon btn--primary">view all conditions we specialize
+                        in</a> -->
+                </div>
+                <img src="../images/beautiful-female-therapist-clinic.jpg" alt="picture of a nurse">
+            </div>
+        </section>
     </body>
 
     </html>
@@ -2913,8 +3272,8 @@
                         <h3>Find Your Way To Better Care! We Have a Location Near You.</h3>
                     </div>
 
-                    <a href="tel:+17143861092" class="btn btn--primary">
-                        <h6>(714) 386 - 1092</h6>
+                    <a href="tel:+14108971941" class="btn btn--primary">
+                        <h6>(410) 897 - 1941</h6>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <g clip-path="url(#clip0_2038_6829)">
@@ -2936,7 +3295,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Annapolis Clinic</h6>
+                                <h6>Annapolis</h6>
                                 <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=166+DEFENSE+HIGHWAY,+Annapolis,+MD&hl=en"
@@ -2960,7 +3319,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Bel Air Location</h6>
+                                <h6>Bel Air</h6>
                                 <p class="text-caption">510 Upper Chesapeake Drive, # 413, BEL AIR, MD 21014</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=510+Upper+chesapeake+drive,+Bel+Air,+MD&hl=en"
@@ -2984,7 +3343,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Clarksville Location</h6>
+                                <h6>Clarksville</h6>
                                 <p class="text-caption">5005 Signal Bell Lane, Ste 204 ( RIVER HILL STATION Building)
                                     Clarksville, 21029</p>
                             </div>
@@ -3009,7 +3368,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Owings Mills Location</h6>
+                                <h6>Owings Mills</h6>
                                 <p class="text-caption">21 Crossroads Drive, Owings Mills MD 21117</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=21+Crossroads+Drive,+Owings+Mills,+MD+21117"
@@ -3033,7 +3392,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Pasadena Location</h6>
+                                <h6>Pasadena</h6>
                                 <p class="text-caption">18 Magothy Beach Rd, Ste B, Pasadena MD 21122</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=18+Magothy+Beach+Rd,+Pasadena,+MD+21122&hl=en"
@@ -3057,7 +3416,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>Alexandria Location</h6>
+                                <h6>Alexandria</h6>
                                 <p class="text-caption">1600 N Beauregard St, ste 105 Alexandria VA, 22311</p>
                             </div>
                             <a href="https://www.google.com/maps?saddr&daddr=1600+N+Beauregard+St,+Alexandria,+VA+22311"
@@ -3081,7 +3440,7 @@
                     <div class="location-card">
                         <div class="info">
                             <div class="text">
-                                <h6>FairFax Location</h6>
+                                <h6>FairFax</h6>
                                 <p class="text-caption">3620 Joseph Siewick Drive, Ste 306,
                                     Inova Fair Oaks Medical Campus
                                     Fairfax VA 22033</p>
@@ -3746,7 +4105,7 @@
                             <h6>Pages</h6>
                             <ul class="links-group">
                                 <li><a href="/" class="button-r">Home</a></li>
-                                <li><a href="/treatments.html" class="button-r">Specialties</a></li>
+                                <li><a href="/diseases.html" class="button-r">Specialties</a></li>
                                 <li><a href="/our-team.html" class="button-r">Our Team</a></li>
                                 <li><a href="/contact-us.html" class="button-r">Contact Us</a></li>
                                 <li><a href="/patients-center.html" class="button-r">Patients Portal</a></li>

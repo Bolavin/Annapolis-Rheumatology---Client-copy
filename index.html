@@ -506,28 +506,7 @@
 
                     <div class="nav__menu">
                         <ul class="nav__list">
-                            <li class="nav__item dd">
-                                <span>
-                                    <a href="/diseases.html" onclick="toggleMenu()">Diseases</a>
-                                    <span class="dd-icon" onclick="toggleDd()">
-                                        <img src="/../images/arrow-down.svg" alt="">
-                                    </span>
-                                </span>
-                                <ul class="dd-menu">
-                                    <li class="dd-menu__item"><a href="/diseases.html#inflammatory-arthritis"
-                                            onclick="toggleDd()">Inflammatory Arthritis</a>
-                                    </li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#autoimmune-diseases"
-                                            onclick="toggleDd()">Autoimmune Diseases</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#musculoskeletal-conditions"
-                                            onclick="toggleDd()">Musculoskeletal
-                                            Conditions</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#joint-or-muscle-pain"
-                                            onclick="toggleDd()">Joint or Muscle Pain</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#metabolic-bone-disease"
-                                            onclick="toggleDd()">Metabolic Bone Disease</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav__item"><a href="/diseases.html" onclick="toggleMenu()">Diseases</a></li>
                             <li class="nav__item"><a href="/our-team.html" onclick="toggleMenu()">Our Team</a></li>
                             <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
                             <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
@@ -563,42 +542,7 @@
 
                 menu.classList.toggle("open")
                 icon.classList.toggle("open")
-
-
             }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                const dropDown = document.querySelector(".dd-menu");
-                const ddIcon = document.querySelector(".dd-icon");
-
-                // Function to toggle dropdown
-                function toggleDd(event) {
-                    event.stopPropagation(); // Prevent click from propagating to document
-                    dropDown.classList.toggle("open");
-                    ddIcon.classList.toggle("open");
-                }
-
-                // Function to close dropdown
-                function closeDd() {
-                    dropDown.classList.remove("open");
-                    ddIcon.classList.remove("open");
-                }
-
-                // Add event listener to toggle dropdown on click
-                ddIcon.addEventListener('click', toggleDd);
-
-                // Add event listener to dropdown items to close dropdown on click
-                dropDown.addEventListener('click', function (event) {
-                    event.stopPropagation(); // Prevent event from bubbling up to document
-                    closeDd();
-                });
-
-                // Add event listener to document to detect clicks outside dropdown
-                document.addEventListener('click', closeDd);
-            });
-
-
-
         </script>
     </body>
 
@@ -2487,19 +2431,22 @@
             }
 
             .patients .btn__container {
-                display: flex;
-                justify-content: flex-start;
+                width: 100%;
+
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                /* justify-content: flex-start;
                 align-items: center;
-                align-content: center;
+                align-content: center; */
                 gap: 24px;
-                align-self: stretch;
-                flex-wrap: wrap
+                /* align-self: stretch; */
+                /* flex-wrap: wrap */
             }
 
-            .patients .btn {
+            /* .patients .btn {
                 flex-grow: 1;
                 width: 20%
-            }
+            } */
 
             .service__cards {
                 display: flex;
@@ -2618,14 +2565,14 @@
                 }
 
                 .patients .btn__container {
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                     gap: 16px;
-                    flex-direction: row
+                    /* flex-direction: row */
                 }
 
                 .patients .btn {
                     gap: 0;
-                    flex-grow: 0;
-                    width: 31%
+                    width: 100%
                 }
 
                 .services .card__container {
@@ -2709,16 +2656,17 @@
                 }
 
                 .patients .btn__container {
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
                     gap: 12px;
-                    flex-direction: column;
+                    /* flex-direction: column;
                     flex-wrap: nowrap;
                     justify-content: flex-start;
-                    align-items: start
+                    align-items: start */
                 }
 
-                .patients .btn {
+                /* .patients .btn {
                     width: 88%
-                }
+                } */
 
                 .service__cards {
                     padding: 20px 12px;
@@ -2730,6 +2678,7 @@
                     gap: 12px;
                     height: 820px
                 }
+
             }
         </style>
     </head>
@@ -2745,6 +2694,9 @@
                         <a href="#" class="btn btn-icon btn--ghost">Pay a Bill</a>
                         <a href="#" class="btn btn-icon btn--ghost">Medical Record Release</a>
                         <a href="#" class="btn btn-icon btn--ghost">Informed Consent Forms</a>
+                        <a href="mailto:info@arheum.com" class="btn btn-icon btn--ghost">Send Email</a>
+                        <a href="tel:+14108971941" class="btn btn-icon btn--ghost">Call Us</a>
+                        <a href="fax:+14106308067" class="btn btn-icon btn--ghost">Fax your details</a>
                     </div>
                 </div>
 
@@ -4001,7 +3953,7 @@
 
             .location-card {
                 display: flex;
-                max-width: 31%;
+                /* max-width: 31%; */
                 flex-grow: 1;
                 padding: 12px;
                 align-items: center;
@@ -4047,6 +3999,7 @@
             .text .text-caption {
                 align-self: stretch;
                 font-size: 14px;
+                line-height: 1.5;
                 opacity: .7
             }
 
@@ -4112,6 +4065,41 @@
 
             .location-card:hover .image::before {
                 background: linear-gradient(180deg, rgba(40, 45, 48, .01) 0, rgba(40, 45, 48, .13) 74.25%, rgba(40, 45, 48, .5) 100%)
+            }
+
+            .location__wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            .location__wrapper .states {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 20px 20px;
+            }
+
+            .location__wrapper .topper:nth-child(3) {
+                margin-top: 20px;
+
+            }
+
+            .topper {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                align-self: stretch;
+            }
+
+            .topper .body-r {
+                opacity: .7;
+            }
+
+            .topper .line {
+                height: 2px;
+                flex: 1 0 0;
+                border-top: 2px solid rgba(40, 45, 48, .05);
             }
 
             @media screen and (max-width:900px) {
@@ -4188,9 +4176,9 @@
                     gap: 24px
                 }
 
-                .location-card {
-                    max-width: 47%
-                }
+                /* .location-card {
+         max-width: 47%
+     } */
 
                 .text h6 {
                     font-size: 16px
@@ -4208,6 +4196,21 @@
                 .info .btn svg {
                     height: 10px;
                     width: 10px
+                }
+
+                .location__wrapper {
+                    gap: 24px;
+                }
+
+                .location__wrapper .states {
+                    width: 100%;
+                    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+                    gap: 16px;
+                }
+
+                .location__wrapper .topper:nth-child(3) {
+                    margin-top: 16px;
+
                 }
             }
 
@@ -4256,13 +4259,15 @@
                     width: 100%
                 }
 
-                .location__wrapper {
-                    gap: 8px
-                }
+                /* .location__wrapper {
+         gap: 8px
+     } */
 
                 .location-card {
                     max-width: 100%
                 }
+
+
             }
         </style>
     </head>
@@ -4295,175 +4300,170 @@
                 </div>
 
                 <div class="location__wrapper">
+                    <div class="topper">
+                        <p class="body-r">Our Locations in the State of Maryland</p>
+                        <div class="line"></div>
+                    </div>
 
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Annapolis</h6>
-                                <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                    <div class="states">
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Annapolis</h6>
+                                    <p class="text-caption">166 Defense Highway, Ste 200 Annapolis, MD 21401</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=166+DEFENSE+HIGHWAY,+Annapolis,+MD&hl=en"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
                             </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=166+DEFENSE+HIGHWAY,+Annapolis,+MD&hl=en"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            </div>
                         </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Bel Air</h6>
+                                    <p class="text-caption">510 Upper Chesapeake Drive, # 413, BEL AIR, MD 21014</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=510+Upper+chesapeake+drive,+Bel+Air,+MD&hl=en"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Clarksville</h6>
+                                    <p class="text-caption">5005 Signal Bell Lane, Ste 204 ( RIVER HILL STATION
+                                        Building)
+                                        Clarksville, 21029</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=5005+Signal+Bell+Ln,+Clarksville,+MD+21029"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Owings Mills</h6>
+                                    <p class="text-caption">21 Crossroads Drive, Owings Mills MD 21117</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=21+Crossroads+Drive,+Owings+Mills,+MD+21117"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Pasadena</h6>
+                                    <p class="text-caption">18 Magothy Beach Rd, Ste B, Pasadena MD 21122</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=18+Magothy+Beach+Rd,+Pasadena,+MD+21122&hl=en"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Bel Air</h6>
-                                <p class="text-caption">510 Upper Chesapeake Drive, # 413, BEL AIR, MD 21014</p>
-                            </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=510+Upper+chesapeake+drive,+Bel+Air,+MD&hl=en"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
-                        </div>
+                    <div class="topper">
+                        <p class="body-r">Our Locations in the State of Virginia</p>
+                        <div class="line"></div>
                     </div>
 
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Clarksville</h6>
-                                <p class="text-caption">5005 Signal Bell Lane, Ste 204 ( RIVER HILL STATION Building)
-                                    Clarksville, 21029</p>
+                    <div class="states">
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>Alexandria</h6>
+                                    <p class="text-caption">1600 N Beauregard St, ste 105 Alexandria VA, 22311</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=1600+N+Beauregard+St,+Alexandria,+VA+22311"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
                             </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=5005+Signal+Bell+Ln,+Clarksville,+MD+21029"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
-                        </div>
-                    </div>
-
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Owings Mills</h6>
-                                <p class="text-caption">21 Crossroads Drive, Owings Mills MD 21117</p>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                             </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=21+Crossroads+Drive,+Owings+Mills,+MD+21117"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
                         </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
-                        </div>
-                    </div>
-
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Pasadena</h6>
-                                <p class="text-caption">18 Magothy Beach Rd, Ste B, Pasadena MD 21122</p>
+                        <div class="location-card">
+                            <div class="info">
+                                <div class="text">
+                                    <h6>FairFax</h6>
+                                    <p class="text-caption">3620 Joseph Siewick Drive, Ste 306,
+                                        Inova Fair Oaks Medical Campus
+                                        Fairfax VA 22033</p>
+                                </div>
+                                <a href="https://www.google.com/maps?saddr&daddr=Inova+Fair+Oaks+Hospital,+Joseph+Siewick+Drive,+Fairfax,+MD&hl=en"
+                                    class="btn btn--ghost get-directions-btn">
+                                    <span>Get Directions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
+                                            fill="#282D30" />
+                                    </svg>
+                                </a>
                             </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=18+Magothy+Beach+Rd,+Pasadena,+MD+21122&hl=en"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
-                        </div>
-                    </div>
-
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>Alexandria</h6>
-                                <p class="text-caption">1600 N Beauregard St, ste 105 Alexandria VA, 22311</p>
+                            <div class="image">
+                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                             </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=1600+N+Beauregard+St,+Alexandria,+VA+22311"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
-                        </div>
-                    </div>
-
-                    <div class="location-card">
-                        <div class="info">
-                            <div class="text">
-                                <h6>FairFax</h6>
-                                <p class="text-caption">3620 Joseph Siewick Drive, Ste 306,
-                                    Inova Fair Oaks Medical Campus
-                                    Fairfax VA 22033</p>
-                            </div>
-                            <a href="https://www.google.com/maps?saddr&daddr=Inova+Fair+Oaks+Hospital,+Joseph+Siewick+Drive,+Fairfax,+MD&hl=en"
-                                class="btn btn--ghost get-directions-btn">
-                                <span>Get Directions</span>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                    fill="none">
-                                    <path
-                                        d="M5.93291 6.38232C5.75609 6.38232 5.58653 6.44998 5.4615 6.57042C5.33648 6.69086 5.26624 6.85421 5.26624 7.02453V9.59339H6.59957V7.66675H8.59957V9.27228L10.9329 7.02453L8.59957 4.77678V6.38232H5.93291ZM8.40424 0.85478L15.0042 7.2127C15.1292 7.33314 15.1994 7.49646 15.1994 7.66675C15.1994 7.83704 15.1292 8.00036 15.0042 8.12079L8.40424 14.4787C8.27922 14.5991 8.10968 14.6667 7.93291 14.6667C7.75613 14.6667 7.58659 14.5991 7.46157 14.4787L0.861573 8.12079C0.736592 8.00036 0.666382 7.83704 0.666382 7.66675C0.666382 7.49646 0.736592 7.33314 0.861573 7.2127L7.46157 0.85478C7.58659 0.734383 7.75613 0.666748 7.93291 0.666748C8.10968 0.666748 8.27922 0.734383 8.40424 0.85478Z"
-                                        fill="#282D30" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="image">
-                            <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
                         </div>
                     </div>
 

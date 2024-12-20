@@ -245,7 +245,7 @@
                 text-align: start;
                 padding: 0;
                 /* font-size: 1.4rem;
-            font-weight: 400; */
+        font-weight: 400; */
             }
 
             .nav__overlay,
@@ -505,28 +505,7 @@
 
                     <div class="nav__menu">
                         <ul class="nav__list">
-                            <li class="nav__item dd">
-                                <span>
-                                    <a href="/diseases.html" onclick="toggleMenu()">Diseases</a>
-                                    <span class="dd-icon" onclick="toggleDd()">
-                                        <img src="/../images/arrow-down.svg" alt="">
-                                    </span>
-                                </span>
-                                <ul class="dd-menu">
-                                    <li class="dd-menu__item"><a href="/diseases.html#inflammatory-arthritis"
-                                            onclick="toggleDd()">Inflammatory Arthritis</a>
-                                    </li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#autoimmune-diseases"
-                                            onclick="toggleDd()">Autoimmune Diseases</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#musculoskeletal-conditions"
-                                            onclick="toggleDd()">Musculoskeletal
-                                            Conditions</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#joint-or-muscle-pain"
-                                            onclick="toggleDd()">Joint or Muscle Pain</a></li>
-                                    <li class="dd-menu__item"><a href="/diseases.html#metabolic-bone-disease"
-                                            onclick="toggleDd()">Metabolic Bone Disease</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav__item"><a href="/diseases.html" onclick="toggleMenu()">Diseases</a></li>
                             <li class="nav__item"><a href="/our-team.html" onclick="toggleMenu()">Our Team</a></li>
                             <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
                             <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
@@ -537,7 +516,7 @@
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                             </a>
-                            <a href="tel:+4108971941" class="nav__btn primary">
+                            <a href="tel:+14108971941" class="nav__btn primary">
                                 <span>(410) 897 - 1941</span>
                                 <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
                                 <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
@@ -562,42 +541,7 @@
 
                 menu.classList.toggle("open")
                 icon.classList.toggle("open")
-
-
             }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                const dropDown = document.querySelector(".dd-menu");
-                const ddIcon = document.querySelector(".dd-icon");
-
-                // Function to toggle dropdown
-                function toggleDd(event) {
-                    event.stopPropagation(); // Prevent click from propagating to document
-                    dropDown.classList.toggle("open");
-                    ddIcon.classList.toggle("open");
-                }
-
-                // Function to close dropdown
-                function closeDd() {
-                    dropDown.classList.remove("open");
-                    ddIcon.classList.remove("open");
-                }
-
-                // Add event listener to toggle dropdown on click
-                ddIcon.addEventListener('click', toggleDd);
-
-                // Add event listener to dropdown items to close dropdown on click
-                dropDown.addEventListener('click', function (event) {
-                    event.stopPropagation(); // Prevent event from bubbling up to document
-                    closeDd();
-                });
-
-                // Add event listener to document to detect clicks outside dropdown
-                document.addEventListener('click', closeDd);
-            });
-
-
-
         </script>
     </body>
 

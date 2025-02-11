@@ -79,7 +79,7 @@
 
 
             /* UTILITIES */
-            .container {
+            .contain {
                 max-width: 1440px;
                 margin-inline: auto;
                 padding-inline: 6vw;
@@ -90,7 +90,7 @@
                 border: 0;
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -325,7 +325,7 @@
 
 
             @media screen and (max-width: 1024px) {
-                .container {
+                .contain {
                     /* max-width: 800px; */
                     margin-inline: auto;
                     padding-inline: 32px;
@@ -417,7 +417,7 @@
                 }
 
                 .nav__list,
-                .btn__container {
+                .btn__contain {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -482,7 +482,7 @@
                     width: .4rem;
                 }
 
-                .btn__container .nav__btn>:nth-child(3) {
+                .btn__contain .nav__btn>:nth-child(3) {
                     width: 20px;
                     height: 20px;
                 }
@@ -493,10 +493,11 @@
     <body>
         <!-- Desktop Nav -->
         <header id="nav--desktop">
-            <nav class="container nav__desktop">
+            <nav class="contain nav__desktop">
 
                 <a href="/">
-                    <img class="nav__brand" src="/../images/logo-block.svg" alt="Annapolis Rheumatology — Logo">
+                    <img class="nav__brand" src="/files/theme/images/logo-block.svg"
+                        alt="Annapolis Rheumatology — Logo">
                 </a>
 
                 <div class="nav__menu-wrapper">
@@ -511,16 +512,16 @@
                             <li class="nav__item"><a href="/locations.html" onclick="toggleMenu()">Locations</a></li>
                             <li class="nav__item"><a href="/contact-us.html" onclick="toggleMenu()">Contact Us</a></li>
                         </ul>
-                        <div class="btn__container">
+                        <div class="btn__contain">
                             <a href="/patients-center.html" class="nav__btn secondary">
                                 <span>Patient Center</span>
-                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
-                                <img src="/images/patient_icon.svg" alt="phone icon" class="btn-icon">
+                                <img src="/files/theme/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/files/theme/images/patient_icon.svg" alt="phone icon" class="btn-icon">
                             </a>
                             <a href="tel:+14108971941" class="nav__btn primary">
                                 <span>(410) 897 - 1941</span>
-                                <img src="/images/y-div.svg" alt="Horizontal divider" class="y-div">
-                                <img src="/images/phone-icons.svg" alt="phone icon" class="btn-icon">
+                                <img src="/files/theme/images/y-div.svg" alt="Horizontal divider" class="y-div">
+                                <img src="/files/theme/images/phone-icons.svg" alt="phone icon" class="btn-icon">
                             </a>
                         </div>
                     </div>
@@ -625,7 +626,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -659,7 +660,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url(images/arrow-right.svg) no-repeat;
+                background: url(/files/theme/images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -676,7 +677,7 @@
                 background: #bd4b5c
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -691,7 +692,7 @@
                 align-items: center;
                 gap: 8px;
                 overflow: hidden;
-                background: linear-gradient(90deg, rgba(11, 109, 160, .25) 25%, rgba(231, 240, 245, .1) 75%), url(../images/physician-consulting-his-patient-clinic.jpg) center/cover no-repeat
+                background: linear-gradient(90deg, rgba(11, 109, 160, .25) 25%, rgba(231, 240, 245, .1) 75%), url("/files/theme/images/physician-consulting-his-patient-clinic.jpg") center/cover no-repeat
             }
 
             .hero__content {
@@ -719,7 +720,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -766,7 +767,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -819,7 +820,7 @@
 
     <body>
         <section class="hero">
-            <div class="container">
+            <div class="contain">
                 <div class="hero__content">
                     <h1>
                         The Right <br> Rheumatologist Can Make All The Difference.
@@ -930,7 +931,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -938,7 +939,7 @@
                 padding-inline: 6vw
             }
 
-            .noti.container {
+            .noti.contain {
                 position: relative;
                 width: 72%;
                 margin-inline: auto;
@@ -1053,7 +1054,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -1065,7 +1066,7 @@
                     line-height: 18px
                 }
 
-                .noti.container {
+                .noti.contain {
                     width: 88%;
                     padding: 8px;
                     margin-block: 32px 40px;
@@ -1107,7 +1108,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -1120,7 +1121,7 @@
                     line-height: 16px
                 }
 
-                .noti.container {
+                .noti.contain {
                     width: 100%;
                     padding: 16px;
                     margin-block: 0 32px;
@@ -1162,13 +1163,15 @@
 
     <body>
 
-        <div class="noti noti--warning container">
+        <div class="noti noti--warning contain">
             <picture class="noti__image">
-                <source srcset="images/noti-picture.webp 1x, images/noti-picture@2x.webp 2x" type="image/webp">
+                <source srcset="/files/theme/images/noti-picture.webp 1x, /files/theme/images/noti-picture@2x.webp 2x"
+                    type="image/webp">
 
-                <source srcset="images/noti-picture.jpg 1x, images/noti-picture@2x.jpg 2x" type="image/jpg">
+                <source srcset="/files/theme/images/noti-picture.jpg 1x, /files/theme/images/noti-picture@2x.jpg 2x"
+                    type="image/jpg">
 
-                <img src="images/noti-picture@2x.jpg" alt="A picture of a nurse talking on phone">
+                <img href="/files/theme/images/noti-picture@2x.jpg" alt="A picture of a nurse talking on phone">
             </picture>
 
             <div class="noti__content">
@@ -1296,7 +1299,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -1350,7 +1353,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url(images/arrow-right.svg) no-repeat;
+                background: url(/files/theme/images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -1378,7 +1381,7 @@
                 background: rgba(239, 85, 106, .2)
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1403,7 +1406,7 @@
                 letter-spacing: -.1px
             }
 
-            .treatment .container {
+            .treatment .contain {
                 display: flex;
                 padding-block: 0 64px;
                 flex-direction: column;
@@ -1446,7 +1449,7 @@
                 padding-inline: 40px
             }
 
-            .welcome .btn__container {
+            .welcome .btn__contain {
                 gap: 24px
             }
 
@@ -1483,7 +1486,7 @@
                 opacity: .7
             }
 
-            .condition .card__container {
+            .condition .card__contain {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -1491,7 +1494,7 @@
                 gap: 24px
             }
 
-            .card__container .card {
+            .card__contain .card {
                 flex-grow: 1;
                 position: relative;
                 width: 20%;
@@ -1529,12 +1532,12 @@
                 object-position: center
             }
 
-            .card:hover .btn__container {
+            .card:hover .btn__contain {
                 right: 24px;
                 top: 24px
             }
 
-            .card .btn__container {
+            .card .btn__contain {
                 position: absolute;
                 flex-direction: row;
                 right: -100%;
@@ -1587,7 +1590,7 @@
                 display: flex
             }
 
-            .card__container .card.one::before {
+            .card__contain .card.one::before {
                 content: '';
                 padding: 8px;
                 position: absolute;
@@ -1600,7 +1603,7 @@
                 background: linear-gradient(180deg, rgba(239, 85, 106, .5) 40%, rgba(255, 157, 59, .2) 100%)
             }
 
-            .card__container .card.one:hover::before {
+            .card__contain .card.one:hover::before {
                 content: '';
                 background: linear-gradient(180deg, rgba(239, 85, 106, .25) 40%, rgba(255, 157, 59, 1) 100%)
             }
@@ -1627,7 +1630,7 @@
                 background-color: #ca7c2f
             }
 
-            .card__container .card.two::before {
+            .card__contain .card.two::before {
                 content: '';
                 padding: 8px;
                 position: absolute;
@@ -1640,7 +1643,7 @@
                 background: linear-gradient(0deg, rgba(73, 140, 187, .1) 0, rgba(239, 85, 106, .2) 100%)
             }
 
-            .card__container .card.two:hover::before {
+            .card__contain .card.two:hover::before {
                 content: '';
                 background: linear-gradient(0deg, rgba(73, 140, 187, 1) 0, rgba(239, 85, 106, .2) 100%)
             }
@@ -1667,7 +1670,7 @@
                 background-color: #3d769e
             }
 
-            .card__container .card.three::before {
+            .card__contain .card.three::before {
                 content: '';
                 padding: 8px;
                 position: absolute;
@@ -1680,7 +1683,7 @@
                 background: linear-gradient(0deg, rgba(124, 189, 64, .1) 0, rgba(239, 85, 106, .25) 100%)
             }
 
-            .card__container .card.three:hover::before {
+            .card__contain .card.three:hover::before {
                 content: '';
                 background: linear-gradient(0deg, rgba(124, 189, 64, 1) 0, rgba(239, 85, 106, .2) 100%)
             }
@@ -1765,7 +1768,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -1790,7 +1793,7 @@
                     height: 16px
                 }
 
-                .treatment .container {
+                .treatment .contain {
                     padding-block: 0 32px;
                     gap: 20px
                 }
@@ -1816,7 +1819,7 @@
                     padding-inline: 24px
                 }
 
-                .welcome .btn__container {
+                .welcome .btn__contain {
                     gap: 16px;
                     flex-direction: row
                 }
@@ -1825,11 +1828,11 @@
                     gap: 20px
                 }
 
-                .condition .card__container {
+                .condition .card__contain {
                     gap: 16px
                 }
 
-                .card__container .card {
+                .card__contain .card {
                     height: 300px
                 }
 
@@ -1856,7 +1859,7 @@
                     gap: 8px
                 }
 
-                .card .btn__container {
+                .card .btn__contain {
                     display: none;
                 }
 
@@ -1881,7 +1884,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -1907,7 +1910,7 @@
                     height: 16px
                 }
 
-                .treatment .container {
+                .treatment .contain {
                     padding-block: 0 24px;
                     gap: 16px
                 }
@@ -1935,7 +1938,7 @@
                     padding-inline: 24px
                 }
 
-                .welcome .btn__container {
+                .welcome .btn__contain {
                     width: 100%;
                     gap: 12px
                 }
@@ -1963,11 +1966,11 @@
                     width: 100%
                 }
 
-                .condition .card__container {
+                .condition .card__contain {
                     flex-wrap: wrap
                 }
 
-                .card__container .card {
+                .card__contain .card {
                     width: 40%;
                     height: 220px;
                     flex-grow: 1
@@ -2023,7 +2026,7 @@
 
     <body>
         <section class="treatment">
-            <div class="container">
+            <div class="contain">
 
                 <div class="welcome">
                     <h2 class="title">
@@ -2035,7 +2038,7 @@
                         with
                         every step.
                     </h2>
-                    <div class="btn__container">
+                    <div class="btn__contain">
                         <a href="/contact-us.html" class="btn btn--primary">Contact Us</a>
                         <a href="tel:+14108971941" class="btn btn--secondary">(410) 897 - 1941</a>
                     </div>
@@ -2056,14 +2059,15 @@
                         </a>
                     </div>
 
-                    <div class="card__container">
+                    <div class="card__contain">
 
                         <div class="card one">
                             <div class="card-content">
-                                <img src="images/carpaltunnelweb.jpg" alt="Inflammatory Arthritis" class="card__img">
+                                <img src="/files/theme/images/carpaltunnelweb.jpg" alt="Inflammatory Arthritis"
+                                    class="card__img">
                                 <div class="overlay">
                                 </div>
-                                <div class="btn__container">
+                                <div class="btn__contain">
                                     <span class="chip">Viral arthritis</span>
                                     <span class="chip">Rheumatoid Arthritis</span>
                                 </div>
@@ -2084,11 +2088,11 @@
                         <div class="card two">
                             <div class="card-content">
 
-                                <img src="images/3d-render-medical-background-with-male-figure-lungs-covid-19-virus-cells.jpg"
+                                <img src="/files/theme/images/3d-render-medical-background-with-male-figure-lungs-covid-19-virus-cells.jpg"
                                     alt="Inflammatory Arthritis" class="card__img">
                                 <div class="overlay">
                                 </div>
-                                <div class="btn__container">
+                                <div class="btn__contain">
                                     <div class="chip">Temporal Arteritis</div>
                                     <div class="chip">Sjogren's Syndrome</div>
                                 </div>
@@ -2110,10 +2114,11 @@
                         <div class="card three">
                             <div class="card-content">
 
-                                <img src="images/arthritisweb.jpg" alt="Musculoskeletal Conditions" class="card__img">
+                                <img src="/files/theme/images/arthritisweb.jpg" alt="Musculoskeletal Conditions"
+                                    class="card__img">
                                 <div class="overlay">
                                 </div>
-                                <div class="btn__container">
+                                <div class="btn__contain">
                                     <div class="chip">Gout</div>
                                     <div class="chip">Osteoarthritis</div>
                                 </div>
@@ -2136,11 +2141,11 @@
 
                         <div class="card four">
                             <div class="card-content">
-                                <img src="images/x-ray-with-neon-colors.jpg" alt="Inflammatory Arthritis"
+                                <img src="/files/theme/images/x-ray-with-neon-colors.jpg" alt="Inflammatory Arthritis"
                                     class="card__img">
                                 <div class="overlay">
                                 </div>
-                                <div class="btn__container">
+                                <div class="btn__contain">
                                     <span class="chip">Viral arthritis</span>
                                     <span class="chip">Rheumatoid Arthritis</span>
                                 </div>
@@ -2186,7 +2191,7 @@
                             in</a>
                     </div>
 
-                    <img src="images/beautiful-female-therapist-clinic.jpg" alt="picture of a nurse">
+                    <img src="/files/theme/images/beautiful-female-therapist-clinic.jpg" alt="picture of a nurse">
                 </div>
 
             </div>
@@ -2325,7 +2330,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -2364,7 +2369,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url(images/arrow-right.svg) no-repeat;
+                background: url(/files/theme/images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -2398,7 +2403,7 @@
                 filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -2411,7 +2416,7 @@
                 background: rgba(40, 45, 48, .1)
             }
 
-            .services .container {
+            .services .contain {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -2430,7 +2435,7 @@
                 background: var(--color-off-white)
             }
 
-            .patients .btn__container {
+            .patients .btn__contain {
                 width: 100%;
 
                 display: grid;
@@ -2459,7 +2464,7 @@
                 background: rgba(255, 255, 255, .66)
             }
 
-            .services .card__container {
+            .services .card__contain {
                 display: flex;
                 align-items: center;
                 gap: 28px;
@@ -2517,7 +2522,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -2546,7 +2551,7 @@
                     padding-block: 48px
                 }
 
-                .services .container {
+                .services .contain {
                     gap: 20px
                 }
 
@@ -2564,7 +2569,7 @@
                     letter-spacing: -.24px
                 }
 
-                .patients .btn__container {
+                .patients .btn__contain {
                     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                     gap: 16px;
                     /* flex-direction: row */
@@ -2575,7 +2580,7 @@
                     width: 100%
                 }
 
-                .services .card__container {
+                .services .card__contain {
                     gap: 16px
                 }
 
@@ -2609,7 +2614,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -2639,7 +2644,7 @@
                     padding-block: 32px
                 }
 
-                .services .container {
+                .services .contain {
                     gap: 16px
                 }
 
@@ -2655,7 +2660,7 @@
                     border-radius: 8px
                 }
 
-                .patients .btn__container {
+                .patients .btn__contain {
                     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
                     gap: 12px;
                     /* flex-direction: column;
@@ -2673,7 +2678,7 @@
                     gap: 20px
                 }
 
-                .services .card__container {
+                .services .card__contain {
                     flex-direction: column;
                     gap: 12px;
                     height: 820px
@@ -2685,11 +2690,11 @@
 
     <body>
         <setion class="services">
-            <div class="container">
+            <div class="contain">
 
                 <div class="patients">
                     <h3>For Patients</h3>
-                    <div class="btn__container">
+                    <div class="btn__contain">
                         <a href="#" class="btn btn-icon btn--ghost">New Patient Form</a>
                         <a href="#" class="btn btn-icon btn--ghost">Pay a Bill</a>
                         <a href="#" class="btn btn-icon btn--ghost">Medical Record Release</a>
@@ -2708,13 +2713,13 @@
                             stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 8" />
                     </svg>
 
-                    <div class="card__container">
+                    <div class="card__contain">
                         <div class="card">
                             <div class="image">
                                 <div class="title">
                                     <h6>Injection & Infusion Therapies</h6>
                                 </div>
-                                <img src="images/pexels-shvetsa-3845115.jpg" alt="Our services">
+                                <img src="/files/theme/images/pexels-shvetsa-3845115.jpg" alt="Our services">
                             </div>
                             <div class="text">
                                 <p class="body-r">
@@ -2730,7 +2735,8 @@
                                 <div class="title">
                                     <h6>Ultrasound & Diagnostic</h6>
                                 </div>
-                                <img src="images/pexels-mart-production-7089400.jpg" alt="Ultrasound & Diagnostic ">
+                                <img src="/files/theme/images/pexels-mart-production-7089400.jpg"
+                                    alt="Ultrasound & Diagnostic ">
                             </div>
                             <div class="text">
                                 <p class="body-r">
@@ -2746,7 +2752,7 @@
                                 <div class="title">
                                     <h6>Digital Medicine</h6>
                                 </div>
-                                <img src="images/Orthopedic-Surgeons.jpg" alt="Digital Medicine">
+                                <img src="/files/theme/images/Orthopedic-Surgeons.jpg" alt="Digital Medicine">
                             </div>
                             <div class="text">
                                 <p class="body-r">
@@ -2862,7 +2868,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -2917,7 +2923,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url(images/arrow-right.svg) no-repeat;
+                background: url(/files/theme/images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -2961,7 +2967,7 @@
                 background: #bd4b5c
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -3006,7 +3012,7 @@
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url(images/brand-Icon.svg) no-repeat;
+                background: url(/files/theme/images/brand-Icon.svg) no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
@@ -3046,7 +3052,7 @@
                 background: rgba(255, 255, 255, .5)
             }
 
-            .our-team .container {
+            .our-team .contain {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -3054,7 +3060,7 @@
                 align-self: stretch
             }
 
-            .our-team .container .dotted-lines {
+            .our-team .contain .dotted-lines {
                 width: 100%;
                 height: 2px
             }
@@ -3205,7 +3211,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -3275,7 +3281,7 @@
                     padding-block: 56px
                 }
 
-                .our-team .container {
+                .our-team .contain {
                     gap: 32px;
                     overflow: hidden
                 }
@@ -3322,7 +3328,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -3367,7 +3373,7 @@
                     padding-block: 32px
                 }
 
-                .our-team .container {
+                .our-team .contain {
                     gap: 20px
                 }
 
@@ -3400,7 +3406,7 @@
 
     <body>
         <section class="our-team">
-            <div class="container">
+            <div class="contain">
 
                 <div class="title">
                     <div class="text">
@@ -3442,7 +3448,7 @@
                                 <p class="body-b">M.D, FACR</p>
                             </div>
                             <div class="doc-image">
-                                <img src="images/doc-jacob.png" alt="Picture of doctor Jacob.">
+                                <img src="/files/theme/images/doc-image/doc-jacob.png" alt="Picture of doctor Jacob.">
                             </div>
                         </div>
 
@@ -3501,7 +3507,7 @@
                                 <p class="body-b">M.D, FACR</p>
                             </div>
                             <div class="doc-image">
-                                <img src="images/doc-susan.png" alt="Picture of doctor Susan.">
+                                <img src="/files/theme/images/doc-image/doc-susan.png" alt="Picture of doctor Susan.">
                             </div>
                         </div>
 
@@ -3563,7 +3569,7 @@
                                 <p class="body-b">M.D, FACP</p>
                             </div>
                             <div class="doc-image">
-                                <img src="images/doc-saade.png" alt="Picture of doctor saade.">
+                                <img src="/files/theme/images/doc-image/doc-saade.png" alt="Picture of doctor saade.">
                             </div>
                         </div>
 
@@ -3626,7 +3632,7 @@
                                 <p class="body-b">M.D, FACR</p>
                             </div>
                             <div class="doc-image">
-                                <img src="images/doc-sonie.png" alt="Picture of doctor Sonie.">
+                                <img src="/files/theme/images/doc-image/doc-sonie.png" alt="Picture of doctor Sonie.">
                             </div>
                         </div>
 
@@ -3787,7 +3793,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -3852,7 +3858,7 @@
                 background: #bd4b5c
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -3897,7 +3903,7 @@
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url(../images/brand-Icon.svg) no-repeat;
+                background: url(/files/theme/images/brand-Icon.svg) no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
@@ -3908,7 +3914,7 @@
                 padding-block: 80px
             }
 
-            .locations .container {
+            .locations .contain {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -4103,7 +4109,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -4141,7 +4147,7 @@
                     padding-block: 48px
                 }
 
-                .location .container {
+                .location .contain {
                     gap: 24px
                 }
 
@@ -4215,7 +4221,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -4240,7 +4246,7 @@
                     padding-block: 32px
                 }
 
-                .location .container {
+                .location .contain {
                     gap: 16px
                 }
 
@@ -4274,7 +4280,7 @@
 
     <body>
         <section class="locations">
-            <div class="container">
+            <div class="contain">
                 <div class="title">
                     <div class="text">
                         <span class="chip--brand">Our Locations</span>
@@ -4324,7 +4330,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                         <div class="location-card">
@@ -4345,7 +4352,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                         <div class="location-card">
@@ -4368,7 +4376,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                         <div class="location-card">
@@ -4389,7 +4398,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                         <div class="location-card">
@@ -4410,7 +4420,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                     </div>
@@ -4439,7 +4450,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                         <div class="location-card">
@@ -4462,7 +4474,8 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="/images/on-the-map.png" alt="A picture of the mad point to our addresss">
+                                <img src="/files/theme/images/on-the-map.png"
+                                    alt="A picture of the mad point to our addresss">
                             </div>
                         </div>
                     </div>
@@ -4633,7 +4646,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -4689,7 +4702,7 @@
             .chip--brand::before {
                 content: '';
                 display: inline-block;
-                background: url(images/brand-Icon.svg) no-repeat;
+                background: url(/files/theme/images/brand-Icon.svg) no-repeat;
                 background-size: contain;
                 width: 10px;
                 height: 10px;
@@ -4718,7 +4731,7 @@
                 background: rgba(255, 255, 255, .5)
             }
 
-            .values .container {
+            .values .contain {
                 display: flex;
                 align-self: stretch;
                 height: fit-content;
@@ -4785,7 +4798,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -4825,7 +4838,7 @@
                     padding-block: 40px
                 }
 
-                .values .container {
+                .values .contain {
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 24px
@@ -4863,7 +4876,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -4933,7 +4946,7 @@
 
     <body>
         <section class="values">
-            <div class="container">
+            <div class="contain">
                 <div class="title">
                     <span class="chip--brand">Our values</span>
                     <h2>Our Values</h2>
@@ -4942,7 +4955,7 @@
                 <div class="card__wrapper">
 
                     <div class="value-card">
-                        <img src="images/quality.png" alt="A picture illustrating one of our values">
+                        <img src="/files/theme/images/quality.png" alt="A picture illustrating one of our values">
 
                         <div class="text">
                             <h4>Quality</h4>
@@ -4958,7 +4971,7 @@
                     </div>
 
                     <div class="value-card">
-                        <img src="images/access.png" alt="A picture illustrating our values">
+                        <img src="/files/theme/images/access.png" alt="A picture illustrating our values">
 
                         <div class="text">
                             <h4>Access</h4>
@@ -4973,7 +4986,7 @@
                     </div>
 
                     <div class="value-card">
-                        <img src="images/waiting-time.png" alt="A picture illustrating our values">
+                        <img src="/files/theme/images/waiting-time.png" alt="A picture illustrating our values">
 
                         <div class="text">
                             <h4>Waiting Time</h4>
@@ -5114,7 +5127,7 @@
                 color: var(--color-off-black)
             }
 
-            .container {
+            .contain {
                 width: 100%;
                 height: fit-content;
                 max-width: 1440px;
@@ -5168,7 +5181,7 @@
             .btn-icon::after {
                 content: '';
                 display: inline-block;
-                background: url(../images/arrow-right.svg) no-repeat;
+                background: url(/files/theme/images/arrow-right.svg) no-repeat;
                 background-size: contain;
                 width: 20px;
                 height: 20px;
@@ -5202,7 +5215,7 @@
                 filter: brightness(0) saturate(100%) invert(100%) sepia(0) saturate(4030%) hue-rotate(182deg) brightness(112%) contrast(88%)
             }
 
-            .btn__container {
+            .btn__contain {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -5215,7 +5228,7 @@
                 background: var(--color-off-black)
             }
 
-            .footer .container {
+            .footer .contain {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -5389,7 +5402,7 @@
             }
 
             @media screen and (max-width:900px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 32px
                 }
@@ -5423,7 +5436,7 @@
                     padding-block: 32px
                 }
 
-                .footer .container {
+                .footer .contain {
                     gap: 24px
                 }
 
@@ -5472,7 +5485,7 @@
             }
 
             @media screen and (max-width:600px) {
-                .container {
+                .contain {
                     margin-inline: auto;
                     padding-inline: 16px;
                     overflow: hidden
@@ -5533,13 +5546,13 @@
 
     <body>
         <footer class="footer">
-            <div class="container">
+            <div class="contain">
                 <div class="topper">
                     <div class="left">
                         <div class="brand">
                             <div class="logo">
-                                <img src="/images/logo--block.svg" alt="A picture of the Logo icon">
-                                <img src="/images/logo-text.svg"
+                                <img src="/files/theme/images/logo--block.svg" alt="A picture of the Logo icon">
+                                <img src="/files/theme/images/logo-text.svg"
                                     alt="A picture of the barnd name - Annapolis Rheumatology">
                             </div>
 
